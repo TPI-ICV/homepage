@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <defs>
+    <linearGradient id="changan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+  </defs>
+  <!-- Background pill -->
+  <rect x="5" y="5" width="390" height="110" rx="16" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Icon stylized -->
+  <g transform="translate(25, 20)">
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="url(#changan-grad)" stroke="#60A5FA" stroke-width="1.5"/>
+    <!-- Radar & vehicle symbol -->
+    <circle cx="40" cy="40" r="28" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="4,3"/>
+    <path d="M 28 48 C 28 35 52 35 52 48 Z" fill="#FFFFFF"/>
+    <circle cx="34" cy="50" r="4" fill="#0F172A"/>
+    <circle cx="46" cy="50" r="4" fill="#0F172A"/>
+    <path d="M 40 20 L 40 32" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 32 23 L 37 31" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 48 23 L 43 31" stroke="#38BDF8" stroke-width="2" stroke-linecap="round"/>
+  </g>
+
+  <!-- Text -->
+  <text x="125" y="40" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="14">Chongqing Key Laboratory</text>
+  <text x="125" y="58" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Trusted Perception &amp; Interaction for ICV</text>
+  <text x="125" y="78" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="600" font-size="11">智能网联汽车可信感知交互重点实验室</text>
+  <text x="125" y="98" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Changan Automobile · 长安汽车</text>
+</svg>
