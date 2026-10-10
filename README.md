@@ -10,14 +10,24 @@ Co-hosted by:
 
 ---
 
+## 📬 Official Submission Instructions
+
+All participating laboratory teams and R&D engineers must submit academic posters and interactive system demos **only** to:
+- **Primary Recipient (TO):** `xi.ai@nusricq.cn`
+- **Carbon Copy (CC):** `barid.x.ai@gmail.com`
+- **Standardized Subject Syntax:** `[TPI-ICV 2026 Poster] - PI Group / Unit - Topic`
+
+---
+
 ## 🌟 Key Features
 
 - **GitHub Pages Native Architecture**: Pure static modern web standards (HTML5, Tailwind CSS via CDN, modern ES6+ JavaScript, KaTeX for mathematical typesetting). Zero build step required.
+- **Academic Light Theme**: Clean academic aesthetic with official NUS Heritage Blue accents (`#003D7C`), off-white backdrop (`#F8FAFC`), and subtle geometric mesh.
 - **Bilingual Interface (English / 中文)**: Instant bilingual toggle supporting all overview text, themes, schedules, and committee profiles.
 - **Interactive Call for Posters & Demos**:
   - Live modal submission composer.
   - Generates standardized submission subject: `[TPI-ICV 2026 Poster] - PI Group / Unit - Topic`.
-  - One-click `mailto:` launch and copy-to-clipboard functionality.
+  - One-click `mailto:` launch and copy-to-clipboard functionality pre-configured to `xi.ai@nusricq.cn` (cc: `barid.x.ai@gmail.com`).
 - **1-Day Program Schedule Timeline**:
   - Filterable by session categories (All, Keynotes, Posters & Demos, Plenary & Panels, Networking).
   - RFC 5545 `.ics` iCalendar export for calendar integration (Apple Calendar, Google Calendar, Outlook).
@@ -40,7 +50,7 @@ Co-hosted by:
 ├── .nojekyll                                  # GitHub Pages Jekyll bypass flag
 ├── assets/
 │   ├── css/
-│   │   └── styles.css                         # Custom theme, glassmorphism, KaTeX & print styles
+│   │   └── styles.css                         # Custom theme, typography, KaTeX & print styles
 │   ├── js/
 │   │   └── app.js                             # Bilingual state, schedule filtering, mailto & .ics generator
 │   └── images/
@@ -52,13 +62,7 @@ Co-hosted by:
 
 ---
 
-## 🚀 GitHub Pages Deployment
+## 🚀 Live Deployments
 
-1. Push this repository to GitHub on branch `main`.
-2. In your repository settings:
-   - Navigate to **Settings** > **Pages**.
-   - Under **Build and deployment** > **Source**, select **Deploy from a branch**.
-   - Choose `main` branch and `/ (root)` folder.
-   - Click **Save**.
-3. Your site will be live at:
-   `https://<username>.github.io/<repository-name>/`
+- **Official Production Site**: [https://tpi-icv.github.io/homepage/](https://tpi-icv.github.io/homepage/)
+- **Fork Preview Site**: [https://baridxiai.github.io/homepage/](https://baridxiai.github.io/homepage/)
