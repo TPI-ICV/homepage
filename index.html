@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TPI-ICV 2026 | 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction</title>
+  
+  <!-- Meta & SEO Tags -->
+  <meta name="description" content="The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026), co-hosted by NUSRI-CQ and Chongqing Key Laboratory of Trusted Perception and Interaction Technology for ICV.">
+  <meta name="keywords" content="TPI-ICV 2026, NUSRI-CQ, Changan, Foundation AI, LLM, Autonomous Driving, Trusted AI, Mechanistic Interpretability, Spatial Computing">
+  <meta property="og:title" content="TPI-ICV 2026 Joint Symposium on Foundation AI & Trusted Vehicular Interaction">
+  <meta property="og:description" content="Academic milestone exchange co-hosted by NUSRI-CQ and Chongqing Key Laboratory for ICV / Changan Automobile.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+              950: '#082f49',
+            },
+            nus: {
+              orange: '#EF7C00',
+              blue: '#003D7C'
+            },
+            slateBg: '#090d16',
+            cardBg: '#0f172a'
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- KaTeX for High-Fidelity Mathematical Typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js"></script>
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AcademicEvent",
+    "name": "The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction",
+    "alternateName": "2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展",
+    "url": "https://baridxiai.github.io/homepage",
+    "description": "Joint academic milestone exchange on Foundation AI, LLMs, and Trusted Perception & Interaction for Intelligent and Connected Vehicles.",
+    "organizer": [
+      {
+        "@type": "Organization",
+        "name": "National University of Singapore (Chongqing) Research Institute",
+        "alternateName": "NUSRI-CQ"
+      },
+      {
+        "@type": "Organization",
+        "name": "Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles"
+      },
+      {
+        "@type": "Organization",
+        "name": "Changan Automobile Forward-looking Technology Research Institute"
+      }
+    ],
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode"
+  }
+  </script>
+</head>
+
+<body class="bg-[#090d16] text-slate-100 antialiased selection:bg-sky-500 selection:text-white relative bg-grid-pattern">
+
+  <!-- Glow Background Accents -->
+  <div class="glow-orb-primary top-[-100px] left-1/2 -translate-x-1/2"></div>
+  <div class="glow-orb-accent top-[1200px] right-[-100px]"></div>
+  <div class="glow-orb-primary top-[2600px] left-[-150px]"></div>
+
+  <!-- ==================== NAVIGATION BAR ==================== -->
+  <nav class="sticky top-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo Brand -->
+        <a href="#hero" class="flex items-center space-x-3 group">
+          <img src="assets/images/logo.svg" alt="TPI-ICV 2026 Logo" class="w-11 h-11 transition-transform group-hover:scale-105">
+          <div class="flex flex-col">
+            <span class="text-xl font-extrabold tracking-wider text-white group-hover:text-sky-400 transition-colors">
+              TPI-ICV <span class="text-sky-400">2026</span>
+            </span>
+            <span class="text-[11px] text-slate-400 font-mono tracking-tight hidden sm:block" data-lang="en">
+              NUSRI-CQ &amp; Changan Joint Symposium
+            </span>
+            <span class="text-[11px] text-slate-400 font-mono tracking-tight hidden sm:block" data-lang="zh">
+              新国大重庆研究院 &amp; 长安汽车联合研讨会
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden lg:flex items-center space-x-1 text-sm font-medium">
+          <a href="#overview" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Overview</span><span data-lang="zh">概述</span>
+          </a>
+          <a href="#speakers" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Keynotes</span><span data-lang="zh">特邀报告</span>
+          </a>
+          <a href="#themes" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Themes</span><span data-lang="zh">研讨主题</span>
+          </a>
+          <a href="#call-for-posters" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Call for Posters</span><span data-lang="zh">征稿与展示</span>
+          </a>
+          <a href="#schedule" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Schedule</span><span data-lang="zh">议程日程</span>
+          </a>
+          <a href="#committees" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Committees</span><span data-lang="zh">组织委员会</span>
+          </a>
+          <a href="#contact" class="desktop-nav-link px-3 py-2 text-slate-300 hover:text-sky-400 transition-colors">
+            <span data-lang="en">Contact</span><span data-lang="zh">会务联系</span>
+          </a>
+        </div>
+
+        <!-- Right Side Utility CTAs -->
+        <div class="flex items-center space-x-3">
+          <!-- Language Toggle Button -->
+          <button type="button" class="lang-toggle-btn px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-all flex items-center space-x-1.5">
+            <svg class="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+            </svg>
+            <span class="lang-label">中文</span>
+          </button>
+
+          <!-- Submit Proposal Button -->
+          <button type="button" class="open-submission-modal-btn hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white text-xs font-bold shadow-lg shadow-sky-500/25 transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            <span data-lang="en">Submit Proposal</span>
+            <span data-lang="zh">提交海报/Demo</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobileMenuToggle" type="button" class="lg:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden glass-nav border-t border-slate-800 px-4 pt-3 pb-6 space-y-2">
+      <a href="#overview" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Overview</span><span data-lang="zh">研讨会概述</span>
+      </a>
+      <a href="#speakers" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Keynote Speakers</span><span data-lang="zh">特邀报告专家</span>
+      </a>
+      <a href="#themes" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Focus Themes</span><span data-lang="zh">四大核心主题</span>
+      </a>
+      <a href="#call-for-posters" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Call for Posters &amp; Demos</span><span data-lang="zh">海报与Demo征集</span>
+      </a>
+      <a href="#schedule" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Program Schedule</span><span data-lang="zh">会议详细议程</span>
+      </a>
+      <a href="#committees" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Committees &amp; PIs</span><span data-lang="zh">组织委员会与PI阵容</span>
+      </a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-sky-400">
+        <span data-lang="en">Venue &amp; Contact</span><span data-lang="zh">地点与联系方式</span>
+      </a>
+      <div class="pt-3">
+        <button type="button" class="open-submission-modal-btn w-full py-2.5 px-4 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-sm shadow-md text-center">
+          <span data-lang="en">Submit Poster / Demo Proposal</span>
+          <span data-lang="zh">提交海报与Demo成果</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <header id="hero" class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Badge -->
+      <div class="flex flex-wrap items-center gap-2 mb-6">
+        <span class="inline-flex items-center space-x-2 px-3 py-1 rounded-full text-xs font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/30">
+          <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+          <span data-lang="en">Joint Academic Milestone Symposium &amp; Poster Exhibition</span>
+          <span data-lang="zh">联合学术研讨会暨成果海报展 · 内部学术交流与技术里程碑</span>
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+          <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span data-lang="en">1-Day Intensive Program · Date: TBD (2026)</span>
+          <span data-lang="zh">一日学术峰会议程 · 日期待定 (2026)</span>
+        </span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight md:leading-none mb-6">
+        <span class="text-gradient block mb-2" data-lang="en">
+          The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction
+        </span>
+        <span class="text-gradient block mb-2" data-lang="zh">
+          2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展
+        </span>
+        <span class="text-slate-400 text-lg sm:text-xl md:text-2xl font-mono font-medium block mt-3 text-sky-300/90">
+          TPI-ICV 2026
+        </span>
+      </h1>
+
+      <!-- Subtitle & Institutional Co-Hosts -->
+      <p class="max-w-4xl text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8" data-lang="en">
+        Co-hosted by <strong class="text-white">National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)</strong> and the <strong class="text-white">Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles</strong>, in strategic collaboration with <strong class="text-white">Changan Automobile Forward-looking Technology Research Institute</strong>.
+      </p>
+      <p class="max-w-4xl text-base sm:text-lg text-slate-300 font-normal leading-relaxed mb-8" data-lang="zh">
+        由 <strong class="text-white">重庆新国大研究院 (NUSRI-CQ)</strong> 与 <strong class="text-white">智能网联汽车可信感知交互技术重庆市重点实验室</strong> 联合主办，携手 <strong class="text-white">长安汽车前瞻技术研究院</strong> 共同打造的高水平学术与前沿工程里程碑研讨会。
+      </p>
+
+      <!-- Key Action CTAs -->
+      <div class="flex flex-wrap items-center gap-4 mb-14">
+        <button type="button" class="open-submission-modal-btn inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-sky-500 via-sky-600 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-sm shadow-xl shadow-sky-500/30 hover:scale-[1.02] transition-all">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          <span data-lang="en">Submit Poster &amp; Demo Proposal</span>
+          <span data-lang="zh">提交海报与成果展示预案</span>
+        </button>
+
+        <a href="#schedule" class="inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 text-slate-200 border border-slate-700 font-semibold text-sm hover:border-sky-500/50 transition-all">
+          <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span data-lang="en">View 1-Day Schedule</span>
+          <span data-lang="zh">查阅一日研讨会议程</span>
+        </a>
+
+        <button type="button" class="export-ics-btn inline-flex items-center space-x-2 px-5 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-300 border border-slate-700/80 text-sm font-medium hover:text-white transition-all">
+          <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+          </svg>
+          <span data-lang="en">Add to Calendar (.ics)</span>
+          <span data-lang="zh">导出日程到日历 (.ics)</span>
+        </button>
+      </div>
+
+      <!-- Quick Stats Counter Strip -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 pt-6 border-t border-slate-800/80">
+        <div class="glass-card p-4 text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">1 Day</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="en">Intensive Program</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="zh">全天密集学术交流</div>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">4 Themes</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="en">Frontier Thrusts</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="zh">大模型与车端四大方向</div>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-sky-400 font-mono">11+ PIs</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="en">Leading Laboratories</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="zh">重点实验室PI团队</div>
+        </div>
+        <div class="glass-card p-4 text-center">
+          <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 font-mono">Posters &amp; Demos</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="en">Interactive Staging</div>
+          <div class="text-xs text-slate-400 mt-1 uppercase tracking-wider font-semibold" data-lang="zh">学术海报与实物演示</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==================== SECTION 1: OVERVIEW & SCOPE ==================== -->
+  <section id="overview" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title Header -->
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 1 · Background &amp; Mission</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第1部分 · 背景与研讨会定位</h2>
+      </div>
+      <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-6">
+        <span data-lang="en">Symposium Overview &amp; Research Scope</span>
+        <span data-lang="zh">研讨会概述与学术技术范畴</span>
+      </h3>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Main Narrative Description -->
+        <div class="lg:col-span-7 space-y-5 text-slate-300 text-base leading-relaxed">
+          <p class="glass-card p-6 border-l-4 border-l-sky-500">
+            <span data-lang="en">
+              The <strong class="text-white">2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)</strong> is an internal academic exchange and technical milestone symposium co-hosted by the <strong class="text-sky-300">National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)</strong> and the <strong class="text-sky-300">Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles</strong>.
+            </span>
+            <span data-lang="zh">
+              <strong class="text-white">2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展 (TPI-ICV 2026)</strong> 是由 <strong class="text-sky-300">重庆新国大研究院 (NUSRI-CQ)</strong> 与 <strong class="text-sky-300">智能网联汽车可信感知交互技术重庆市重点实验室</strong> 联合主办的内部高水平学术交流与技术里程碑检阅盛会。
+            </span>
+          </p>
+
+          <p>
+            <span data-lang="en">
+              With the rapid emergence of Large Language Models (LLMs), multimodal foundation models, and embodied intelligence, next-generation intelligent vehicles demand breakthroughs in <strong class="text-white">adversarial robustness, mechanistic interpretability, safety alignment, ultra-long context reasoning</strong>, and <strong class="text-white">real-time edge-cloud coordination</strong>.
+            </span>
+            <span data-lang="zh">
+              伴随大语言模型 (LLMs)、多模态大基模型与具身智能技术的迅猛演进，新一代智能网联汽车正面临从感知智能向认知智能跃迁的核心挑战。亟需在车端轻量化与端云协同、对抗鲁棒性、机理可解释性、安全对齐、超长上下文推理及实时车端协同部署等核心领域实现关键技术突破。
+            </span>
+          </p>
+
+          <p>
+            <span data-lang="en">
+              TPI-ICV 2026 brings together laboratory PIs, research fellows (RFs), postgraduate students, and Changan Automobile R&amp;D engineers for a one-day intensive symposium. The event features Keynote Addresses from invited scholars, Plenary Technical Sessions, an Interactive Academic Poster Session, and Live Prototype Demonstrations.
+            </span>
+            <span data-lang="zh">
+              本次研讨会汇聚重点实验室各方向学术带头人 (PIs)、博士后研究员 (RFs)、博硕士研究生以及长安汽车前瞻院一线研发技术骨干，展开全天候密集式研讨。会议设置顶尖学者特邀主题报告、阶段性重大攻关汇报、成果学术海报面对面展评与实物交互系统现场Demo实测。
+            </span>
+          </p>
+        </div>
+
+        <!-- Co-Hosts & Institutional Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2" data-lang="en">
+            Organizing Institutions &amp; Partners
+          </div>
+          <div class="text-xs font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2" data-lang="zh">
+            主办与协办单位体系
+          </div>
+
+          <!-- NUSRI-CQ Card -->
+          <div class="glass-card p-5 flex items-start space-x-4 border-slate-700/80">
+            <div class="w-14 h-14 rounded-xl bg-nus-blue/80 flex-shrink-0 flex items-center justify-center p-2 border border-sky-400/40">
+              <span class="font-extrabold text-white text-sm tracking-tighter">NUS<span class="text-amber-400">RI</span></span>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm">National University of Singapore (Chongqing) Research Institute</h4>
+              <p class="text-xs text-sky-400 font-medium">NUSRI-CQ / 重庆新国大研究院</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="en">International excellence bridge connecting world-class AI science with industrial ecosystems.</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="zh">聚焦国际一流前沿基础科研，链接全球顶级AI人才与国家战略产业发展。</p>
+            </div>
+          </div>
+
+          <!-- Key Lab Card -->
+          <div class="glass-card p-5 flex items-start space-x-4 border-slate-700/80">
+            <div class="w-14 h-14 rounded-xl bg-sky-950/80 flex-shrink-0 flex items-center justify-center p-2 border border-sky-500/40">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm">Chongqing Key Laboratory of Trusted Perception &amp; Interaction for ICV</h4>
+              <p class="text-xs text-sky-400 font-medium">智能网联汽车可信感知交互技术重庆市重点实验室</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="en">Pioneering certified safety, multi-sensor fusion, and natural spatial interaction.</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="zh">突破多传感器退化感知融合、车端大模型可信对齐与自然空间计算交互核心机理。</p>
+            </div>
+          </div>
+
+          <!-- Changan Automobile Card -->
+          <div class="glass-card p-5 flex items-start space-x-4 border-slate-700/80">
+            <div class="w-14 h-14 rounded-xl bg-slate-800 flex-shrink-0 flex items-center justify-center p-2 border border-blue-500/40">
+              <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="text-white font-bold text-sm">Changan Automobile Forward-looking Technology Research Institute</h4>
+              <p class="text-xs text-sky-400 font-medium">长安汽车前瞻技术研究院</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="en">Leading future mobility technologies, high-tier autonomous driving, and mass production vehicle intelligence.</p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="zh">推动整车量产智能化架构、软硬解耦协同平台与未来汽车颠覆性技术落地。</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: KEYNOTE & INVITED SPEAKERS ==================== -->
+  <section id="speakers" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 2 · Keynote Addresses</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第2部分 · 特邀主旨学术报告</h2>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            <span data-lang="en">Keynote &amp; Visionary Speakers</span>
+            <span data-lang="zh">特邀学术与产业愿景报告人</span>
+          </h3>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl" data-lang="en">
+            World-class scholars and automotive industry executives delivering visionary perspectives on Large Language Models, safety alignment, and spatial computing.
+          </p>
+          <p class="text-slate-400 text-sm mt-2 max-w-2xl" data-lang="zh">
+            邀请人工智能基模型、可解释性可信安全、空间交互计算领域顶尖学者及长安汽车前瞻院高管发表引领性报告。
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <span class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+            <span data-lang="en">Speaker Names: To Be Announced</span>
+            <span data-lang="zh">报告人阵容陆续揭晓中</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Speakers Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Keynote 1 -->
+        <div class="glass-card p-6 flex flex-col justify-between border-slate-700/80 group">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-sky-500/20 to-blue-600/30 border border-sky-400/40 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <svg class="w-8 h-8 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+              </svg>
+            </div>
+            <div class="text-xs font-mono font-bold text-sky-400 tracking-wider uppercase mb-1">Keynote 1 · Academia</div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">Foundation AI &amp; LLMs</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">通用大模型与基础AI前沿</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              Next-generation foundation architectures, extreme context compression, and cognitive reasoning frontiers for embodied systems.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              新一代大语言模型架构、超长上下文压缩与端侧高效低时延推理机理。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Speaker: TBD</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-sky-950 text-sky-300 border border-sky-800">Keynote</span>
+          </div>
+        </div>
+
+        <!-- Keynote 2 -->
+        <div class="glass-card p-6 flex flex-col justify-between border-slate-700/80 group">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/20 to-teal-600/30 border border-emerald-400/40 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <svg class="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div class="text-xs font-mono font-bold text-emerald-400 tracking-wider uppercase mb-1">Keynote 2 · Academia</div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">AI Safety &amp; Mechanistic Interpretability</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">AI安全对齐与机理可解释性</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              Internal circuit tracing, formal verification guarantees, and adversarial robustness against multimodal jailbreaks.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              大模型内部表征追踪、回路机制分析、形式化验证及多模态对抗鲁棒攻防。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Speaker: TBD</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-emerald-950 text-emerald-300 border border-emerald-800">Keynote</span>
+          </div>
+        </div>
+
+        <!-- Keynote 3 -->
+        <div class="glass-card p-6 flex flex-col justify-between border-slate-700/80 group">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-purple-600/30 border border-indigo-400/40 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <svg class="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div class="text-xs font-mono font-bold text-indigo-400 tracking-wider uppercase mb-1">Keynote 3 · Academia</div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">Spatial Computing &amp; Embodied Interaction</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">空间计算与具身人车交互</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              In-cabin AR spatial SLAM under severe dynamics, non-invasive physiological monitoring, and cognitive load modeling.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              动载平台坐标系融合定位、座舱增强现实 (AR) 与非侵入式脑机情感交互感知。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Speaker: TBD</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-indigo-950 text-indigo-300 border border-indigo-800">Keynote</span>
+          </div>
+        </div>
+
+        <!-- Industry Keynote -->
+        <div class="glass-card p-6 flex flex-col justify-between border-slate-700/80 group">
+          <div>
+            <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-orange-600/30 border border-amber-400/40 flex items-center justify-center mb-5 group-hover:scale-105 transition-transform">
+              <svg class="w-8 h-8 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div class="text-xs font-mono font-bold text-amber-400 tracking-wider uppercase mb-1">Industry Visionary Talk</div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">Changan R&amp;D Leadership</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">长安汽车研发领导致辞与愿景</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              Industrialization roadmap for foundation models in mass-produced intelligent connected vehicles, edge intelligence, and battery safety.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              面向新能源与智能网联整车的大模型量产落地战略、端云协同架构及前瞻技术布局。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Speaker: TBD</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-950 text-amber-300 border border-amber-800">Industry</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footnote update banner -->
+      <div class="mt-8 p-4 rounded-xl bg-slate-800/40 border border-slate-700/60 text-xs text-slate-400 flex items-center space-x-2">
+        <svg class="w-4 h-4 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span data-lang="en">
+          The full list of distinguished keynote and invited plenary speakers will be announced in subsequent updates.
+        </span>
+        <span data-lang="zh">
+          特邀主旨学术报告人及产业愿景演讲嘉宾名单将随会议筹备推进在后续更新中正式公布。
+        </span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: SYMPOSIUM FOCUS AREAS & THEMES ==================== -->
+  <section id="themes" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 3 · Core Research Thrusts</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第3部分 · 研讨会核心研究方向</h2>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            <span data-lang="en">Symposium Focus Areas &amp; Themes</span>
+            <span data-lang="zh">四大前沿主题与技术攻关矩阵</span>
+          </h3>
+          <p class="text-slate-300 text-sm mt-2 max-w-3xl" data-lang="en">
+            Poster presentations and interactive demonstrations are organized across the laboratory’s core research thrusts and joint technical roadmaps.
+          </p>
+          <p class="text-slate-300 text-sm mt-2 max-w-3xl" data-lang="zh">
+            学术海报汇报与系统实物演示围绕重点实验室四大技术攻关主线和端云协同联合研发路线图全面展开。
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 Themes Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- THEME 1 -->
+        <div class="glass-card p-7 border-slate-700/80 hover:border-sky-500/60 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-sky-500/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-mono font-black text-sm border border-sky-400/40">
+              T1
+            </span>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold" data-lang="en">Theme 1 · Core Thrust</span>
+              <span class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold" data-lang="zh">主题一 · 核心攻关</span>
+              <h4 class="text-xl font-bold text-white" data-lang="en">Large Language Models (LLMs) &amp; Foundation AI Frontiers</h4>
+              <h4 class="text-xl font-bold text-white" data-lang="zh">大语言模型 (LLMs) 与通用基础AI前沿</h4>
+            </div>
+          </div>
+
+          <div class="space-y-4 mt-6 text-sm text-slate-300">
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-sky-300 block mb-1">
+                <span data-lang="en">LLM Architecture &amp; Efficient Inference</span>
+                <span data-lang="zh">大模型架构与车端高效推理</span>
+              </strong>
+              <span data-lang="en">Ultra-long context modeling, context compression/pruning, and low-latency inference on onboard computing units.</span>
+              <span data-lang="zh">超长上下文建模、注意力机制剪枝与上下文无损压缩、车载受限算力平台的低时延量化加速推理。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-sky-300 block mb-1">
+                <span data-lang="en">Autonomous Agent Systems &amp; Tool Evolution</span>
+                <span data-lang="zh">智能体系统与工具自演进机制</span>
+              </strong>
+              <span data-lang="en">Multi-agent interaction safety, tool invocation reliability, and self-evolving agent architectures.</span>
+              <span data-lang="zh">多智能体协同交互安全、复杂环境下的外部API工具可靠调用及智能体自反思自进化机制。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-sky-300 block mb-1">
+                <span data-lang="en">Industrial &amp; Vehicular Time-Series Foundation Models</span>
+                <span data-lang="zh">工业与车载时序基础大模型</span>
+              </strong>
+              <span data-lang="en">Multi-sensor time-series pre-training for vehicle health monitoring, predictive maintenance, and fault diagnosis.</span>
+              <span data-lang="zh">针对多传感器高频高维时序数据的自监督预训练、整车全生命周期健康监测与动力底盘故障先兆诊断。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-sky-300 block mb-1">
+                <span data-lang="en">Edge-Cloud Collaborative LLMs</span>
+                <span data-lang="zh">端云协同大模型分布式部署</span>
+              </strong>
+              <span data-lang="en">Asymmetric deployment strategies coupling lightweight vehicle-side models with cloud-scale foundation models.</span>
+              <span data-lang="zh">非对称端云部署策略、车端极轻量化小模型与云端超千亿基模型的无缝任务分流与知识迁移。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- THEME 2 -->
+        <div class="glass-card p-7 border-slate-700/80 hover:border-emerald-500/60 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-black text-sm border border-emerald-400/40">
+              T2
+            </span>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold" data-lang="en">Theme 2 · Core Thrust</span>
+              <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold" data-lang="zh">主题二 · 核心攻关</span>
+              <h4 class="text-xl font-bold text-white" data-lang="en">Trusted AI, Safety Alignment &amp; Mechanistic Interpretability</h4>
+              <h4 class="text-xl font-bold text-white" data-lang="zh">可信AI、安全对齐与机理可解释性</h4>
+            </div>
+          </div>
+
+          <div class="space-y-4 mt-6 text-sm text-slate-300">
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-emerald-300 block mb-1">
+                <span data-lang="en">Mechanistic Interpretability &amp; Formal Methods</span>
+                <span data-lang="zh">机理可解释性与形式化验证</span>
+              </strong>
+              <span data-lang="en">Circuit analysis, internal representation tracing, and formal verification for high-stakes vehicle AI systems.</span>
+              <span data-lang="zh">神经网络神经元回路机制剖析、车端高风险决策内部表征追踪及安全关键控制的形式化验证。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-emerald-300 block mb-1">
+                <span data-lang="en">Multimodal Adversarial Robustness</span>
+                <span data-lang="zh">多模态对抗攻防鲁棒性</span>
+              </strong>
+              <span data-lang="en">Attack and defense dynamics across LLMs, Vision-Language Models (VLMs), and cockpit acoustic/speech channels.</span>
+              <span data-lang="zh">覆盖LLM、视觉-语言大模型 (VLMs) 及智能座舱声学/语音信道的越狱注入对抗攻防机理。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-emerald-300 block mb-1">
+                <span data-lang="en">Content Safety &amp; Anti-Deepfake</span>
+                <span data-lang="zh">内容安全护栏与深度伪造辨识</span>
+              </strong>
+              <span data-lang="en">In-cabin model guardrails, digital persona copyright protection, and speech/video forgery detection.</span>
+              <span data-lang="zh">智能座舱生成内容安全过滤护栏、虚拟形象数字版权水印与声音/图像/视频深度伪造鉴伪取证。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-emerald-300 block mb-1">
+                <span data-lang="en">Data Privacy, Governance &amp; Responsible AI</span>
+                <span data-lang="zh">数据隐私治理与负责任AI</span>
+              </strong>
+              <span data-lang="en">Provable defense against data inversion/reconstruction on desensitized automotive datasets, machine unlearning, data classification/grading, and compliance frameworks.</span>
+              <span data-lang="zh">脱敏车端大模型训练数据的逆向还原可证防御、大模型机器遗忘 (Machine Unlearning) 与数据分类分级合规。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- THEME 3 -->
+        <div class="glass-card p-7 border-slate-700/80 hover:border-indigo-500/60 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-mono font-black text-sm border border-indigo-400/40">
+              T3
+            </span>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold" data-lang="en">Theme 3 · Core Thrust</span>
+              <span class="text-xs font-mono uppercase tracking-wider text-indigo-400 font-semibold" data-lang="zh">主题三 · 核心攻关</span>
+              <h4 class="text-xl font-bold text-white" data-lang="en">Spatial Computing &amp; Natural Human-Vehicle Interaction</h4>
+              <h4 class="text-xl font-bold text-white" data-lang="zh">空间计算与自然人车交互</h4>
+            </div>
+          </div>
+
+          <div class="space-y-4 mt-6 text-sm text-slate-300">
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-indigo-300 block mb-1">
+                <span data-lang="en">Spatial Computing &amp; In-Cabin AR</span>
+                <span data-lang="zh">空间计算与座舱全景AR</span>
+              </strong>
+              <span data-lang="en">Moving-platform coordinate fusion, robust SLAM positioning under severe vibration/dynamic lighting, and cross-vendor AR glasses middleware.</span>
+              <span data-lang="zh">动载载体坐标系实时解耦融合、剧烈颠簸/复杂变光照环境下的高鲁棒空间SLAM与跨生态AR眼镜协同中间件。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-indigo-300 block mb-1">
+                <span data-lang="en">Affective Computing &amp; Non-Invasive Sensing</span>
+                <span data-lang="zh">情感计算与非侵入式生理传感</span>
+              </strong>
+              <span data-lang="en">Non-invasive Brain-Computer Interfaces (BCI) for physiological tracking, cognitive workload modeling, and emotion recognition.</span>
+              <span data-lang="zh">非侵入式脑机接口 (BCI) 生理信号采集、驾驶员认知负荷建模与多模态乘员情感状态感知。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-indigo-300 block mb-1">
+                <span data-lang="en">Next-Generation Biometrics</span>
+                <span data-lang="zh">下一代座舱生物识别与意图预测</span>
+              </strong>
+              <span data-lang="en">In-cabin iris recognition, gaze estimation, and multimodal driver intention prediction.</span>
+              <span data-lang="zh">车规级非配合虹膜识别、视线追踪注视点估计与乘员多模态交互意图提前预测。</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- THEME 4 -->
+        <div class="glass-card p-7 border-slate-700/80 hover:border-amber-500/60 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-amber-500/5 rounded-bl-full pointer-events-none"></div>
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="w-9 h-9 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-mono font-black text-sm border border-amber-400/40">
+              T4
+            </span>
+            <div>
+              <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold" data-lang="en">Theme 4 · Core Thrust</span>
+              <span class="text-xs font-mono uppercase tracking-wider text-amber-400 font-semibold" data-lang="zh">主题四 · 核心攻关</span>
+              <h4 class="text-xl font-bold text-white" data-lang="en">Robust Autonomous Driving &amp; Emerging Vehicle Technologies</h4>
+              <h4 class="text-xl font-bold text-white" data-lang="zh">高鲁棒自动驾驶与未来汽车新兴技术</h4>
+            </div>
+          </div>
+
+          <div class="space-y-4 mt-6 text-sm text-slate-300">
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-amber-300 block mb-1">
+                <span data-lang="en">Robust Multi-Sensor Perception</span>
+                <span data-lang="zh">多模态高鲁棒恶劣工况感知</span>
+              </strong>
+              <span data-lang="en">Degradation-adaptive perception and trusted sensor fusion (Camera, LiDAR, Radar) under adverse operating conditions.</span>
+              <span data-lang="zh">针对雨雾、眩光、遮挡等恶劣环境的传感器退化自适应估计与相机-激光雷达-毫米波雷达置信度融合。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-amber-300 block mb-1">
+                <span data-lang="en">Autonomous Driving Robustness Evaluation</span>
+                <span data-lang="zh">自动驾驶系统全域鲁棒性评测</span>
+              </strong>
+              <span data-lang="en">Standardized robustness testing suites, corner-case simulation pipelines, and explainability toolchains.</span>
+              <span data-lang="zh">标准化端到端智驾系统鲁棒性压力测试集、Corner-Case长尾极端仿真工况生成与黑盒决策归因工具链。</span>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-slate-900/80 border border-slate-800">
+              <strong class="text-amber-300 block mb-1">
+                <span data-lang="en">Advanced Battery Systems &amp; Energy Control</span>
+                <span data-lang="zh">结构储能一体化电池与整车能量管控</span>
+              </strong>
+              <span data-lang="en">
+                Multifunctional structural load-bearing battery architectures and cross-domain energy management algorithms.
+              </span>
+              <span data-lang="zh">
+                多功能结构承载储能一体化电池构型与跨域能耗智能协同调度算法。
+              </span>
+              <!-- LaTeX Display Formula for Battery Specifications -->
+              <div class="mt-2.5 p-2.5 rounded bg-slate-950/90 border border-slate-800 text-center text-xs font-mono">
+                $$\text{Energy Density} \ge 100\text{ Wh/kg}, \quad \text{Areal Capacity} \ge 1.5\text{ kWh/m}^2, \quad \text{Tensile Strength} \ge 300\text{ MPa}$$
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: CALL FOR POSTERS & DEMOS ==================== -->
+  <section id="call-for-posters" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 4 · Call for Participation</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第4部分 · 成果海报展与实物Demo征集</h2>
+      </div>
+
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10">
+        <div>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            <span data-lang="en">Call for Posters &amp; Interactive Demonstrations</span>
+            <span data-lang="zh">学术海报与现场系统Demo征集倡议</span>
+          </h3>
+          <p class="text-slate-300 text-sm mt-2 max-w-3xl" data-lang="en">
+            All participating laboratory PI teams, research fellows (RFs), PhD and master students, and Changan Automobile R&amp;D staff are invited to present recent research findings, ongoing grant progress, or system prototypes.
+          </p>
+          <p class="text-slate-300 text-sm mt-2 max-w-3xl" data-lang="zh">
+            诚邀重庆市重点实验室全体PI课题组、博士后研究员 (RFs)、在读硕博研究生以及长安汽车前瞻院研发工程团队，提交最新高水平学术论文成果、在研重大课题进展或软硬件原型系统。
+          </p>
+        </div>
+        <div class="mt-4 lg:mt-0">
+          <button type="button" class="open-submission-modal-btn inline-flex items-center space-x-2 px-5 py-3 rounded-xl bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-lg shadow-sky-500/30 transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
+            </svg>
+            <span data-lang="en">Launch Submission Composer</span>
+            <span data-lang="zh">打开交互式提案生成器</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Submission Guidelines Format Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        
+        <!-- Format 1: Poster Draft -->
+        <div class="glass-card p-6 border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 border border-sky-400/30 font-mono font-bold text-lg">
+              A0
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">1. Poster Draft</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">1. 海报初稿规范</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              Single-page PDF in standard <strong>A0 Portrait format (841 mm × 1189 mm)</strong>. High resolution for exhibition printing.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              提交单页PDF格式文档，严格遵循 <strong>A0标准竖版尺寸 (841 mm × 1189 mm)</strong>，矢量图或高分辨率位图以便统一印刷装裱。
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-800 text-[11px] font-mono text-sky-400">
+            PDF · 841 × 1189 mm · Portrait
+          </div>
+        </div>
+
+        <!-- Format 2: Abstract -->
+        <div class="glass-card p-6 border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 border border-emerald-400/30 font-mono font-bold text-lg">
+              1-P
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">2. Structured Abstract</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">2. 结构化单页摘要</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              A 1-page structured summary outlining: <em>Title, Authors, Affiliations, Problem Statement, Methodology, Key Results</em>, and <em>Automotive Application Relevance</em>.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              包含：<em>题目、作者列表、通讯署名、核心问题陈述、理论/算法方案、关键实验结果</em> 及 <em>汽车工业落地价值</em>。
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-800 text-[11px] font-mono text-emerald-400">
+            1-Page Summary · Clear Mathematical Parity
+          </div>
+        </div>
+
+        <!-- Format 3: Interactive Demo -->
+        <div class="glass-card p-6 border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 border border-amber-400/30 font-mono font-bold text-lg">
+              LIVE
+            </div>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="en">3. Interactive Demos</h4>
+            <h4 class="text-lg font-bold text-white mb-2" data-lang="zh">3. 实物与系统交互Demo</h4>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              Software pipelines, mechanistic interpretability toolkits, LLM agent demos, and hardware setups. Please specify setup requirements (table space, power, display, networking).
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              欢迎算法管道、可解释性分析套件、端侧大模型Agent及硬件实物原型展示。请务必提前列明供电、展台、外接显示器及局域网需求。
+            </p>
+          </div>
+          <div class="mt-6 pt-3 border-t border-slate-800 text-[11px] font-mono text-amber-400">
+            Live Exhibits · Hardware &amp; Toolkits
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Submission Subject & Channel Guide -->
+      <div class="glass-card p-6 border-sky-500/40 bg-gradient-to-r from-slate-900/90 via-sky-950/30 to-slate-900/90">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h4 class="text-white font-bold text-base flex items-center space-x-2">
+              <svg class="w-5 h-5 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+              <span data-lang="en">Submission Channel &amp; Standardized Email Subject</span>
+              <span data-lang="zh">成果提交渠道与统一邮件主题格式</span>
+            </h4>
+            <p class="text-xs text-slate-300 mt-1" data-lang="en">
+              Submit poster drafts and demo proposals via email to the secretariat:
+            </p>
+            <p class="text-xs text-slate-300 mt-1" data-lang="zh">
+              请将海报初稿及Demo提案通过电子邮件直接提交至研讨会秘书组：
+            </p>
+            <div class="mt-3 inline-block font-mono text-xs px-3 py-2 rounded-lg bg-black/60 text-sky-300 border border-slate-800 select-all">
+              [TPI-ICV 2026 Poster] - PI Group / Unit - Topic
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3">
+            <a href="mailto:xi.ai@nusri.cn,xiaohong.liu@nusri.cn?subject=[TPI-ICV%202026%20Poster]%20-%20PI%20Group%20-%20Topic" class="px-4 py-2.5 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold text-xs shadow-md transition-all">
+              <span data-lang="en">Send Email Now</span>
+              <span data-lang="zh">直接发送邮件</span>
+            </a>
+            <button type="button" onclick="copyToClipboard('xi.ai@nusri.cn, xiaohong.liu@nusri.cn', 'Secretariat Emails')" class="px-4 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold transition-all">
+              <span data-lang="en">Copy Emails</span>
+              <span data-lang="zh">复制秘书组邮箱</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: IMPORTANT DATES ==================== -->
+  <section id="dates" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 5 · Key Deadlines</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第5部分 · 关键时间节点</h2>
+      </div>
+
+      <div class="mb-10">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+          <span data-lang="en">Important Dates &amp; Milestone Schedule</span>
+          <span data-lang="zh">关键时间节点与里程碑进度</span>
+        </h3>
+        <p class="text-slate-400 text-sm mt-2" data-lang="en">
+          All deadlines are set to 23:59 UTC+8 (China Standard Time). Formal dates will be officially promulgated shortly.
+        </p>
+        <p class="text-slate-400 text-sm mt-2" data-lang="zh">
+          所有截稿时间以北京时间 (UTC+8) 23:59 为准。正式日期近期将由会务组联合发布。
+        </p>
+      </div>
+
+      <!-- Milestone Timeline Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Milestone 1 -->
+        <div class="glass-card p-6 border-slate-700/80 relative group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-8 h-8 rounded-full bg-sky-500/20 text-sky-400 font-mono font-bold text-xs flex items-center justify-center border border-sky-400/40">
+              01
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              TBD
+            </span>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="en">Poster &amp; Demo Submission Deadline</h4>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="zh">海报与Demo提案提交截止</h4>
+          <p class="text-xs text-slate-400" data-lang="en">Submission of A0 poster draft and 1-page structured abstract.</p>
+          <p class="text-xs text-slate-400" data-lang="zh">提交A0海报初稿PDF及单页结构化摘要。</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-slate-400">
+            Date (UTC+8): <span class="text-amber-400 font-semibold">TBD</span>
+          </div>
+        </div>
+
+        <!-- Milestone 2 -->
+        <div class="glass-card p-6 border-slate-700/80 relative group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-8 h-8 rounded-full bg-sky-500/20 text-sky-400 font-mono font-bold text-xs flex items-center justify-center border border-sky-400/40">
+              02
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              TBD
+            </span>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="en">Notification of Acceptance</h4>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="zh">评审结果与录用通知</h4>
+          <p class="text-xs text-slate-400" data-lang="en">Announcement of selected posters, live demo allocations, and presentation slots.</p>
+          <p class="text-xs text-slate-400" data-lang="zh">公布录用展评海报清单、Demo展位及现场保障安排。</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-slate-400">
+            Date (UTC+8): <span class="text-amber-400 font-semibold">TBD</span>
+          </div>
+        </div>
+
+        <!-- Milestone 3 -->
+        <div class="glass-card p-6 border-slate-700/80 relative group">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-8 h-8 rounded-full bg-sky-500/20 text-sky-400 font-mono font-bold text-xs flex items-center justify-center border border-sky-400/40">
+              03
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/30">
+              TBD
+            </span>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="en">Final Print-Ready Poster Due</h4>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="zh">终版定稿海报交付</h4>
+          <p class="text-xs text-slate-400" data-lang="en">Final revised PDF delivery for professional symposium mounting and printing.</p>
+          <p class="text-xs text-slate-400" data-lang="zh">会务组统一装裱制作所需之终版高清PDF交付截止。</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-slate-400">
+            Date (UTC+8): <span class="text-amber-400 font-semibold">TBD</span>
+          </div>
+        </div>
+
+        <!-- Milestone 4 -->
+        <div class="glass-card p-6 border-slate-700/80 relative group bg-gradient-to-b from-sky-950/40 to-slate-900/80 border-sky-500/50">
+          <div class="flex items-center justify-between mb-4">
+            <span class="w-8 h-8 rounded-full bg-sky-500 text-white font-mono font-bold text-xs flex items-center justify-center">
+              04
+            </span>
+            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+              1-Day
+            </span>
+          </div>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="en">Symposium Date</h4>
+          <h4 class="text-base font-bold text-white mb-2" data-lang="zh">学术研讨会正式举行</h4>
+          <p class="text-xs text-slate-300" data-lang="en">Full 1-day event including keynotes, posters, plenary reviews, and banquet.</p>
+          <p class="text-xs text-slate-300" data-lang="zh">全天学术交流盛会、成果展评、圆桌对话与晚宴。</p>
+          <div class="mt-4 pt-3 border-t border-slate-800 text-xs font-mono text-slate-300">
+            Date (UTC+8): <span class="text-sky-300 font-bold">TBD (2026)</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 6: PROGRAM SCHEDULE ==================== -->
+  <section id="schedule" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 6 · Program Agenda</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第6部分 · 一日会议详细议程</h2>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+            <span data-lang="en">Program Schedule (1-Day Event — Tentative Structure)</span>
+            <span data-lang="zh">研讨会一日详细议程 (暂定架构)</span>
+          </h3>
+          <p class="text-slate-400 text-sm mt-2" data-lang="en">
+            High-density intellectual exchange spanning 08:30 to 20:00 (UTC+8).
+          </p>
+          <p class="text-slate-400 text-sm mt-2" data-lang="zh">
+            涵盖全天08:30至20:00 (北京时间) 的高密度报告、海报互动展评、路线图研讨与晚宴。
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2 mt-4 md:mt-0">
+          <button type="button" data-filter="all" class="schedule-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-sky-600 text-white shadow-md transition-all">
+            <span data-lang="en">All Sessions</span><span data-lang="zh">全部环节</span>
+          </button>
+          <button type="button" data-filter="keynote" class="schedule-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all">
+            <span data-lang="en">Keynotes</span><span data-lang="zh">特邀报告</span>
+          </button>
+          <button type="button" data-filter="poster" class="schedule-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all">
+            <span data-lang="en">Posters &amp; Demos</span><span data-lang="zh">成果海报展</span>
+          </button>
+          <button type="button" data-filter="plenary" class="schedule-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all">
+            <span data-lang="en">Plenary &amp; Panel</span><span data-lang="zh">大会圆桌</span>
+          </button>
+          <button type="button" class="export-ics-btn px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 text-emerald-400 border border-emerald-500/30 hover:bg-slate-700 transition-all flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span>.ICS</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Schedule Timeline Container -->
+      <div class="space-y-3">
+        
+        <!-- Item 1: Registration -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="networking">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              08:30 – 09:00
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Registration &amp; Morning Refreshments</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">签到注册与晨间茶歇</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Badge pickup, poster mounting, and interactive demo staging.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">与会嘉宾签到、海报装裱张贴与现场Demo系统布展调试。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-300 self-start sm:self-center border border-slate-700">
+            Logistics
+          </span>
+        </div>
+
+        <!-- Item 2: Opening Ceremony -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="plenary">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              09:00 – 09:30
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Opening Ceremony &amp; Welcome Addresses</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">开幕式与领导致辞</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Remarks by NUSRI-CQ and Changan Automobile Leadership.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">重庆新国大研究院领导与长安汽车高层致开幕辞。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-sky-950 text-sky-300 self-start sm:self-center border border-sky-800">
+            Opening
+          </span>
+        </div>
+
+        <!-- Item 3: Morning Keynotes (LLM & Safety) -->
+        <div class="schedule-item glass-card p-5 border-sky-500/50 bg-gradient-to-r from-slate-900/90 via-sky-950/20 to-slate-900/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="keynote">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-sky-500/40 flex-shrink-0">
+              09:30 – 10:45
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Morning Keynote Sessions (LLM &amp; Safety)</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">上午特邀主旨报告 (大模型与可信安全)</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Keynote 1 (Foundation AI &amp; LLMs) &amp; Keynote 2 (AI Safety &amp; Mechanistic Interpretability) [Speakers TBD].</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">特邀主旨报告1（大模型与基础AI）及特邀主旨报告2（AI安全对齐与机理可解释性）。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-sky-500/20 text-sky-300 self-start sm:self-center border border-sky-500/40">
+            Keynotes 1 &amp; 2
+          </span>
+        </div>
+
+        <!-- Item 4: Group Photo & Tea Break -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="networking">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              10:45 – 11:00
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Group Photo &amp; Tea Break</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">合影留念与学术茶歇</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Symposium group photography and academic networking.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">全体参会嘉宾集体合影与学术自由交流。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-300 self-start sm:self-center border border-slate-700">
+            Break
+          </span>
+        </div>
+
+        <!-- Item 5: Morning Keynotes (Interaction & Industry) -->
+        <div class="schedule-item glass-card p-5 border-sky-500/50 bg-gradient-to-r from-slate-900/90 via-sky-950/20 to-slate-900/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="keynote">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-sky-500/40 flex-shrink-0">
+              11:00 – 12:15
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Morning Keynote Sessions (Interaction &amp; Industry)</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">上午特邀主旨报告 (空间交互与产业愿景)</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Keynote 3 (Spatial Computing &amp; Embodied Interaction) &amp; Industry Visionary Talk (Changan Leadership) [Speakers TBD].</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">特邀主旨报告3（空间计算与具身人车交互）及长安汽车前瞻技术产业愿景报告。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-sky-500/20 text-sky-300 self-start sm:self-center border border-sky-500/40">
+            Keynote 3 &amp; Industry
+          </span>
+        </div>
+
+        <!-- Item 6: Networking Lunch -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="networking">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              12:15 – 13:30
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Networking Lunch</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">学术交流午餐</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Collaborative lunch for symposium attendees.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">参会学者、PI及工程团队交流午餐。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-300 self-start sm:self-center border border-slate-700">
+            Lunch
+          </span>
+        </div>
+
+        <!-- Item 7: Interactive Poster Session & Live Demonstrations -->
+        <div class="schedule-item glass-card p-5 border-amber-500/50 bg-gradient-to-r from-slate-900/90 via-amber-950/20 to-slate-900/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="poster">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-amber-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-amber-500/40 flex-shrink-0">
+              13:30 – 15:00
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white flex items-center space-x-2">
+                <span data-lang="en">Interactive Poster Session &amp; Live Demonstrations</span>
+                <span data-lang="zh">学术海报交流展评与实物成果互动演示</span>
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+              </h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Authors stand by posters / Live system exhibits across 4 research thrusts / Advisory committee review.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">成果作者海报旁立讲与互动答辩 / 四大方向实物系统动态Demo / 学术委员会专家现场观摩评审。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-amber-500/20 text-amber-300 self-start sm:self-center border border-amber-500/40">
+            Posters &amp; Demos
+          </span>
+        </div>
+
+        <!-- Item 8: Oral Plenary & Milestone Review Session -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="plenary">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              15:00 – 16:30
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Oral Plenary &amp; Milestone Review Session</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">大会主会口头报告与联合攻关里程碑评审</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">PI project presentations and joint laboratory roadmap execution review.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">各课题组阶段性重点攻关突破口头汇报、成果总结与实验室技术路线规划。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-sky-300 self-start sm:self-center border border-slate-700">
+            Oral Plenary
+          </span>
+        </div>
+
+        <!-- Item 9: Panel Discussion -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="plenary">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              16:30 – 17:15
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Panel Discussion</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">前沿圆桌高峰对话</h4>
+              <p class="text-xs text-sky-300 mt-1" data-lang="en">Topic: Future Trajectories of Large Models in Embodied &amp; Connected Vehicles</p>
+              <p class="text-xs text-sky-300 mt-1" data-lang="zh">议题：大模型在具身智能与智能网联整车领域的未来演进趋势与产业破局</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-indigo-950 text-indigo-300 self-start sm:self-center border border-indigo-800">
+            Panel
+          </span>
+        </div>
+
+        <!-- Item 10: Awards Ceremony & Closing Remarks -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="plenary">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              17:15 – 17:45
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Awards Ceremony &amp; Closing Remarks</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">优秀海报颁奖典礼与闭幕总结</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Presentation of Best Poster Awards &amp; Closing Remarks by the Co-Chairs.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">评选并颁发研讨会“最佳学术海报奖 (Best Poster Awards)”与联合主席闭幕总结。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-amber-950 text-amber-300 self-start sm:self-center border border-amber-800">
+            Awards
+          </span>
+        </div>
+
+        <!-- Item 11: Joint Collaboration Dinner -->
+        <div class="schedule-item glass-card p-5 border-slate-700/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4" data-category="networking">
+          <div class="flex items-start space-x-4">
+            <div class="font-mono text-sm font-bold text-sky-400 bg-slate-900/90 px-3 py-1.5 rounded-lg border border-slate-800 flex-shrink-0">
+              18:00 – 20:00
+            </div>
+            <div>
+              <h4 class="text-base font-bold text-white" data-lang="en">Joint Collaboration Dinner</h4>
+              <h4 class="text-base font-bold text-white" data-lang="zh">联合学术与产业交流晚宴</h4>
+              <p class="text-xs text-slate-300 mt-1" data-lang="en">Networking dinner and in-depth academic dialogue.</p>
+              <p class="text-xs text-slate-300 mt-1" data-lang="zh">深化校企产学研合作与自由学术交流晚宴。</p>
+            </div>
+          </div>
+          <span class="px-2.5 py-1 rounded text-xs font-mono font-semibold bg-slate-800 text-slate-300 self-start sm:self-center border border-slate-700">
+            Dinner
+          </span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 7: ORGANIZATION & COMMITTEES ==================== -->
+  <section id="committees" class="py-16 md:py-24 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 7 · Governance &amp; PIs</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第7部分 · 组织机构与学术带头人</h2>
+      </div>
+
+      <div class="mb-12">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+          <span data-lang="en">Organization &amp; Committees</span>
+          <span data-lang="zh">组织管理架构与学术委员会阵容</span>
+        </h3>
+        <p class="text-slate-400 text-sm mt-2 max-w-3xl" data-lang="en">
+          Distinguished international scholars from NUS, A*STAR, NTU, Beihang, Henan Polytech, BIT, and industry leaders from Changan Automobile.
+        </p>
+        <p class="text-slate-400 text-sm mt-2 max-w-3xl" data-lang="zh">
+          汇聚来自新加坡国立大学、新加坡科技研究局 (A*STAR)、南洋理工大学、欧洲科学院、北航、北理工等顶尖机构资深学者及长安汽车工程专家。
+        </p>
+      </div>
+
+      <!-- Committee Blocks -->
+      <div class="space-y-12">
+        
+        <!-- 1. Steering & Management Committee -->
+        <div class="glass-card p-8 border-slate-700/80">
+          <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+            <h4 class="text-xl font-bold text-white flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-sky-400"></span>
+              <span data-lang="en">Steering &amp; Management Committee</span>
+              <span data-lang="zh">管理委员会 (Steering &amp; Management Committee)</span>
+            </h4>
+            <span class="text-xs font-mono text-sky-400 font-semibold uppercase">Executive Board</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Co-Chairs -->
+            <div class="space-y-4">
+              <div class="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold">
+                Co-Chairs / 联合主席
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Prof. Jibin LUO (罗继斌)</div>
+                <div class="text-xs text-sky-300 mt-1">Associate Vice President</div>
+                <div class="text-xs text-slate-400">National University of Singapore</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Zhangsong ZHAN (詹樟松)</div>
+                <div class="text-xs text-sky-300 mt-1">Assistant to President, Changan Automobile</div>
+                <div class="text-xs text-slate-400">General Manager, Forward-looking Technology Research Institute</div>
+              </div>
+            </div>
+
+            <!-- Vice Chairs -->
+            <div class="space-y-4">
+              <div class="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold">
+                Vice Chairs / 副主席
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Prof. Jiagong WANG (王家功)</div>
+                <div class="text-xs text-sky-300 mt-1">Director</div>
+                <div class="text-xs text-slate-400">NUS (Chongqing) Research Institute</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Huili YU (禹慧丽)</div>
+                <div class="text-xs text-sky-300 mt-1">Deputy General Manager</div>
+                <div class="text-xs text-slate-400">Changan Automobile</div>
+              </div>
+            </div>
+
+            <!-- Members -->
+            <div class="space-y-4">
+              <div class="text-xs font-mono uppercase tracking-wider text-sky-400 font-bold">
+                Members / 委员
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Prof. Jinbin WANG (王锦彬)</div>
+                <div class="text-xs text-sky-300 mt-1">Professor</div>
+                <div class="text-xs text-slate-400">National University of Singapore</div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+                <div class="text-white font-bold text-sm">Jun LI (李俊)</div>
+                <div class="text-xs text-sky-300 mt-1">Deputy General Manager</div>
+                <div class="text-xs text-slate-400">Changan Forward-looking Technology Research Institute</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Academic Advisory Committee -->
+        <div class="glass-card p-8 border-slate-700/80">
+          <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+            <h4 class="text-xl font-bold text-white flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-emerald-400"></span>
+              <span data-lang="en">Academic Advisory Committee</span>
+              <span data-lang="zh">学术委员会 (Academic Advisory Committee)</span>
+            </h4>
+            <span class="text-xs font-mono text-emerald-400 font-semibold uppercase">Scientific Board</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            
+            <!-- Chair -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/40 lg:col-span-2">
+              <div class="text-[11px] font-mono text-emerald-400 font-bold uppercase mb-1">Chair / 学术委员会主席</div>
+              <div class="text-white font-bold text-base">Prof. Yong-Wei ZHANG (张永伟)</div>
+              <div class="text-xs text-emerald-300 mt-1 font-medium">Distinguished Principal Scientist</div>
+              <div class="text-xs text-slate-400">Institute of High Performance Computing (IHPC), A*STAR, Singapore</div>
+            </div>
+
+            <!-- Vice Chair -->
+            <div class="p-4 rounded-xl bg-slate-900/90 border border-emerald-500/40 lg:col-span-2">
+              <div class="text-[11px] font-mono text-emerald-400 font-bold uppercase mb-1">Vice Chair / 学术委员会副主席</div>
+              <div class="text-white font-bold text-base">Huili YU (禹慧丽)</div>
+              <div class="text-xs text-emerald-300 mt-1 font-medium">Deputy General Manager</div>
+              <div class="text-xs text-slate-400">Changan Forward-looking Technology Research Institute</div>
+            </div>
+
+            <!-- Committee Member 1 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Prof. Shuanggen JIN (金双根)</div>
+              <div class="text-xs text-slate-300 mt-1">Member of the Academy of Europe</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Chief Scientist of National Key R&amp;D Program; Professor, Henan Polytechnic University</div>
+            </div>
+
+            <!-- Committee Member 2 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Prof. Dangxiao WANG (王党校)</div>
+              <div class="text-xs text-slate-300 mt-1">Professor, Beihang University</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Associate Editor, IEEE Transactions on Haptics</div>
+            </div>
+
+            <!-- Committee Member 3 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Prof. Bo AN (安波)</div>
+              <div class="text-xs text-slate-300 mt-1">Professor &amp; Director of AI Centre (AI.SG)</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Nanyang Technological University (NTU)</div>
+            </div>
+
+            <!-- Committee Member 4 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Prof. Bingsheng HE (何丙胜)</div>
+              <div class="text-xs text-slate-300 mt-1">Professor &amp; Vice-Dean (Computing)</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">National University of Singapore (NUS)</div>
+            </div>
+
+            <!-- Committee Member 5 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Prof. Qing SHI (石青)</div>
+              <div class="text-xs text-slate-300 mt-1">Professor</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Beijing Institute of Technology (BIT)</div>
+            </div>
+
+            <!-- Committee Member 6 -->
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-white font-bold text-sm">Xing CHEN (陈星)</div>
+              <div class="text-xs text-slate-300 mt-1">Ergonomics &amp; Human Factors Expert</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">Changan Automobile</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. Executive Leadership & Secretariat -->
+        <div class="glass-card p-8 border-slate-700/80">
+          <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+            <h4 class="text-xl font-bold text-white flex items-center space-x-2">
+              <span class="w-3 h-3 rounded-full bg-indigo-400"></span>
+              <span data-lang="en">Executive Leadership &amp; Secretariat</span>
+              <span data-lang="zh">执行领导层与会务秘书组</span>
+            </h4>
+            <span class="text-xs font-mono text-indigo-400 font-semibold uppercase">Operations</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-[11px] font-mono text-indigo-400 uppercase font-semibold">Laboratory Director</div>
+              <div class="text-white font-bold text-sm mt-1">Prof. Jiagong WANG (王家功)</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-[11px] font-mono text-indigo-400 uppercase font-semibold">Executive Deputy Director</div>
+              <div class="text-white font-bold text-sm mt-1">Prof. Yihong WU (吴义宏)</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-[11px] font-mono text-indigo-400 uppercase font-semibold">Deputy Director</div>
+              <div class="text-white font-bold text-sm mt-1">Prof. Yan PANG (庞严)</div>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+              <div class="text-[11px] font-mono text-indigo-400 uppercase font-semibold">Assistant Directors / Secretariat</div>
+              <div class="text-white font-bold text-sm mt-1">Dr. Xiaohong LIU (刘小红)<br>Dr. Xi AI (艾惜)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Key Laboratory PIs & Group Leads -->
+        <div class="glass-card p-8 border-slate-700/80">
+          <div class="border-b border-slate-800 pb-4 mb-6 flex items-center justify-between">
+            <div>
+              <h4 class="text-xl font-bold text-white flex items-center space-x-2">
+                <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+                <span data-lang="en">Key Laboratory PIs &amp; Group Leads</span>
+                <span data-lang="zh">重点实验室PI专家与课题组学术带头人</span>
+              </h4>
+              <p class="text-xs text-slate-400 mt-1" data-lang="en">
+                Leading principal investigators driving core grant sub-projects and cooperative engineering initiatives.
+              </p>
+              <p class="text-xs text-slate-400 mt-1" data-lang="zh">
+                领衔各重大课题攻坚子方向与产学研联合攻关组的资深学术带头人。
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Qingjin YAN (颜庆金)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Yan PANG (庞严)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Kaidi YANG (杨凯棣)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Zhiyong HUANG (黄智勇)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Lin SHAO (绍林)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Lin ZHAO (赵琳)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Xinchao WANG (王鑫超)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Qiang MENG (孟强)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Yifan FENG (冯一凡)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Prof. Yuting ZHU (朱玉婷)
+            </span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-xs font-semibold text-slate-200 hover:border-sky-500/50 hover:text-sky-300 transition-all">
+              Dr. Peichen ZHONG
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 8: VENUE & CONTACT ==================== -->
+  <section id="contact" class="py-16 md:py-24 bg-slate-900/40 border-t border-slate-800/60 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-sky-500 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="en">Section 8 · Venue &amp; Secretariat Contacts</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-sky-400 font-bold" data-lang="zh">第8部分 · 举办地点与会务秘书处</h2>
+      </div>
+
+      <div class="mb-10">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white">
+          <span data-lang="en">Venue &amp; Contact Information</span>
+          <span data-lang="zh">会场指引与秘书处联系方式</span>
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Venue Card -->
+        <div class="glass-card p-6 border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 border border-sky-400/40">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1" data-lang="en">Symposium Venue</h4>
+            <h4 class="text-lg font-bold text-white mb-1" data-lang="zh">会议举办地点</h4>
+            <p class="text-base text-sky-400 font-semibold mb-3">TBD · Chongqing, China (NUSRI-CQ / Hybrid)</p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="en">
+              The symposium is held in Chongqing, China, utilizing the advanced academic auditorium and demo exhibition facilities at NUSRI-CQ, with hybrid video link access for remote laboratory researchers.
+            </p>
+            <p class="text-xs text-slate-300 leading-relaxed" data-lang="zh">
+              研讨会将在中国重庆举办，依托重庆新国大研究院学术报告厅及智能展厅实物演示区，并同步为海外科研人员提供线上专线连线接入。具体楼宇及展厅编号随会务通告发布。
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-800 flex items-center space-x-2 text-xs text-slate-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <span data-lang="en">Venue navigation &amp; accommodation info will be dispatched upon acceptance.</span>
+            <span data-lang="zh">交通接驳及差旅协议酒店信息将在录取通知阶段同步发送。</span>
+          </div>
+        </div>
+
+        <!-- Secretariat Contacts Card -->
+        <div class="glass-card p-6 border-slate-700/80 flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-4 border border-indigo-400/40">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h4 class="text-lg font-bold text-white mb-1" data-lang="en">Symposium Secretariat</h4>
+            <h4 class="text-lg font-bold text-white mb-1" data-lang="zh">会务秘书处联系方式</h4>
+            <p class="text-xs text-slate-400 mb-4" data-lang="en">For submission inquiries, demo logistics, and agenda details:</p>
+            <p class="text-xs text-slate-400 mb-4" data-lang="zh">关于论文海报提交、Demo场地需求及会议日程咨询：</p>
+
+            <div class="space-y-3">
+              <!-- Dr. Xi AI -->
+              <div class="p-3.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <div class="text-white font-bold text-sm">Dr. Xi AI (艾惜)</div>
+                  <div class="text-xs text-slate-400">Submission &amp; Inquiries Lead</div>
+                  <a href="mailto:xi.ai@nusri.cn" class="text-xs text-sky-400 hover:underline font-mono">xi.ai@nusri.cn</a>
+                </div>
+                <button type="button" onclick="copyToClipboard('xi.ai@nusri.cn', 'Dr. Xi AI email')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Dr. Xiaohong LIU -->
+              <div class="p-3.5 rounded-lg bg-slate-900/90 border border-slate-800 flex items-center justify-between">
+                <div>
+                  <div class="text-white font-bold text-sm">Dr. Xiaohong LIU (刘小红)</div>
+                  <div class="text-xs text-slate-400">Secretariat Coordinator</div>
+                  <a href="mailto:xiaohong.liu@nusri.cn" class="text-xs text-sky-400 hover:underline font-mono">xiaohong.liu@nusri.cn</a>
+                </div>
+                <button type="button" onclick="copyToClipboard('xiaohong.liu@nusri.cn', 'Dr. Xiaohong LIU email')" class="p-2 rounded bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-slate-800">
+            <a href="mailto:xi.ai@nusri.cn,xiaohong.liu@nusri.cn?subject=[TPI-ICV%202026%20Inquiry]" class="text-xs text-sky-400 hover:text-sky-300 flex items-center space-x-1 font-semibold">
+              <span>Send General Inquiry to Secretariat</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="py-12 border-t border-slate-800 bg-[#060910] text-slate-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="flex items-center space-x-3">
+          <img src="assets/images/logo.svg" alt="TPI-ICV 2026 Logo" class="w-8 h-8 opacity-90">
+          <div>
+            <div class="text-white font-bold text-sm">TPI-ICV 2026</div>
+            <div class="text-slate-400 text-[11px]" data-lang="en">NUSRI-CQ &amp; Chongqing Key Laboratory for ICV</div>
+            <div class="text-slate-400 text-[11px]" data-lang="zh">重庆新国大研究院 &amp; 智能网联汽车可信感知交互重点实验室</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6">
+          <a href="#overview" class="hover:text-white transition-colors">Overview</a>
+          <a href="#themes" class="hover:text-white transition-colors">Themes</a>
+          <a href="#call-for-posters" class="hover:text-white transition-colors">Call for Posters</a>
+          <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
+          <a href="#committees" class="hover:text-white transition-colors">Committees</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+          <button type="button" onclick="window.print()" class="no-print hover:text-sky-400 transition-colors flex items-center space-x-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+            </svg>
+            <span>Print Program</span>
+          </button>
+        </div>
+
+        <div class="text-center md:text-right">
+          <div>&copy; 2026 TPI-ICV Organizing Committee. All rights reserved.</div>
+          <div class="text-[10px] text-slate-400 mt-1 font-mono">Designed for GitHub Pages Static Deployment</div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SUBMISSION PROPOSAL ASSISTANT MODAL ==================== -->
+  <div id="submissionModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card max-w-2xl w-full p-6 sm:p-8 border-sky-500/40 shadow-2xl relative">
+      
+      <!-- Close button -->
+      <button type="button" class="close-modal-btn absolute top-5 right-5 text-slate-400 hover:text-white p-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-2">
+        <span class="w-8 h-8 rounded-lg bg-sky-500/20 text-sky-400 flex items-center justify-center font-bold">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+          </svg>
+        </span>
+        <h3 class="text-xl font-bold text-white">
+          <span data-lang="en">Poster &amp; Demo Submission Assistant</span>
+          <span data-lang="zh">学术海报与Demo提案提交辅助器</span>
+        </h3>
+      </div>
+      <p class="text-xs text-slate-400 mb-6" data-lang="en">
+        Fill out your presentation details to generate an email compliant with the symposium submission syntax: <code class="text-sky-300">[TPI-ICV 2026 Poster] - PI Group / Unit - Topic</code>.
+      </p>
+      <p class="text-xs text-slate-400 mb-6" data-lang="zh">
+        填写汇报信息，将自动按规范生成邮件主题与结构化正文并发送至会务秘书组邮箱。
+      </p>
+
+      <form id="submissionComposerForm" class="space-y-4 text-xs">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1" for="subPresenter">
+              <span data-lang="en">Corresponding Author / Presenter</span>
+              <span data-lang="zh">第一作者 / 汇报人姓名</span>
+            </label>
+            <input type="text" id="subPresenter" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500" placeholder="e.g. Dr. Jane Doe">
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1" for="subPIGroup">
+              <span data-lang="en">PI Group / Unit</span>
+              <span data-lang="zh">所属PI课题组 / 研发部门</span>
+            </label>
+            <input type="text" id="subPIGroup" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500" placeholder="e.g. Prof. Yan PANG Group / Changan AI Lab">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1" for="subFormat">
+              <span data-lang="en">Presentation Format</span>
+              <span data-lang="zh">拟汇报形式</span>
+            </label>
+            <select id="subFormat" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500">
+              <option value="Poster (A0 Portrait PDF)">Poster (A0 Portrait PDF) / 仅海报展评</option>
+              <option value="Interactive Live System Demo">Interactive Live System Demo / 仅系统Demo演示</option>
+              <option value="Both Poster & Live Demo">Both Poster &amp; Live Demo / 海报与系统Demo兼有</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-slate-300 font-semibold mb-1" for="subTheme">
+              <span data-lang="en">Primary Research Theme</span>
+              <span data-lang="zh">所属主题方向</span>
+            </label>
+            <select id="subTheme" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500">
+              <option value="Theme 1: LLMs & Foundation AI">Theme 1: LLMs &amp; Foundation AI Frontiers</option>
+              <option value="Theme 2: Trusted AI & Safety">Theme 2: Trusted AI, Safety &amp; Mechanistic Interpretability</option>
+              <option value="Theme 3: Spatial Computing & Interaction">Theme 3: Spatial Computing &amp; Natural Interaction</option>
+              <option value="Theme 4: Autonomous Driving & Batteries">Theme 4: Robust Autonomous Driving &amp; Battery Technologies</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1" for="subTitle">
+            <span data-lang="en">Working Paper / Project Title</span>
+            <span data-lang="zh">论文 / 项目研究成果题目</span>
+          </label>
+          <input type="text" id="subTitle" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500" placeholder="e.g. Mechanistic Circuit Tracing for Onboard Vision-Language Models">
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1" for="subAbstract">
+            <span data-lang="en">Structured Abstract / Problem &amp; Methodology Summary</span>
+            <span data-lang="zh">结构化摘要 (研究问题、方法、实验结果与汽车应用意义)</span>
+          </label>
+          <textarea id="subAbstract" rows="3" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500" placeholder="Provide a brief summary of problem statement, mathematical/system formulation, key results, and vehicular relevance..."></textarea>
+        </div>
+
+        <div>
+          <label class="block text-slate-300 font-semibold mb-1" for="subRequirements">
+            <span data-lang="en">Demo Logistics (Power, Table, External Display, Local Network)</span>
+            <span data-lang="zh">现场保障需求 (如需Demo展示：供电、展台尺寸、显示器、专用局域网)</span>
+          </label>
+          <input type="text" id="subRequirements" class="w-full px-3 py-2 rounded-lg bg-slate-900 border border-slate-700 text-white focus:outline-none focus:border-sky-500" placeholder="e.g. 1× 220V power socket, HDMI 4K monitor, 1.2m desk space">
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-end gap-3">
+          <button type="button" class="close-modal-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold">
+            <span data-lang="en">Cancel</span><span data-lang="zh">取消</span>
+          </button>
+          <button type="button" id="copyEmailDraftBtn" class="px-4 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-white font-semibold flex items-center space-x-1.5">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+            </svg>
+            <span data-lang="en">Copy Formatted Text</span>
+            <span data-lang="zh">复制格式化文本</span>
+          </button>
+          <button type="button" id="openMailClientBtn" class="px-5 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white font-bold flex items-center space-x-1.5 shadow-lg shadow-sky-500/25">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span data-lang="en">Open in Mail App</span>
+            <span data-lang="zh">打开邮件客户端发送</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
