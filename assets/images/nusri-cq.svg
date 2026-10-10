@@ -10,19 +10,19 @@
     </linearGradient>
   </defs>
   <!-- Background pill -->
-  <rect x="5" y="5" width="390" height="110" rx="16" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+  <rect x="5" y="5" width="390" height="110" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="2"/>
   
   <!-- NUS Crest / Icon placeholder stylized -->
   <g transform="translate(25, 20)">
-    <rect x="0" y="0" width="80" height="80" rx="12" fill="url(#nus-blue)" stroke="#38BDF8" stroke-width="1.5"/>
+    <rect x="0" y="0" width="80" height="80" rx="12" fill="url(#nus-blue)" stroke="#003D7C" stroke-width="1.5"/>
     <path d="M 40 12 L 65 30 L 65 60 L 40 72 L 15 60 L 15 30 Z" fill="none" stroke="url(#nus-orange)" stroke-width="3"/>
     <text x="40" y="44" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="20">NUS</text>
     <text x="40" y="58" text-anchor="middle" fill="#EF7C00" font-family="'Inter', sans-serif" font-weight="700" font-size="10" letter-spacing="1">CQ</text>
   </g>
 
   <!-- Text -->
-  <text x="125" y="44" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="15">NUSRI-CQ</text>
-  <text x="125" y="66" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="12">National Univ. of Singapore</text>
-  <text x="125" y="85" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="600" font-size="12">(Chongqing) Research Institute</text>
-  <text x="125" y="102" fill="#64748B" font-family="'Inter', sans-serif" font-weight="400" font-size="11">重庆新国大研究院</text>
+  <text x="125" y="44" fill="#0F172A" font-family="'Inter', sans-serif" font-weight="700" font-size="15">NUSRI-CQ</text>
+  <text x="125" y="66" fill="#475569" font-family="'Inter', sans-serif" font-weight="500" font-size="12">National Univ. of Singapore</text>
+  <text x="125" y="85" fill="#003D7C" font-family="'Inter', sans-serif" font-weight="600" font-size="12">(Chongqing) Research Institute</text>
+  <text x="125" y="102" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">重庆新国大研究院</text>
 </svg>
