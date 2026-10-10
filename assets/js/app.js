@@ -236,7 +236,7 @@ ${piGroup}
     openMailBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const { subject, body } = buildEmailPayload();
-      const mailtoUrl = `mailto:xi.ai@nusri.cn,xiaohong.liu@nusri.cn?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:xi.ai@nusricq.cn?cc=barid.x.ai@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailtoUrl;
     });
   }
@@ -245,7 +245,7 @@ ${piGroup}
     copyDraftBtn.addEventListener('click', (e) => {
       e.preventDefault();
       const { subject, body } = buildEmailPayload();
-      const fullText = `TO: xi.ai@nusri.cn, xiaohong.liu@nusri.cn\nSUBJECT: ${subject}\n\n${body}`;
+      const fullText = `TO: xi.ai@nusricq.cn\nCC: barid.x.ai@gmail.com\nSUBJECT: ${subject}\n\n${body}`;
 
       navigator.clipboard.writeText(fullText).then(() => {
         showToast(currentLang === 'zh' ? '提交邮件草稿与主题已复制到剪贴板！' : 'Email draft & subject copied to clipboard!');
@@ -285,7 +285,7 @@ function generateAndDownloadICS() {
     "SUMMARY:The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)",
     "DESCRIPTION:Joint academic milestone symposium co-hosted by NUSRI-CQ and Chongqing Key Laboratory of Trusted Perception and Interaction Technology for ICV. Features Keynotes, Academic Posters, Live Demos, and Plenary Sessions.",
     "LOCATION:Chongqing, China / National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)",
-    "ORGANIZER;CN=TPI-ICV Secretariat:mailto:xi.ai@nusri.cn",
+    "ORGANIZER;CN=TPI-ICV Secretariat:mailto:xi.ai@nusricq.cn",
     "STATUS:CONFIRMED",
     "END:VEVENT",
     "END:VCALENDAR"
