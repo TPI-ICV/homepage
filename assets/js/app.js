@@ -1,5 +1,5 @@
 /**
- * TPI-ICV 2026 Academic Symposium Client Engine
+ * TPI-ICV 2026 Academic Symposium Client Engine (Academic Light Edition)
  * Features:
  * - Real-time Bilingual Language Switcher (EN / ZH)
  * - Interactive Schedule Categorization
@@ -140,11 +140,11 @@ function initScheduleFilter() {
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => {
-        b.classList.remove('bg-sky-600', 'text-white', 'shadow-md');
-        b.classList.add('bg-slate-800/80', 'text-slate-300', 'hover:bg-slate-700');
+        b.classList.remove('bg-[#003D7C]', 'text-white', 'shadow-sm');
+        b.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-50');
       });
-      btn.classList.add('bg-sky-600', 'text-white', 'shadow-md');
-      btn.classList.remove('bg-slate-800/80', 'text-slate-300');
+      btn.classList.add('bg-[#003D7C]', 'text-white', 'shadow-sm');
+      btn.classList.remove('bg-white', 'text-slate-700', 'border', 'border-slate-300', 'hover:bg-slate-50');
 
       const filter = btn.getAttribute('data-filter');
 
@@ -192,7 +192,6 @@ function initSubmissionModal() {
   });
 
   // Email form generator logic
-  const form = document.getElementById('submissionComposerForm');
   const openMailBtn = document.getElementById('openMailClientBtn');
   const copyDraftBtn = document.getElementById('copyEmailDraftBtn');
 
@@ -270,7 +269,6 @@ function initCalendarExport() {
 }
 
 function generateAndDownloadICS() {
-  // Estimated 1-day event date placeholder (e.g., 20261118)
   const icsContent = [
     "BEGIN:VCALENDAR",
     "VERSION:2.0",
@@ -343,11 +341,11 @@ function initScrollspy() {
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('text-sky-400', 'font-semibold');
-      link.classList.add('text-slate-300');
+      link.classList.remove('text-[#003D7C]', 'font-bold');
+      link.classList.add('text-slate-700');
       if (link.getAttribute('href') === `#${currentId}`) {
-        link.classList.add('text-sky-400', 'font-semibold');
-        link.classList.remove('text-slate-300');
+        link.classList.add('text-[#003D7C]', 'font-bold');
+        link.classList.remove('text-slate-700');
       }
     });
   });
@@ -359,7 +357,7 @@ function showToast(message) {
   if (!toast) {
     toast = document.createElement('div');
     toast.id = 'appToast';
-    toast.className = 'fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-sky-600 text-white font-medium shadow-2xl transition-all duration-300 transform translate-y-10 opacity-0 flex items-center space-x-2 border border-sky-400/40';
+    toast.className = 'fixed bottom-6 right-6 z-50 px-5 py-3 rounded-xl bg-[#003D7C] text-white font-medium shadow-2xl transition-all duration-300 transform translate-y-10 opacity-0 flex items-center space-x-2 border border-blue-400/40';
     document.body.appendChild(toast);
   }
 
