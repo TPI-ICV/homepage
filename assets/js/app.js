@@ -15,7 +15,7 @@ let currentLang = localStorage.getItem('tpi_lang') || 'en';
 const translations = {
   en: {
     heroTag: "Joint Academic Milestone Symposium & Poster Exhibition",
-    dateTbd: "Date: TBD · Chongqing, China / Hybrid",
+    dateTbd: "Date: 12 Nov 2026 · Chongqing, China / Hybrid",
     submitSuccess: "Email proposal draft copied to clipboard!",
     icsSuccess: "Symposium calendar (.ics) file generated and downloaded!",
     copyEmailSuccess: "Secretariat email copied to clipboard: ",
@@ -42,7 +42,7 @@ const translations = {
   },
   zh: {
     heroTag: "联合学术研讨会暨成果海报展 · 内部学术交流与技术里程碑",
-    dateTbd: "时间：待定 (TBD) · 中国·重庆 / 线上线下结合",
+    dateTbd: "时间：2026年11月12日 · 中国·重庆 / 线上线下结合",
     submitSuccess: "提交邮件草稿已复制到剪贴板！",
     icsSuccess: "研讨会日历日程 (.ics) 文件已生成并开始下载！",
     copyEmailSuccess: "会务秘书组邮箱已复制：",
@@ -280,8 +280,8 @@ function generateAndDownloadICS() {
     "BEGIN:VEVENT",
     "UID:tpi-icv-2026-full-symposium@nusri.cn",
     "DTSTAMP:20261010T080000Z",
-    "DTSTART;TZID=Asia/Chongqing:20261118T090000",
-    "DTEND;TZID=Asia/Chongqing:20261118T163000",
+    "DTSTART;TZID=Asia/Chongqing:20261112T090000",
+    "DTEND;TZID=Asia/Chongqing:20261112T163000",
     "SUMMARY:The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)",
     "DESCRIPTION:Joint academic milestone symposium co-hosted by NUSRI-CQ and Chongqing Key Laboratory of Trusted Perception and Interaction Technology for ICV. Features Keynotes, Academic Posters, Live Demos, and Plenary Sessions.",
     "LOCATION:Chongqing, China / National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)",
