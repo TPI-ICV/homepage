@@ -1,27 +1,28 @@
 /**
  * TPI-ICV 2026 Symposium — Automated Google Sheets Registration Backend
  * Bound to Google Sheet:
- * https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?usp=sharing
+ * https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?gid=0#gid=0
  *
  * SETUP (Takes ~30 Seconds inside your Google Sheet):
- * 1. Open https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit
+ * 1. Open https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?gid=0#gid=0
  * 2. Click "Extensions" (扩展程序) -> "Apps Script".
  * 3. Paste this entire file into Code.gs and click Save (Ctrl+S).
  * 4. Click "Deploy" (部署) -> "New deployment" (新建部署):
  *    - Select type: "Web app" (网页应用)
  *    - Execute as: "Me" (我)
  *    - Who has access: "Anyone" (任何人)
- * 5. Copy the generated "Web app URL" (ends with /exec) and paste it into
- *    the "Secretariat Tally & CSV" modal (or DEFAULT_REGISTRATION_WEBHOOK_URL in assets/js/app.js).
+ * 5. Copy the generated "Web app URL" (ends with /exec) and set it as
+ *    DEFAULT_REGISTRATION_WEBHOOK_URL in assets/js/app.js.
  */
 
 const SPREADSHEET_ID = '1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8';
+const SHEET_GID = 0;
 const NOTIFY_TO = 'xi.ai@nusricq.cn';
 const NOTIFY_CC = 'barid.x.ai@gmail.com';
 
 function getTargetSheet() {
   const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
-  const sheet = ss.getSheets()[0];
+  const sheet = ss.getSheets().find(s => s.getSheetId() === SHEET_GID) || ss.getSheets()[0];
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
       'Timestamp (UTC+8)',
@@ -67,7 +68,7 @@ function doPost(e) {
       const subject = `[TPI-ICV 2026 Registration] - ${modeShort} - ${payload.affiliation} - ${payload.name} (${count} Attendee${count > 1 ? 's' : ''})`;
       const body = [
         `New TPI-ICV 2026 Participant Registration (Saved to Google Sheet):`,
-        `Sheet: https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit`,
+        `Sheet: https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit?gid=0#gid=0`,
         ``,
         `1. Name: ${payload.name}`,
         `2. Affiliation: ${payload.affiliation}`,

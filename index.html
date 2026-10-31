@@ -1677,19 +1677,12 @@
             欢迎报名参加 TPI-ICV 2026 联合学术研讨会（2026年11月12日）。支持重庆新国大研究院线下现场参会或线上远程视频接入，可按个人或课题组/团队统一登记参会人数与相关信息。
           </p>
         </div>
-        <div class="mt-4 md:mt-0 flex flex-wrap items-center gap-2.5">
-          <a href="https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-1.5 px-3.5 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-bold shadow-sm transition-all">
+        <div class="mt-4 md:mt-0">
+          <span class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-mono font-semibold">
             <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
-            <span data-lang="en">Open Live Google Sheet</span>
-            <span data-lang="zh">打开 Google 在线报名表</span>
-          </a>
-          <button type="button" class="open-tally-modal-btn inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 text-xs font-bold shadow-sm transition-all">
-            <svg class="w-3.5 h-3.5 text-[#003D7C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-            </svg>
-            <span data-lang="en">Secretariat Tally &amp; CSV</span>
-            <span data-lang="zh">秘书处参会统计与导出</span>
-          </button>
+            <span data-lang="en">Registration Open · In-Person &amp; Online</span>
+            <span data-lang="zh">报名通道开放中 · 支持线下与线上参会</span>
+          </span>
         </div>
       </div>
 
@@ -2180,133 +2173,6 @@
         </div>
 
       </form>
-
-    </div>
-  </div>
-
-  <!-- ==================== SECRETARIAT HEADCOUNT & CSV TALLY MODAL ==================== -->
-  <div id="secretariatTallyModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-    <div class="bg-white rounded-2xl border border-slate-200 max-w-4xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      
-      <!-- Close button -->
-      <button type="button" class="close-tally-modal-btn absolute top-5 right-5 text-slate-400 hover:text-slate-800 p-2">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-
-      <div class="flex items-center space-x-3 mb-2">
-        <span class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center font-bold border border-emerald-200">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-        </span>
-        <h3 class="text-base sm:text-lg font-bold text-slate-900">
-          <span data-lang="en">Secretariat Participant Counter &amp; Roster Exporter</span>
-          <span data-lang="zh">会务秘书处参会人数统计与名单导出中心</span>
-        </h3>
-      </div>
-      <p class="text-xs text-slate-600 mb-5" data-lang="en">
-        Automatically tally total headcounts, In-Person vs. Online attendance, and Networking Lunch reservations from your Google Sheets Web App or pasted registration emails, and export to Excel (`.csv`).
-      </p>
-      <p class="text-xs text-slate-600 mb-5" data-lang="zh">
-        支持从云端 Google Sheets 接口同步实时报名数据，或一键批量粘贴报名邮件文本自动汇总总人数、线下/线上人数、午餐人数并导出 Excel (`.csv`) 签到表。
-      </p>
-
-      <!-- Live Summary Counter Cards -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5">
-        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-          <div id="tallyTotalAttendees" class="text-2xl font-bold font-mono text-[#003D7C]">0</div>
-          <div class="text-[11px] font-semibold text-slate-600 mt-0.5" data-lang="en">Total Attendees</div>
-          <div class="text-[11px] font-semibold text-slate-600 mt-0.5" data-lang="zh">总参会人数</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-center">
-          <div id="tallyInPersonAttendees" class="text-2xl font-bold font-mono text-emerald-800">0</div>
-          <div class="text-[11px] font-semibold text-emerald-900 mt-0.5" data-lang="en">In-Person (Chongqing)</div>
-          <div class="text-[11px] font-semibold text-emerald-900 mt-0.5" data-lang="zh">线下现场参会</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-blue-50/70 border border-blue-200 text-center">
-          <div id="tallyOnlineAttendees" class="text-2xl font-bold font-mono text-[#003D7C]">0</div>
-          <div class="text-[11px] font-semibold text-[#003D7C] mt-0.5" data-lang="en">Online / Hybrid</div>
-          <div class="text-[11px] font-semibold text-[#003D7C] mt-0.5" data-lang="zh">线上 / 混合参会</div>
-        </div>
-        <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-center">
-          <div id="tallyLunchAttendees" class="text-2xl font-bold font-mono text-amber-800">0</div>
-          <div class="text-[11px] font-semibold text-amber-900 mt-0.5" data-lang="en">Networking Lunch</div>
-          <div class="text-[11px] font-semibold text-amber-900 mt-0.5" data-lang="zh">交流午餐人数</div>
-        </div>
-      </div>
-
-      <!-- Option A: Connected Google Sheet Live Sync -->
-      <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 mb-4 text-xs">
-        <div class="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-          <label class="font-bold text-slate-800" for="tallyWebhookInput">
-            <span data-lang="en">Connected Google Sheet / Web App URL:</span>
-            <span data-lang="zh">已绑定的 Google 在线报名表 / Web App 地址：</span>
-          </label>
-          <a href="https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-[#003D7C] hover:underline font-bold flex items-center space-x-1">
-            <span data-lang="en">Open Google Sheet ↗</span>
-            <span data-lang="zh">打开 Google 表格 ↗</span>
-          </a>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-2">
-          <input type="url" id="tallyWebhookInput" value="https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?usp=sharing" class="flex-1 px-3 py-2 rounded-lg bg-white border border-slate-300 text-slate-900 font-mono text-xs focus:outline-none focus:border-[#003D7C]" placeholder="https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?usp=sharing">
-          <button type="button" id="syncCloudSheetBtn" class="px-4 py-2 rounded-lg bg-[#003D7C] hover:bg-[#002D5C] text-white font-bold whitespace-nowrap">
-            <span data-lang="en">Sync Google Sheet</span>
-            <span data-lang="zh">从 Google 表格同步</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Option B: Quick Email / Text Batch Parser -->
-      <div class="mb-4 text-xs">
-        <label class="block font-bold text-slate-800 mb-1" for="tallyPasteInput">
-          <span data-lang="en">Or Paste Registration Emails / Subjects / Text Below to Parse &amp; Count Instantly:</span>
-          <span data-lang="zh">或将收到的参会报名邮件正文 / 主题列表直接粘贴至下方，一键自动解析统计：</span>
-        </label>
-        <textarea id="tallyPasteInput" rows="4" class="w-full px-3 py-2 rounded-lg bg-slate-50 border border-slate-300 text-slate-900 font-mono text-[11px] focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="Paste one or more [TPI-ICV 2026 Registration] email bodies or subject lines here..."></textarea>
-        <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
-          <span id="tallyStatusText" class="text-[11px] text-slate-500 font-mono">0 registration records loaded.</span>
-          <div class="flex flex-wrap items-center gap-2">
-            <button type="button" id="clearTallyBtn" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold">
-              <span data-lang="en">Clear</span><span data-lang="zh">清空记录</span>
-            </button>
-            <button type="button" id="parseTallyBtn" class="px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold">
-              <span data-lang="en">Parse &amp; Count Participants</span>
-              <span data-lang="zh">解析并汇总人数</span>
-            </button>
-            <button type="button" id="exportTallyCsvBtn" class="px-3.5 py-1.5 rounded-lg bg-[#003D7C] hover:bg-[#002D5C] text-white font-bold flex items-center space-x-1">
-              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              <span data-lang="en">Export Roster (.csv)</span>
-              <span data-lang="zh">导出签到名单 (.csv)</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Parsed Roster Preview Table -->
-      <div class="border border-slate-200 rounded-xl overflow-x-auto max-h-56">
-        <table class="w-full text-left border-collapse text-[11px]">
-          <thead class="bg-slate-100 text-slate-700 border-b border-slate-200 font-bold">
-            <tr>
-              <th class="py-2 px-3">#</th>
-              <th class="py-2 px-3">Name</th>
-              <th class="py-2 px-3">Affiliation</th>
-              <th class="py-2 px-3">Mode</th>
-              <th class="py-2 px-3">Attendees</th>
-              <th class="py-2 px-3">Lunch</th>
-              <th class="py-2 px-3">Email / Phone</th>
-            </tr>
-          </thead>
-          <tbody id="tallyTableBody" class="divide-y divide-slate-100 text-slate-700">
-            <tr>
-              <td colspan="7" class="py-4 text-center text-slate-400">No registration records loaded yet.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
     </div>
   </div>
