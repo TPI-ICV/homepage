@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initScheduleFilter();
   initSubmissionModal();
+  initRegistrationPortal();
   initCalendarExport();
   initMobileMenu();
   initScrollspy();
@@ -252,6 +253,116 @@ ${piGroup}
       }).catch(err => {
         console.error('Clipboard copy failed:', err);
       });
+    });
+  }
+}
+
+// Participant Registration Portal Logic
+function initRegistrationPortal() {
+  const form = document.getElementById('participantRegistrationForm');
+  if (!form) return;
+
+  const modeSelect = document.getElementById('regMode');
+  const lunchSelect = document.getElementById('regLunch');
+  const copyBtn = document.getElementById('copyRegTextBtn');
+  const downloadBtn = document.getElementById('downloadRegReceiptBtn');
+  const banner = document.getElementById('regConfirmationBanner');
+  const summaryEl = document.getElementById('regConfirmationSummary');
+
+  // Auto-sync lunch selection when switching between In-Person and Online
+  if (modeSelect && lunchSelect) {
+    modeSelect.addEventListener('change', () => {
+      if (modeSelect.value.startsWith('Online')) {
+        lunchSelect.selectedIndex = 2; // N/A - Online Participant
+      } else if (lunchSelect.selectedIndex === 2) {
+        lunchSelect.selectedIndex = 0; // Yes - Attending Networking Lunch
+      }
+    });
+  }
+
+  function buildRegistrationPayload() {
+    const name = document.getElementById('regName')?.value.trim() || "Participant Name";
+    const affiliation = document.getElementById('regAffiliation')?.value.trim() || "Affiliation / Unit";
+    const mode = document.getElementById('regMode')?.value || "In-Person (Chongqing, NUSRI-CQ) / 线下现场参会";
+    const count = document.getElementById('regCount')?.value || "1";
+    const email = document.getElementById('regEmail')?.value.trim() || "Not provided";
+    const phone = document.getElementById('regPhone')?.value.trim() || "Not provided";
+    const role = document.getElementById('regRole')?.value || "Research Fellow / Postdoctoral Researcher";
+    const lunch = document.getElementById('regLunch')?.value || "Yes - Attending Networking Lunch";
+    const notes = document.getElementById('regNotes')?.value.trim() || "None";
+
+    const modeShort = mode.startsWith('Online') ? 'Online' : (mode.startsWith('Hybrid') ? 'Hybrid' : 'In-Person');
+    const subject = `[TPI-ICV 2026 Registration] - ${modeShort} - ${affiliation} - ${name} (${count} Attendee${Number(count) > 1 ? 's' : ''})`;
+    const body = `Dear TPI-ICV 2026 Symposium Secretariat,
+
+Please find below our participant registration for the 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026, 12 Nov 2026).
+
+--- PARTICIPANT REGISTRATION DETAILS ---
+1. Participant / Contact Name: ${name}
+2. Affiliation / Organization: ${affiliation}
+3. Attendance Mode: ${mode}
+4. Number of Attendees: ${count}
+5. Participant Category / Role: ${role}
+6. Contact Email: ${email}
+7. Phone / WeChat: ${phone}
+8. Networking Lunch (12:00-14:00): ${lunch}
+
+--- OTHER INFORMATION & REMARKS ---
+${notes}
+
+Sincerely,
+${name}
+${affiliation}
+`;
+
+    if (banner && summaryEl) {
+      banner.classList.remove('hidden');
+      summaryEl.textContent = `${name} (${affiliation}) · ${modeShort} · ${count} Attendee(s)`;
+    }
+
+    return { name, affiliation, modeShort, count, subject, body };
+  }
+
+  // Form submit -> Open Mail Client
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const { subject, body } = buildRegistrationPayload();
+    const mailtoUrl = `mailto:xi.ai@nusricq.cn?cc=barid.x.ai@gmail.com&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+    showToast(currentLang === 'zh' ? '正在打开邮件客户端发送参会报名...' : 'Opening mail client to submit registration...');
+  });
+
+  // Copy registration text to clipboard
+  if (copyBtn) {
+    copyBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const { subject, body } = buildRegistrationPayload();
+      const fullText = `TO: xi.ai@nusricq.cn\nCC: barid.x.ai@gmail.com\nSUBJECT: ${subject}\n\n${body}`;
+      navigator.clipboard.writeText(fullText).then(() => {
+        showToast(currentLang === 'zh' ? '参会报名信息已复制到剪贴板！' : 'Registration details copied to clipboard!');
+      }).catch(err => {
+        console.error('Failed to copy registration text:', err);
+      });
+    });
+  }
+
+  // Download registration receipt (.txt)
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const { name, subject, body } = buildRegistrationPayload();
+      const receiptContent = `================================================================\nTPI-ICV 2026 SYMPOSIUM REGISTRATION RECEIPT\nDate: 12 Nov 2026 (09:00 - 16:30 UTC+8)\nSecretariat: xi.ai@nusricq.cn (CC: barid.x.ai@gmail.com)\n================================================================\n\nSUBJECT: ${subject}\n\n${body}`;
+      const blob = new Blob([receiptContent], { type: 'text/plain;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      const safeName = name.replace(/[^a-zA-Z0-9_\u4e00-\u9fa5-]+/g, '_');
+      link.setAttribute('download', `TPI-ICV-2026-Registration-${safeName}.txt`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+      showToast(currentLang === 'zh' ? '参会报名回执单 (.txt) 已下载！' : 'Registration receipt (.txt) downloaded!');
     });
   }
 }

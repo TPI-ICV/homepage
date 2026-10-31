@@ -133,13 +133,16 @@
           <a href="#committees" class="desktop-nav-link px-2.5 py-1.5 text-slate-700 hover:text-[#003D7C] transition-colors">
             <span data-lang="en">Committees</span><span data-lang="zh">组织委员会</span>
           </a>
+          <a href="#registration" class="desktop-nav-link px-2.5 py-1.5 text-emerald-800 hover:text-emerald-900 font-bold transition-colors">
+            <span data-lang="en">Registration</span><span data-lang="zh">参会报名</span>
+          </a>
           <a href="#contact" class="desktop-nav-link px-2.5 py-1.5 text-slate-700 hover:text-[#003D7C] transition-colors">
             <span data-lang="en">Contact</span><span data-lang="zh">会务联系</span>
           </a>
         </div>
 
         <!-- Right Side Utility CTAs -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center space-x-2.5">
           <!-- Language Toggle Button -->
           <button type="button" class="lang-toggle-btn px-3 py-1.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 text-xs font-bold text-slate-700 shadow-sm transition-all flex items-center space-x-1.5">
             <svg class="w-4 h-4 text-[#003D7C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -147,6 +150,15 @@
             </svg>
             <span class="lang-label">中文</span>
           </button>
+
+          <!-- Register Button -->
+          <a href="#registration" class="hidden sm:inline-flex items-center space-x-1.5 px-3.5 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold shadow-sm transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+            </svg>
+            <span data-lang="en">Register</span>
+            <span data-lang="zh">参会注册</span>
+          </a>
 
           <!-- Submit Proposal Button -->
           <button type="button" class="open-submission-modal-btn hidden sm:inline-flex items-center space-x-2 px-4 py-2 rounded-lg bg-[#003D7C] hover:bg-[#002B57] text-white text-xs font-bold shadow-md shadow-blue-900/10 transition-all">
@@ -187,10 +199,17 @@
       <a href="#committees" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#003D7C]">
         <span data-lang="en">Committees &amp; PIs</span><span data-lang="zh">组织委员会与PI阵容</span>
       </a>
+      <a href="#registration" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-bold text-emerald-800 hover:bg-emerald-50">
+        <span data-lang="en">Symposium Registration</span><span data-lang="zh">参会报名注册</span>
+      </a>
       <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-semibold text-slate-700 hover:bg-slate-50 hover:text-[#003D7C]">
         <span data-lang="en">Venue &amp; Contact</span><span data-lang="zh">地点与联系方式</span>
       </a>
-      <div class="pt-3">
+      <div class="pt-3 space-y-2">
+        <a href="#registration" class="mobile-nav-link block w-full py-2.5 px-4 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-sm shadow-md text-center">
+          <span data-lang="en">Register to Attend</span>
+          <span data-lang="zh">参会注册报名</span>
+        </a>
         <button type="button" class="open-submission-modal-btn w-full py-2.5 px-4 rounded-lg bg-[#003D7C] hover:bg-[#002B57] text-white font-bold text-sm shadow-md text-center">
           <span data-lang="en">Submit Poster / Demo Proposal</span>
           <span data-lang="zh">提交海报与Demo成果</span>
@@ -242,6 +261,14 @@
 
       <!-- Key Action CTAs -->
       <div class="flex flex-wrap items-center gap-3 mb-10">
+        <a href="#registration" class="inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs shadow-sm hover:shadow transition-all">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+          </svg>
+          <span data-lang="en">Participant Registration</span>
+          <span data-lang="zh">参会报名注册</span>
+        </a>
+
         <button type="button" class="open-submission-modal-btn inline-flex items-center space-x-2 px-5 py-2.5 rounded-lg bg-[#003D7C] hover:bg-[#002D5C] text-white font-bold text-xs shadow-sm hover:shadow transition-all">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
@@ -807,10 +834,6 @@
               <span class="text-xs leading-relaxed" data-lang="zh">
                 多功能结构承载储能一体化电池构型与跨域能耗智能协同调度算法。
               </span>
-              <!-- LaTeX Display Formula for Battery Specifications -->
-              <div class="mt-2.5 p-2.5 rounded bg-blue-50/70 border border-blue-200 text-center text-xs font-mono">
-                $$\text{Energy Density} \ge 100\text{ Wh/kg}, \quad \text{Areal Capacity} \ge 1.5\text{ kWh/m}^2, \quad \text{Tensile Strength} \ge 300\text{ MPa}$$
-              </div>
             </div>
           </div>
         </div>
@@ -1591,14 +1614,247 @@
     </div>
   </section>
 
-  <!-- ==================== SECTION 8: VENUE & CONTACT ==================== -->
-  <section id="contact" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+  <!-- ==================== SECTION 8: PARTICIPANT REGISTRATION PORTAL ==================== -->
+  <section id="registration" class="py-16 md:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center space-x-3 mb-4">
+        <span class="w-8 h-1 bg-emerald-700 rounded-full"></span>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold" data-lang="en">Section 8 · Participant Registration Portal</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold" data-lang="zh">第8部分 · 参会报名注册通道</h2>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-slate-900">
+            <span data-lang="en">Symposium Attendance Registration</span>
+            <span data-lang="zh">研讨会参会注册登记 (Registration Portal)</span>
+          </h3>
+          <p class="text-slate-600 text-sm mt-2 max-w-2xl" data-lang="en">
+            Register your attendance for TPI-ICV 2026 (12 Nov 2026). Both in-person attendees at NUSRI-CQ (Chongqing) and online remote participants are welcome to register individually or as a group.
+          </p>
+          <p class="text-slate-600 text-sm mt-2 max-w-2xl" data-lang="zh">
+            欢迎报名参加 TPI-ICV 2026 联合学术研讨会（2026年11月12日）。支持重庆新国大研究院线下现场参会或线上远程视频接入，可按个人或课题组/团队统一登记参会人数与相关信息。
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0">
+          <span class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-bold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+            <span data-lang="en">Registration Open · In-Person &amp; Online</span>
+            <span data-lang="zh">报名通道开放中 · 支持线下与线上参会</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Registration Form Card (2 columns wide) -->
+        <div class="lg:col-span-2 academic-card p-6 sm:p-8 bg-white border border-slate-200 shadow-sm">
+          <form id="participantRegistrationForm" class="space-y-5 text-xs">
+            
+            <!-- Row 1: Name & Affiliation -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regName">
+                  <span data-lang="en">Participant / Primary Contact Name <span class="text-red-600">*</span></span>
+                  <span data-lang="zh">参会人姓名 / 团队联系人姓名 <span class="text-red-600">*</span></span>
+                </label>
+                <input type="text" id="regName" required class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="e.g. Prof. / Dr. / Mr. / Ms. Full Name (姓名)">
+              </div>
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regAffiliation">
+                  <span data-lang="en">Affiliation / Organization &amp; Department <span class="text-red-600">*</span></span>
+                  <span data-lang="zh">所属单位 / 机构与部门 <span class="text-red-600">*</span></span>
+                </label>
+                <input type="text" id="regAffiliation" required class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="e.g. NUS / NUSRI-CQ / Changan Automobile">
+              </div>
+            </div>
+
+            <!-- Row 2: Attendance Mode & Number of Attendees -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regMode">
+                  <span data-lang="en">Attendance Mode (In-Person or Online) <span class="text-red-600">*</span></span>
+                  <span data-lang="zh">参会方式 (线下现场 / 线上远程) <span class="text-red-600">*</span></span>
+                </label>
+                <select id="regMode" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 font-semibold focus:bg-white focus:outline-none focus:border-[#003D7C]">
+                  <option value="In-Person (Chongqing, NUSRI-CQ) / 线下现场参会">In-Person (Chongqing, NUSRI-CQ) / 线下现场参会</option>
+                  <option value="Online (Remote Video Link) / 线上远程参会">Online (Remote Video Link) / 线上远程参会</option>
+                  <option value="Hybrid Group (Both In-Person & Online) / 团队混合参会">Hybrid Group (Both In-Person &amp; Online) / 团队混合参会</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regCount">
+                  <span data-lang="en">Number of Attendees <span class="text-red-600">*</span></span>
+                  <span data-lang="zh">参会人数 <span class="text-red-600">*</span></span>
+                </label>
+                <input type="number" id="regCount" min="1" max="100" value="1" required class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 font-mono font-bold focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="1">
+              </div>
+            </div>
+
+            <!-- Row 3: Contact Email & Phone/WeChat -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regEmail">
+                  <span data-lang="en">Contact Email <span class="text-red-600">*</span></span>
+                  <span data-lang="zh">联系邮箱 (用于接收会议通知/接入链接) <span class="text-red-600">*</span></span>
+                </label>
+                <input type="email" id="regEmail" required class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="e.g. name@nus.edu.sg / name@changan.com.cn">
+              </div>
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regPhone">
+                  <span data-lang="en">Phone Number / WeChat ID</span>
+                  <span data-lang="zh">手机号码 / 微信号</span>
+                </label>
+                <input type="text" id="regPhone" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="e.g. +86 138-xxxx-xxxx / +65 xxxx-xxxx">
+              </div>
+            </div>
+
+            <!-- Row 4: Participant Role & Networking Lunch -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regRole">
+                  <span data-lang="en">Participant Category / Role</span>
+                  <span data-lang="zh">参会人身份类别 / 职务</span>
+                </label>
+                <select id="regRole" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]">
+                  <option value="Invited Speaker / Committee Member (特邀报告嘉宾 / 委员会专家)">Invited Speaker / Committee Member (特邀嘉宾 / 委员会专家)</option>
+                  <option value="Principal Investigator / Faculty (实验室PI / 高校教师)">Principal Investigator / Faculty (实验室PI / 高校教师)</option>
+                  <option value="Changan R&D Engineer / Management (长安汽车研发专家 / 管理人员)">Changan R&amp;D Engineer / Management (长安汽车专家 / 管理人员)</option>
+                  <option value="Research Fellow / Postdoctoral Researcher (博士后 / 研究员)" selected>Research Fellow / Postdoctoral Researcher (博士后 / 研究员)</option>
+                  <option value="Postgraduate Student - PhD / Master (博士 / 硕士研究生)">Postgraduate Student - PhD / Master (博士 / 硕士研究生)</option>
+                  <option value="Industry Partner / Other Guest (产业合作伙伴 / 其他嘉宾)">Industry Partner / Other Guest (产业伙伴 / 其他嘉宾)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-slate-800 font-bold mb-1.5" for="regLunch">
+                  <span data-lang="en">Networking Lunch (12:00 – 14:00)</span>
+                  <span data-lang="zh">学术交流午餐统计 (12:00 – 14:00)</span>
+                </label>
+                <select id="regLunch" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]">
+                  <option value="Yes - Attending Networking Lunch (参加交流午餐)">Yes — Attending Networking Lunch (参加交流午餐)</option>
+                  <option value="No - Not Attending Lunch (不参加午餐)">No — Not Attending Lunch (不参加午餐)</option>
+                  <option value="N/A - Online Participant (线上参会无需用餐)">N/A — Online Participant (线上参会无需用餐)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Row 5: Other Information (Accompanying Attendees, Vehicle Plate, Dietary, Remarks) -->
+            <div>
+              <label class="block text-slate-800 font-bold mb-1.5" for="regNotes">
+                <span data-lang="en">Other Information (Accompanying Attendees' Names, Vehicle Plate for Campus Access, Dietary Needs, etc.)</span>
+                <span data-lang="zh">其他补充信息 (如多人参会请附随行人员姓名、入园车牌号、饮食禁忌或特殊需求等)</span>
+              </label>
+              <textarea id="regNotes" rows="3" class="w-full px-3.5 py-2.5 rounded-lg bg-slate-50/70 border border-slate-300 text-slate-900 focus:bg-white focus:outline-none focus:border-[#003D7C]" placeholder="e.g. Accompanying attendees: Dr. X, Mr. Y; Vehicle license plate for parking: 渝A·XXXXX; Dietary restriction: Vegetarian..."></textarea>
+            </div>
+
+            <!-- Confirmation Banner (Hidden until action triggered) -->
+            <div id="regConfirmationBanner" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs">
+              <div class="font-bold flex items-center space-x-1.5 mb-1">
+                <svg class="w-4 h-4 text-emerald-700 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span data-lang="en">Registration Details Prepared!</span>
+                <span data-lang="zh">参会报名信息已生成！</span>
+              </div>
+              <p id="regConfirmationSummary" class="text-[11px] text-emerald-800 font-mono whitespace-pre-line"></p>
+            </div>
+
+            <!-- Submit Action Buttons -->
+            <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+              <div class="text-[11px] text-slate-500">
+                <span data-lang="en">Routed to Secretariat: <strong class="text-[#003D7C]">xi.ai@nusricq.cn</strong></span>
+                <span data-lang="zh">报名接收邮箱：<strong class="text-[#003D7C]">xi.ai@nusricq.cn</strong></span>
+              </div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <button type="button" id="downloadRegReceiptBtn" class="px-3.5 py-2.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold flex items-center space-x-1.5 transition-all">
+                  <svg class="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                  </svg>
+                  <span data-lang="en">Download Receipt (.txt)</span>
+                  <span data-lang="zh">下载报名回执</span>
+                </button>
+                <button type="button" id="copyRegTextBtn" class="px-4 py-2.5 rounded-lg bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold flex items-center space-x-1.5 shadow-sm transition-all">
+                  <svg class="w-4 h-4 text-[#003D7C]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/>
+                  </svg>
+                  <span data-lang="en">Copy Registration Text</span>
+                  <span data-lang="zh">复制报名信息</span>
+                </button>
+                <button type="submit" id="submitRegMailBtn" class="px-5 py-2.5 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold flex items-center space-x-1.5 shadow-sm transition-all">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                  </svg>
+                  <span data-lang="en">Submit Registration via Email</span>
+                  <span data-lang="zh">通过邮件提交参会报名</span>
+                </button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right Side Registration Info & Guidelines Card -->
+        <div class="academic-card p-6 bg-white border border-slate-200 flex flex-col justify-between shadow-sm">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-4 border border-emerald-200">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            </div>
+            <h4 class="text-base font-bold text-slate-900 mb-2" data-lang="en">Registration Guidelines</h4>
+            <h4 class="text-base font-bold text-slate-900 mb-2" data-lang="zh">参会注册须知</h4>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4" data-lang="en">
+              No registration fee is required for invited speakers, committee members, NUS/NUSRI-CQ researchers, and Changan Automobile participants.
+            </p>
+            <p class="text-xs text-slate-600 leading-relaxed mb-4" data-lang="zh">
+              本次联合学术研讨会对特邀报告嘉宾、委员会专家、新国大/重庆新国大研究院科研人员及长安汽车参会代表免收注册费。
+            </p>
+
+            <div class="space-y-3 text-xs">
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="en">1. In-Person Attendance (Chongqing)</div>
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="zh">1. 线下现场参会 (重庆)</div>
+                <p class="text-slate-600 text-[11px]" data-lang="en">Includes symposium badge, program booklet, morning/afternoon tea breaks, and networking lunch (12:00–14:00).</p>
+                <p class="text-slate-600 text-[11px]" data-lang="zh">含现场参会胸牌、会议手册、上下午学术茶歇及交流午餐（12:00–14:00）。如需驾车入园请在备注中填写车牌号。</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="en">2. Online Attendance (Remote Link)</div>
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="zh">2. 线上远程参会 (视频连线)</div>
+                <p class="text-slate-600 text-[11px]" data-lang="en">A dedicated conference meeting link and passcode will be sent to your registered email prior to 12 Nov 2026.</p>
+                <p class="text-slate-600 text-[11px]" data-lang="zh">会务组将于 2026年11月12日 会前向您的注册邮箱发送线上直播/视频会议接入链接与会议号。</p>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="en">3. Group / Team Registration</div>
+                <div class="font-bold text-slate-900 mb-0.5" data-lang="zh">3. 课题组 / 部门团队批量报名</div>
+                <p class="text-slate-600 text-[11px]" data-lang="en">PI groups or Changan R&amp;D units may register multiple attendees at once by specifying the total headcount and listing members in "Other Information".</p>
+                <p class="text-slate-600 text-[11px]" data-lang="zh">支持课题组或研发部门集中报名，请填写总参会人数并在补充信息栏列出随行参会人员姓名。</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 text-[11px] font-mono text-slate-600">
+            <div><strong class="text-slate-900">Date:</strong> 12 Nov 2026 (09:00–16:30 UTC+8)</div>
+            <div class="mt-0.5"><strong class="text-slate-900">TO:</strong> <span class="text-[#003D7C] font-bold">xi.ai@nusricq.cn</span></div>
+            <div class="mt-0.5"><strong class="text-slate-900">CC:</strong> <span class="text-[#003D7C] font-bold">barid.x.ai@gmail.com</span></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 9: VENUE & CONTACT ==================== -->
+  <section id="contact" class="py-16 md:py-24 bg-white border-b border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="flex items-center space-x-3 mb-4">
         <span class="w-8 h-1 bg-[#003D7C] rounded-full"></span>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-[#003D7C] font-bold" data-lang="en">Section 8 · Venue &amp; Secretariat Contacts</h2>
-        <h2 class="text-xs font-mono uppercase tracking-widest text-[#003D7C] font-bold" data-lang="zh">第8部分 · 举办地点与会务秘书处</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-[#003D7C] font-bold" data-lang="en">Section 9 · Venue &amp; Secretariat Contacts</h2>
+        <h2 class="text-xs font-mono uppercase tracking-widest text-[#003D7C] font-bold" data-lang="zh">第9部分 · 举办地点与会务秘书处</h2>
       </div>
 
       <div class="mb-10">
@@ -1711,6 +1967,7 @@
           <a href="#call-for-posters" class="hover:text-white transition-colors">Call for Posters</a>
           <a href="#schedule" class="hover:text-white transition-colors">Schedule</a>
           <a href="#committees" class="hover:text-white transition-colors">Committees</a>
+          <a href="#registration" class="hover:text-white transition-colors font-semibold text-emerald-400">Registration</a>
           <a href="#contact" class="hover:text-white transition-colors">Contact</a>
           <button type="button" onclick="window.print()" class="no-print hover:text-white transition-colors flex items-center space-x-1">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
