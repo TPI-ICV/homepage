@@ -16,7 +16,8 @@ const GOOGLE_SHEET_ID = '1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8';
 const GOOGLE_SHEET_GID = '0';
 const GOOGLE_SHEET_EDIT_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/edit?gid=${GOOGLE_SHEET_GID}#gid=${GOOGLE_SHEET_GID}`;
 const GOOGLE_SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEET_ID}/gviz/tq?tqx=out:csv&gid=${GOOGLE_SHEET_GID}`;
-const DEFAULT_REGISTRATION_WEBHOOK_URL = localStorage.getItem('tpi_webhook_url') || GOOGLE_SHEET_EDIT_URL;
+const GOOGLE_APPS_SCRIPT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbwr1iZDvW_7tMMMLjEmY0VxgeIjTHhcBiNWlXgvQ2cPyHg49hWKiyoV_Nr9lOJUpASY/exec';
+const DEFAULT_REGISTRATION_WEBHOOK_URL = GOOGLE_APPS_SCRIPT_WEBHOOK_URL;
 
 // Translations Dictionary for Dynamic Components
 const translations = {
@@ -370,10 +371,10 @@ ${affiliation}
     if (enLabel) enLabel.textContent = 'Submitting Online...';
     if (zhLabel) zhLabel.textContent = '正在在线提交...';
 
-    const webhookUrl = (localStorage.getItem('tpi_webhook_url') || DEFAULT_REGISTRATION_WEBHOOK_URL || '').trim();
+    const webhookUrl = GOOGLE_APPS_SCRIPT_WEBHOOK_URL;
     let submittedOnline = false;
 
-    // 1. If a Google Apps Script Web App URL is configured, post directly to it
+    // 1. Post directly to the bound Google Apps Script Web App URL (writes row to Google Sheet)
     if (webhookUrl && webhookUrl.includes('script.google.com')) {
       try {
         await fetch(webhookUrl, {

@@ -1,27 +1,15 @@
 /**
+ * @OnlyCurrentDoc
  * TPI-ICV 2026 Symposium — Automated Google Sheets Registration Backend
  * Bound to Google Sheet:
  * https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?gid=0#gid=0
- *
- * SETUP (Takes ~30 Seconds inside your Google Sheet):
- * 1. Open https://docs.google.com/spreadsheets/d/1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8/edit?gid=0#gid=0
- * 2. Click "Extensions" (扩展程序) -> "Apps Script".
- * 3. Paste this entire file into Code.gs and click Save (Ctrl+S).
- * 4. Click "Deploy" (部署) -> "New deployment" (新建部署):
- *    - Select type: "Web app" (网页应用)
- *    - Execute as: "Me" (我)
- *    - Who has access: "Anyone" (任何人)
- * 5. Copy the generated "Web app URL" (ends with /exec) and set it as
- *    DEFAULT_REGISTRATION_WEBHOOK_URL in assets/js/app.js.
  */
 
 const SPREADSHEET_ID = '1ghRYq4manys5lGs5IGRlnwgVwxX31G-ksVx-gN4dht8';
 const SHEET_GID = 0;
-const NOTIFY_TO = 'xi.ai@nusricq.cn';
-const NOTIFY_CC = 'barid.x.ai@gmail.com';
 
 function getTargetSheet() {
-  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const ss = SpreadsheetApp.getActiveSpreadsheet() || SpreadsheetApp.openById(SPREADSHEET_ID);
   const sheet = ss.getSheets().find(s => s.getSheetId() === SHEET_GID) || ss.getSheets()[0];
   if (sheet.getLastRow() === 0) {
     sheet.appendRow([
@@ -62,35 +50,6 @@ function doPost(e) {
       payload.lunch || '',
       payload.notes || ''
     ]);
-
-    try {
-      const modeShort = (payload.mode || '').indexOf('Online') === 0 ? 'Online' : 'In-Person';
-      const subject = `[TPI-ICV 2026 Registration] - ${modeShort} - ${payload.affiliation} - ${payload.name} (${count} Attendee${count > 1 ? 's' : ''})`;
-      const body = [
-        `New TPI-ICV 2026 Participant Registration (Saved to Google Sheet):`,
-        `Sheet: https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/edit?gid=0#gid=0`,
-        ``,
-        `1. Name: ${payload.name}`,
-        `2. Affiliation: ${payload.affiliation}`,
-        `3. Attendance Mode: ${payload.mode}`,
-        `4. Number of Attendees: ${count}`,
-        `5. Role / Category: ${payload.role}`,
-        `6. Email: ${payload.email}`,
-        `7. Phone / WeChat: ${payload.phone}`,
-        `8. Networking Lunch: ${payload.lunch}`,
-        `9. Other Notes: ${payload.notes || 'None'}`,
-        `10. Timestamp (UTC+8): ${timestamp}`
-      ].join('\n');
-
-      MailApp.sendEmail({
-        to: NOTIFY_TO,
-        cc: NOTIFY_CC,
-        subject: subject,
-        body: body
-      });
-    } catch (mailErr) {
-      // Ignore if MailApp is not authorized
-    }
 
     return ContentService
       .createTextOutput(JSON.stringify({ status: 'ok', timestamp: timestamp }))
