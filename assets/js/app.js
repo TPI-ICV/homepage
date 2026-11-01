@@ -525,7 +525,7 @@ function generateAndDownloadICS() {
     "DTEND;TZID=Asia/Chongqing:20261112T160000",
     "SUMMARY:The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)",
     "DESCRIPTION:Joint academic milestone symposium co-hosted by NUSRI-CQ and Chongqing Key Laboratory of Trusted Perception and Interaction Technology for ICV. Features Keynotes, Academic Posters, Live Demos, and Plenary Sessions.",
-    "LOCATION:Chongqing, China / National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)",
+    "LOCATION:Building 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area, Chongqing, China (NUSRI-CQ)",
     "ORGANIZER;CN=TPI-ICV Secretariat:mailto:xi.ai@nusricq.cn",
     "STATUS:CONFIRMED",
     "END:VEVENT",
