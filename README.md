@@ -31,8 +31,6 @@ All participating laboratory teams and R&D engineers must submit academic poster
 - **1-Day Program Schedule Timeline**:
   - Filterable by session categories (All, Keynotes, Posters & Demos, Plenary & Panels, Networking).
   - RFC 5545 `.ics` iCalendar export for calendar integration (Apple Calendar, Google Calendar, Outlook).
-- **Mathematical Fidelity**: Direct KaTeX rendering for battery energy density, areal capacity, and tensile strength criteria:
-  $$\text{Energy Density} \ge 100\text{ Wh/kg}, \quad \text{Areal Capacity} \ge 1.5\text{ kWh/m}^2, \quad \text{Tensile Strength} \ge 300\text{ MPa}$$
 - **Full Governance & Committee Roster**:
   - Steering & Management Committee (Co-Chairs, Vice-Chairs, Members).
   - Academic Advisory Committee (Scholars from A*STAR, Academy of Europe, Beihang, NTU, NUS, BIT, Changan).
