@@ -49,7 +49,7 @@ const translations = {
     btnClose: "Close"
   },
   zh: {
-    heroTag: "联合学术研讨会暨成果海报展 · 内部学术交流与技术里程碑",
+    heroTag: "联合学术研讨会 · 内部学术交流与技术里程碑",
     dateTbd: "时间：2026年11月12日 · 中国·重庆 / 线上线下结合",
     submitSuccess: "提交邮件草稿已复制到剪贴板！",
     icsSuccess: "研讨会日历日程 (.ics) 文件已生成并开始下载！",

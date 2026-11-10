@@ -1,7 +1,7 @@
 # TPI-ICV 2026 Academic Symposium Website
 
 > **The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)**  
-> **2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展**
+> **2026年大模型与智能网联汽车可信感知交互联合学术研讨会**
 
 Co-hosted by:
 - **National University of Singapore (Chongqing) Research Institute (NUSRI-CQ / 重庆新国大研究院)**
