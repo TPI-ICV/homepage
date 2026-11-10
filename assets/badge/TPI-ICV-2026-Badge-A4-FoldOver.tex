@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper, margin=0pt]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{tikz}
+\usetikzlibrary{calc, positioning}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\setmainfont{Lato}[
+  Path = /usr/share/fonts/truetype/lato/,
+  Extension = .ttf,
+  UprightFont = Lato-Regular,
+  BoldFont = Lato-Bold,
+  ItalicFont = Lato-Italic,
+  BoldItalicFont = Lato-BoldItalic
+]
+\setCJKmainfont[
+  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
+  Extension = .otf,
+  UprightFont = FandolHei-Regular,
+  BoldFont = FandolHei-Bold
+]{FandolHei}
+\setmonofont{DejaVu Sans Mono}[Scale=0.86]
+
+\definecolor{nusnavy}{HTML}{0A1E3C}
+\definecolor{nusblue}{HTML}{003D7C}
+\definecolor{goldrule}{HTML}{D97706}
+\definecolor{slate700}{HTML}{334155}
+\definecolor{slate500}{HTML}{64748B}
+\definecolor{slate300}{HTML}{CBD5E1}
+\definecolor{warmgray}{HTML}{F8FAFC}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\begin{tikzpicture}[remember picture, overlay]
+  % Light warm gray sheet background outside the badge spread
+  \fill[warmgray] (current page.north west) rectangle (current page.south east);
+
+  % Top Print Instructions Header
+  \node[anchor=north, text width=190mm, align=center] at ([yshift=-16mm]current page.north) {
+    {\fontsize{9.5}{11.5}\selectfont\color{nusnavy}\textbf{TPI-ICV 2026 OFFICIAL SYMPOSIUM BADGE $\;\cdot\;$ A4 FOLD-OVER PRINT SHEET (A6: 105 $\times$ 148 mm)}}\\[1.5mm]
+    {\fontsize{7.2}{9.0}\selectfont\color{slate700}
+      \textbf{Print \& Assembly Instructions / 打印与制作说明:}
+      \textbf{1)} Print at \textbf{100\% Actual Size} on A4 paper (请按100\%实际大小在A4纸上单面打印) $\;\cdot\;$
+      \textbf{2)} Trim along the horizontal crop lines (沿上下裁切线裁下 $210\times 148\text{ mm}$ 区域) $\;\cdot\;$
+      \textbf{3)} Fold in half along the center dashed line and insert into an \textbf{A6 (105 $\times$ 148 mm)} lanyard holder (沿中间虚线对折，正反面即自动对齐，直接放入A6胸牌卡套).
+    }
+  };
+
+  % Side Labels (FRONT SIDE / BACK SIDE) above the spread
+  \node[anchor=south, align=center] at ([xshift=-52.5mm, yshift=75.8mm]current page.center) {
+    {\fontsize{7.0}{8.5}\selectfont\color{nusnavy}\textbf{$\blacktriangledown$ FRONT SIDE / 胸牌正面 (Event Name \& Attendee) $\blacktriangledown$}}
+  };
+  \node[anchor=south, align=center] at ([xshift=52.5mm, yshift=75.8mm]current page.center) {
+    {\fontsize{7.0}{8.5}\selectfont\color{nusblue}\textbf{$\blacktriangledown$ BACK SIDE / 胸牌背面 (Full Day Agenda) $\blacktriangledown$}}
+  };
+
+  % White 210 x 148 mm Spread Canvas Centered on A4 Page
+  \fill[white]
+    ([xshift=-105mm, yshift=74mm]current page.center)
+    rectangle
+    ([xshift=105mm, yshift=-74mm]current page.center);
+
+  % Left Half: Page 1 (Front Side, 105 x 148 mm)
+  \node[anchor=center, inner sep=0pt] at ([xshift=-52.5mm, yshift=0mm]current page.center) {
+    \includegraphics[page=1, width=105mm, height=148mm]{TPI-ICV-2026-Badge-A6-2Sided.pdf}
+  };
+
+  % Right Half: Page 2 (Back Side, 105 x 148 mm)
+  \node[anchor=center, inner sep=0pt] at ([xshift=52.5mm, yshift=0mm]current page.center) {
+    \includegraphics[page=2, width=105mm, height=148mm]{TPI-ICV-2026-Badge-A6-2Sided.pdf}
+  };
+
+  % Horizontal Trim / Crop Lines across Top and Bottom of the 148mm Spread
+  \draw[slate500, line width=0.45pt]
+    ([xshift=-105mm, yshift=74mm]current page.center) -- ([xshift=105mm, yshift=74mm]current page.center);
+  \draw[slate500, line width=0.45pt]
+    ([xshift=-105mm, yshift=-74mm]current page.center) -- ([xshift=105mm, yshift=-74mm]current page.center);
+
+  % Center Vertical Fold Line (Dashed)
+  \draw[goldrule, line width=0.65pt, densely dashed]
+    ([xshift=0mm, yshift=82mm]current page.center) -- ([xshift=0mm, yshift=-82mm]current page.center);
+
+  % Center Fold Indicator Pill at Bottom
+  \node[anchor=north, align=center] at ([xshift=0mm, yshift=-83.5mm]current page.center) {
+    {\fontsize{6.8}{8.2}\selectfont\color{goldrule}\textbf{$\blacktriangle$ CENTER FOLD LINE $\;\cdot\;$ 沿此中线向后对折 (105 mm $\vert$ 105 mm) $\blacktriangle$}}
+  };
+\end{tikzpicture}
+\end{document}
