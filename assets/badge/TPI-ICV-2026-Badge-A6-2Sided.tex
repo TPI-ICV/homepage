@@ -66,7 +66,6 @@
   };
 
   % Center Open Area for Attendee Name & Affiliation (Clean & Uncluttered)
-  % Subtle light guide line only at the center for optional label placement
   \node[anchor=center, text width=86mm, align=center] at ([yshift=-3mm]current page.center) {
     {\fontsize{18}{22}\selectfont\color{slate900}\textbf{\strut}}\\[3mm]
     {\fontsize{11}{14}\selectfont\color{slate600}\strut}
@@ -91,89 +90,89 @@
 \newpage
 
 % ======================================================================
-% PAGE 2: BACK SIDE (CLEAN SIMPLE AGENDA)
+% PAGE 2: BACK SIDE (CLEAN BILINGUAL AGENDA)
 % ======================================================================
 \begin{tikzpicture}[remember picture, overlay]
   % Pure White Background
   \fill[white] (current page.north west) rectangle (current page.south east);
 
   % Simple Top Header Band
-  \fill[nusnavy] (current page.north west) rectangle ([yshift=-18mm]current page.north east);
-  \fill[nusorange] ([yshift=-18mm]current page.north west) rectangle ([yshift=-19.2mm]current page.north east);
+  \fill[nusnavy] (current page.north west) rectangle ([yshift=-16.5mm]current page.north east);
+  \fill[nusorange] ([yshift=-16.5mm]current page.north west) rectangle ([yshift=-17.7mm]current page.north east);
 
-  \node[anchor=center, text width=90mm, align=center] at ([yshift=-9.5mm]current page.north) {
-    {\fontsize{9.5}{11.5}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议议程}}\\[0.6mm]
-    {\fontsize{6.5}{8.0}\selectfont\color{white!85!slate200}\textbf{12 November 2026 $\;\cdot\;$ 09:00 -- 16:00}}
+  \node[anchor=center, text width=90mm, align=center] at ([yshift=-8.8mm]current page.north) {
+    {\fontsize{9.0}{11.0}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议议程}}\\[0.5mm]
+    {\fontsize{6.2}{7.6}\selectfont\color{white!85!slate200}\textbf{12 November 2026 $\;\cdot\;$ 09:00 -- 16:00}}
   };
 
-  % Clean Minimalist 2-Column Schedule Table
-  \node[anchor=north, text width=87mm, inner sep=0pt] at ([yshift=-24.5mm]current page.north) {
-    \fontsize{6.3}{7.8}\selectfont
-    \renewcommand{\arraystretch}{1.68}
-    \setlength{\tabcolsep}{3pt}
+  % Clean Minimalist 2-Column Bilingual Schedule Table
+  \node[anchor=north, text width=88mm, inner sep=0pt] at ([yshift=-21.5mm]current page.north) {
+    \fontsize{5.9}{7.35}\selectfont
+    \renewcommand{\arraystretch}{1.58}
+    \setlength{\tabcolsep}{2.8pt}
     \arrayrulecolor{slate200}
-    \begin{tabularx}{\linewidth}{@{} p{16.5mm} >{\raggedright\arraybackslash}X @{}}
+    \begin{tabularx}{\linewidth}{@{} p{15.5mm} >{\raggedright\arraybackslash}X @{}}
       \textbf{\texttt{\textcolor{slate600}{09:00-09:30}}} &
-      \textbf{\textcolor{slate900}{Registration \& Morning Refreshments}} \\
+      \textbf{\textcolor{slate900}{Registration \& Morning Refreshments}} \textcolor{slate600}{$\cdot$ 会议签到与早间茶叙} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusorange}{09:30-09:40}}} &
-      \textbf{\textcolor{nusnavy}{Opening Ceremony}} \textcolor{slate600}{(Prof. Susanna Leong, Chang An Rep, George Loh)} \\
+      \textbf{\textcolor{nusnavy}{Opening Ceremony $\cdot$ 开幕致辞}} \textcolor{slate600}{(Prof. Susanna Leong, Chang An Rep, George Loh)} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{09:40-10:10}}} &
-      \textbf{\textcolor{slate900}{Dr. Li Wenbo}} --- 座舱智能体情感交互与测试评价 \\
+      \textbf{\textcolor{slate900}{Dr. Li Wenbo}} --- 座舱智能体情感交互与测试评价 \textcolor{slate600}{\textit{(Affective Interaction \& Testing/Evaluation of Cockpit Intelligent Agents)}} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{10:10-10:40}}} &
-      \textbf{\textcolor{slate900}{Prof. Ong Soh Khim}} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} \\
+      \textbf{\textcolor{slate900}{Prof. Ong Soh Khim}} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} \textcolor{slate600}{(面向自动驾驶的注视与眼球转动检测)} \\
       \hline
 
       \textbf{\texttt{\textcolor{slate600}{10:40-11:00}}} &
-      \textbf{\textcolor{slate600}{Tea Break \& Group Photo}} \\
+      \textbf{\textcolor{slate600}{Tea Break \& Group Photo $\cdot$ 全体嘉宾合影与学术茶歇}} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{11:00-11:30}}} &
-      \textbf{\textcolor{slate900}{Dr. Yajing Yang}} --- \textit{Data Analysis with LLM} \\
+      \textbf{\textcolor{slate900}{Dr. Yajing Yang}} --- \textit{Data Analysis with LLM} \textcolor{slate600}{(基于大语言模型的数据分析)} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{11:30-12:00}}} &
-      \textbf{\textcolor{slate900}{Dr. Shaoyang Peng}} --- \textit{LLM Unlearning} \\
+      \textbf{\textcolor{slate900}{Dr. Shaoyang Peng}} --- \textit{LLM Unlearning} \textcolor{slate600}{(大语言模型机器遗忘技术)} \\
       \hline
 
       \textbf{\texttt{\textcolor{slate600}{12:00-13:00}}} &
-      \textbf{\textcolor{slate600}{Networking Lunch}} \\
+      \textbf{\textcolor{slate600}{Networking Lunch $\cdot$ 学术交流午餐}} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{13:00-13:30}}} &
-      \textbf{\textcolor{slate900}{Prof. Shen Lei}} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} \\
+      \textbf{\textcolor{slate900}{Prof. Shen Lei}} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} \textcolor{slate600}{(电动汽车智能电池管理系统)} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{13:30-14:00}}} &
-      \textbf{\textcolor{slate900}{Prof. Pang Yan}} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} \\
+      \textbf{\textcolor{slate900}{Prof. Pang Yan}} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} \textcolor{slate600}{(迈向可信智能体AI：隐私、安全与可靠性)} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{14:00-14:30}}} &
-      \textbf{\textcolor{slate900}{Dr. 王通越}} --- 面向汽车驾乘人员健康管理的人工智能伦理治理 \\
+      \textbf{\textcolor{slate900}{Dr. 王通越}} --- 面向汽车驾乘人员健康管理的人工智能伦理治理 \textcolor{slate600}{\textit{(AI Ethics Governance for Automotive Occupant Health Management)}} \\
       \hline
 
       \textbf{\texttt{\textcolor{slate600}{14:30-14:50}}} &
-      \textbf{\textcolor{slate600}{Afternoon Tea Break}} \\
+      \textbf{\textcolor{slate600}{Afternoon Tea Break $\cdot$ 下午茶歇}} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusnavy}{14:50-15:30}}} &
-      \textbf{\textcolor{nusnavy}{Panel Discussion}} --- \textit{Future Trajectories of Large Models in Embodied \& Connected Vehicles} \\
+      \textbf{\textcolor{nusnavy}{Panel Discussion $\cdot$ 圆桌论坛}} --- \textit{Future Trajectories of Large Models in Embodied \& Connected Vehicles} \textcolor{slate600}{(大模型在具身与智能网联汽车中的演进)} \\
       \hline
 
       \textbf{\texttt{\textcolor{nusorange}{15:30-16:00}}} &
-      \textbf{\textcolor{slate900}{Closing Remarks}} \\
+      \textbf{\textcolor{slate900}{Closing Remarks $\cdot$ 闭幕总结致辞}} \\
     \end{tabularx}
   };
 
   % Simple Bottom Venue Line
-  \fill[nusnavy] (current page.south west) rectangle ([yshift=8.5mm]current page.south east);
-  \node[anchor=center, text width=92mm, align=center] at ([yshift=4.25mm]current page.south) {
-    {\fontsize{5.6}{6.8}\selectfont\color{white}\textbf{Venue: Bldg 4, Internet Industrial Park Phase 2, Chongqing $\;\cdot\;$ NUSRI-CQ}}
+  \fill[nusnavy] (current page.south west) rectangle ([yshift=11.0mm]current page.south east);
+  \node[anchor=center, text width=92mm, align=center] at ([yshift=5.5mm]current page.south) {
+    {\fontsize{5.4}{6.6}\selectfont\color{white}\textbf{Venue: Bldg 4, Internet Industrial Park Phase 2, Chongqing}\\[0.3mm]\textbf{中国重庆两江新区互联网产业园二期4号楼 $\;\cdot\;$ NUSRI-CQ}}
   };
 \end{tikzpicture}
 
