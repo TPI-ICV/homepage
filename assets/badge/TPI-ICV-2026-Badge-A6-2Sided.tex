@@ -2,26 +2,14 @@
 \usepackage[paperwidth=105mm, paperheight=148mm, margin=0pt]{geometry}
 \usepackage{fontspec}
 \usepackage{xeCJK}
-\usepackage{amsmath,amssymb}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, positioning, calc, backgrounds}
-\usepackage[most]{tcolorbox}
-\usepackage{qrcode}
+\usetikzlibrary{calc, positioning}
 \usepackage{array}
-\usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{colortbl}
 \usepackage{xcolor}
-\usepackage{hyperref}
 
-\hypersetup{
-  colorlinks=true,
-  urlcolor=nusblue,
-  pdftitle={TPI-ICV 2026 Official Symposium Badge (A6 Two-Sided)},
-  pdfauthor={NUSRI-CQ & Chongqing Key Laboratory for ICV}
-}
-
-% ==================== PRINT-GRADE TYPOGRAPHY ====================
+% Clean Sans-Serif Typography (Standard Academic Badge Style)
 \setmainfont{Lato}[
   Path = /usr/share/fonts/truetype/lato/,
   Extension = .ttf,
@@ -38,331 +26,154 @@
   ItalicFont = Lato-Italic,
   BoldItalicFont = Lato-BoldItalic
 ]
-\newfontfamily\displayserif{LinLibertine}[
-  Path = /usr/share/fonts/opentype/linux-libertine/,
-  Extension = .otf,
-  UprightFont = *_R,
-  BoldFont = *_RB,
-  ItalicFont = *_RI,
-  BoldItalicFont = *_RBI
-]
-\setmonofont{DejaVu Sans Mono}[Scale=0.86]
-
-% True OpenType CJK Fonts
 \setCJKmainfont[
   Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
   Extension = .otf,
   UprightFont = FandolHei-Regular,
-  BoldFont = FandolHei-Bold,
-  ItalicFont = FandolKai-Regular
+  BoldFont = FandolHei-Bold
 ]{FandolHei}
-\setCJKsansfont[
-  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
-  Extension = .otf,
-  UprightFont = FandolHei-Regular,
-  BoldFont = FandolHei-Bold,
-  ItalicFont = FandolKai-Regular
-]{FandolHei}
-\newCJKfontfamily\cjkserif[
-  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
-  Extension = .otf,
-  UprightFont = FandolSong-Regular,
-  BoldFont = FandolSong-Bold
-]{FandolSong}
+\setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
-% ==================== EDITORIAL PRINT COLOR PALETTE ====================
-\definecolor{nusnavy}{HTML}{0A1E3C}
-\definecolor{nusblue}{HTML}{003D7C}
-\definecolor{goldaccent}{HTML}{B45309}
-\definecolor{goldrule}{HTML}{D97706}
-\definecolor{goldtint}{HTML}{FFFBEB}
-\definecolor{emerald}{HTML}{065F46}
-\definecolor{emeraldtint}{HTML}{ECFDF5}
-\definecolor{indigo}{HTML}{312E81}
+% Minimalist Academic Palette (NUS Blue, NUS Orange, Slate)
+\definecolor{nusnavy}{HTML}{002B5C}
+\definecolor{nusorange}{HTML}{EF7C00}
 \definecolor{slate900}{HTML}{0F172A}
-\definecolor{slate700}{HTML}{334155}
 \definecolor{slate600}{HTML}{475569}
-\definecolor{slate500}{HTML}{64748B}
 \definecolor{slate400}{HTML}{94A3B8}
-\definecolor{slate200}{HTML}{CBD5E1}
-\definecolor{slate100}{HTML}{F1F5F9}
-\definecolor{warmgray}{HTML}{F8FAFC}
-\definecolor{rowalt}{HTML}{F8FAFC}
+\definecolor{slate200}{HTML}{E2E8F0}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
-% Micro Mode Badges for Back-Side Agenda
-\newcommand{\onsitemini}{\textbf{\texttt{\textcolor{emerald}{[On-site]}}}}
-\newcommand{\onlinemini}{\textbf{\texttt{\textcolor{nusblue}{[Online]}}}}
-\newcommand{\hybridmini}{\textbf{\texttt{\textcolor{goldaccent}{[Hybrid]}}}}
-
-\newsavebox{\badgeqr}
-
 \begin{document}
-\savebox{\badgeqr}{\qrcode[height=1.35cm]{https://tpi-icv.github.io/homepage/}}
 
 % ======================================================================
-% PAGE 1: FRONT SIDE (EVENT NAME, ATTENDEE CREDENTIAL BOX & ROLE BANNER)
+% PAGE 1: FRONT SIDE (SIMPLE STANDARD ACADEMIC BADGE)
 % ======================================================================
 \begin{tikzpicture}[remember picture, overlay]
-  % Pure Paper Background
+  % Pure White Background
   \fill[white] (current page.north west) rectangle (current page.south east);
 
-  % Lanyard Slot Guide (Subtle top-center punch guide outside frame)
-  \draw[slate200, line width=0.35pt, densely dashed, rounded corners=1.2mm]
-    ([xshift=-7.5mm, yshift=-2.8mm]current page.north)
-    rectangle
-    ([xshift=7.5mm, yshift=-5.6mm]current page.north);
+  % Top Navy Header Band
+  \fill[nusnavy] (current page.north west) rectangle ([yshift=-36mm]current page.north east);
+  \fill[nusorange] ([yshift=-36mm]current page.north west) rectangle ([yshift=-37.5mm]current page.north east);
 
-  % Outer Fine Navy Frame
-  \draw[nusnavy, line width=0.95pt]
-    ([xshift=4.5mm, yshift=-8.0mm]current page.north west)
-    rectangle
-    ([xshift=-4.5mm, yshift=4.5mm]current page.south east);
+  % Event Title in Header
+  \node[anchor=center, text width=90mm, align=center] at ([yshift=-19.5mm]current page.north) {
+    {\fontsize{7.5}{9.0}\selectfont\color{nusorange}\textbf{TPI-ICV 2026}}\\[1.8mm]
+    {\fontsize{9.2}{11.4}\selectfont\color{white}\textbf{The 2026 Joint Symposium on\\Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}}\\[1.6mm]
+    {\fontsize{7.4}{9.2}\selectfont\color{white!90!slate200}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会}}
+  };
 
-  % Inner Burnished Gold Hairline Frame
-  \draw[goldrule!85!white, line width=0.35pt]
-    ([xshift=5.5mm, yshift=-9.0mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=5.5mm]current page.south east);
+  % Center Open Area for Attendee Name & Affiliation (Clean & Uncluttered)
+  % Subtle light guide line only at the center for optional label placement
+  \node[anchor=center, text width=86mm, align=center] at ([yshift=-3mm]current page.center) {
+    {\fontsize{18}{22}\selectfont\color{slate900}\textbf{\strut}}\\[3mm]
+    {\fontsize{11}{14}\selectfont\color{slate600}\strut}
+  };
 
-  % Top Institutional Crown Bar inside Frame
-  \fill[nusnavy]
-    ([xshift=5.5mm, yshift=-9.0mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=-10.6mm]current page.north east);
-  \fill[goldrule]
-    ([xshift=5.5mm, yshift=-10.6mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=-11.2mm]current page.north east);
-
-  % 1. Event Masthead Block
-  \node[anchor=north, text width=88mm, inner sep=0pt, align=center] (frontheader) at ([yshift=-13.8mm]current page.north) {
-    % Symposium Kicker
-    {\fontsize{5.8}{7.0}\selectfont\color{goldaccent}\textbf{TPI-ICV 2026 $\;\cdot\;$ JOINT ACADEMIC SYMPOSIUM \& POSTER EXHIBITION}}\\[1.6mm]
-
-    % Main English Event Name
-    {\displayserif\fontsize{10.5}{12.4}\selectfont\color{nusnavy}\textbf{The 2026 Joint Symposium on\\Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}}\\[1.5mm]
-
-    % Main Chinese Event Name
-    {\cjkserif\fontsize{7.8}{9.6}\selectfont\color{nusblue}\textbf{2026年大模型与智能网联汽车可信感知交互\\联合学术研讨会暨成果海报展}}\\[1.8mm]
-
-    % Ornamental Gold & Navy Divider
-    \begin{tikzpicture}
-      \draw[slate200, line width=0.35pt] (-38mm, 0) -- (38mm, 0);
-      \draw[goldrule, line width=0.85pt] (-14mm, 0) -- (14mm, 0);
-      \fill[nusnavy] (0, 0) circle (1.0pt);
-    \end{tikzpicture}\\[1.4mm]
-
-    % Co-Hosts Compact Block (Uniform Line Spacing)
-    {\fontsize{5.35}{6.9}\selectfont\color{slate700}
-      \textbf{\textcolor{nusnavy}{National University of Singapore (Chongqing) Research Institute (重庆新国大研究院)}}\\[0.2mm]
-      \textbf{Chongqing Key Lab of Trusted Perception \& Interaction for ICV (重庆市重点实验室)}\\[0.2mm]
-      \textbf{Changan Automobile Forward-looking Tech Research Institute (长安汽车前瞻技术研究院)}\par
+  % Co-Hosts & Date/Location above Bottom Bar
+  \node[anchor=south, text width=90mm, align=center] at ([yshift=21.5mm]current page.south) {
+    \textcolor{slate200}{\rule{78mm}{0.4pt}}\\[2.2mm]
+    {\fontsize{6.5}{8.2}\selectfont\color{slate600}
+      \textbf{NUSRI-CQ (重庆新国大研究院)} $\;\cdot\;$ \textbf{Chongqing Key Lab for ICV} $\;\cdot\;$ \textbf{Changan Auto}\\[0.8mm]
+      \textbf{\textcolor{slate900}{12 November 2026 $\;\cdot\;$ Chongqing, China}}
     }
   };
 
-  % 2. Clean Attendee Name & Affiliation Credential Box (Sticker / Write-In Ready)
-  \node[anchor=north, text width=86mm, inner sep=0pt] (namebox) at ([yshift=-62.0mm]current page.north) {
-    \begin{tcolorbox}[
-      enhanced,
-      colback=warmgray,
-      colframe=nusnavy!35!slate200,
-      boxrule=0.55pt,
-      borderline west={2.0pt}{0pt}{nusnavy},
-      borderline east={2.0pt}{0pt}{goldrule},
-      arc=1.2mm,
-      left=4.0mm, right=4.0mm, top=3.2mm, bottom=3.2mm,
-      height=45.0mm,
-      valign=center
-    ]
-      {\fontsize{5.6}{6.8}\selectfont\color{slate500}\textbf{ATTENDEE NAME / 参会嘉宾姓名}}\\[8.4mm]
-      \textcolor{slate200}{\rule{\linewidth}{0.4pt}}\\[3.6mm]
-      {\fontsize{5.6}{6.8}\selectfont\color{slate500}\textbf{AFFILIATION \& TITLE / 所属单位与职务}}\\[7.8mm]
-      \textcolor{slate200}{\rule{\linewidth}{0.4pt}}\\[1.5mm]
-      {\hfill\fontsize{4.8}{5.8}\selectfont\color{slate400}\textit{TPI-ICV 2026 Official Credential $\cdot$ Label or Write-In}}
-    \end{tcolorbox}
-  };
-
-  % 3. Event Date, Venue & QR Mini Strip
-  \node[anchor=north, text width=86mm, inner sep=0pt] (venuestrip) at ([yshift=-110.2mm]current page.north) {
-    \begin{tcolorbox}[
-      enhanced,
-      colback=white,
-      colframe=slate200,
-      boxrule=0.4pt,
-      arc=1.0mm,
-      left=2.4mm, right=2.0mm, top=1.2mm, bottom=1.2mm
-    ]
-      \begin{minipage}[c]{0.76\linewidth}
-        \fontsize{5.35}{6.65}\selectfont\color{slate700}\raggedright
-        \textbf{\textcolor{nusnavy}{DATE / 日期:}} \textbf{12 November 2026 (09:00--16:00 UTC+8)}\\[0.5mm]
-        \textbf{\textcolor{nusnavy}{VENUE / 地点:}} \textbf{Bldg 4, Internet Industrial Park Phase 2,}\\
-        \textbf{Chongqing Liang Jiang New Area} \textcolor{slate600}{(两江新区互联网产业园二期4号楼)}\\[0.5mm]
-        \textbf{\textcolor{goldaccent}{AGENDA / 详细议程:}} \textit{Please see reverse side (请翻阅背面详细议程)}
-      \end{minipage}\hfill
-      \begin{minipage}[c]{0.21\linewidth}
-        \centering
-        \usebox{\badgeqr}
-      \end{minipage}
-    \end{tcolorbox}
-  };
-
-  % 4. Bottom Role Identification Banner
-  \fill[nusnavy]
-    ([xshift=5.5mm, yshift=5.5mm]current page.south west)
-    rectangle
-    ([xshift=-5.5mm, yshift=18.2mm]current page.south east);
-  \fill[goldrule]
-    ([xshift=5.5mm, yshift=18.2mm]current page.south west)
-    rectangle
-    ([xshift=-5.5mm, yshift=19.0mm]current page.south east);
-
-  \node[anchor=center, text width=88mm, align=center] at ([yshift=11.8mm]current page.south) {
-    {\fontsize{9.8}{11.5}\selectfont\color{white}\textbf{PARTICIPANT $\;\cdot\;$ 参会代表}}\\[0.5mm]
-    {\fontsize{5.3}{6.4}\selectfont\color{goldtint!90!white}\textbf{NUSRI-CQ $\;\cdot\;$ CHONGQING KEY LAB FOR ICV $\;\cdot\;$ CHANGAN AUTO}}
+  % Bottom Role Bar
+  \fill[nusnavy] (current page.south west) rectangle ([yshift=16.5mm]current page.south east);
+  \node[anchor=center, text width=90mm, align=center] at ([yshift=8.25mm]current page.south) {
+    {\fontsize{11.5}{13.5}\selectfont\color{white}\textbf{PARTICIPANT $\;\cdot\;$ 参会代表}}
   };
 \end{tikzpicture}
 
 \newpage
 
 % ======================================================================
-% PAGE 2: BACK SIDE (FULL 14-ITEM SYMPOSIUM AGENDA)
+% PAGE 2: BACK SIDE (CLEAN SIMPLE AGENDA)
 % ======================================================================
 \begin{tikzpicture}[remember picture, overlay]
-  % Pure Paper Background
+  % Pure White Background
   \fill[white] (current page.north west) rectangle (current page.south east);
 
-  % Lanyard Slot Guide (Mirrored on back side)
-  \draw[slate200, line width=0.35pt, densely dashed, rounded corners=1.2mm]
-    ([xshift=-7.5mm, yshift=-2.8mm]current page.north)
-    rectangle
-    ([xshift=7.5mm, yshift=-5.6mm]current page.north);
+  % Simple Top Header Band
+  \fill[nusnavy] (current page.north west) rectangle ([yshift=-18mm]current page.north east);
+  \fill[nusorange] ([yshift=-18mm]current page.north west) rectangle ([yshift=-19.2mm]current page.north east);
 
-  % Outer Fine Navy Frame
-  \draw[nusnavy, line width=0.95pt]
-    ([xshift=4.5mm, yshift=-8.0mm]current page.north west)
-    rectangle
-    ([xshift=-4.5mm, yshift=4.5mm]current page.south east);
-
-  % Inner Burnished Gold Hairline Frame
-  \draw[goldrule!85!white, line width=0.35pt]
-    ([xshift=5.5mm, yshift=-9.0mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=5.5mm]current page.south east);
-
-  % Top Header Banner inside Frame
-  \fill[nusnavy]
-    ([xshift=5.5mm, yshift=-9.0mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=-17.8mm]current page.north east);
-  \fill[goldrule]
-    ([xshift=5.5mm, yshift=-17.8mm]current page.north west)
-    rectangle
-    ([xshift=-5.5mm, yshift=-18.5mm]current page.north east);
-
-  \node[anchor=center, text width=88mm, align=center] at ([yshift=-13.4mm]current page.north) {
-    {\fontsize{7.4}{8.8}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议详细议程}}\\[0.35mm]
-    {\fontsize{5.3}{6.4}\selectfont\color{goldtint!90!white}\textbf{12 November 2026 (09:00--16:00 UTC+8) $\;\cdot\;$ NUSRI-CQ, Bldg 4}}
+  \node[anchor=center, text width=90mm, align=center] at ([yshift=-9.5mm]current page.north) {
+    {\fontsize{9.5}{11.5}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议议程}}\\[0.6mm]
+    {\fontsize{6.5}{8.0}\selectfont\color{white!85!slate200}\textbf{12 November 2026 $\;\cdot\;$ 09:00 -- 16:00}}
   };
 
-  % Full 14-Item Agenda Table inside Bordered Card (Strictly Constrained to 89mm Width)
-  \node[anchor=north, text width=89mm, inner sep=0pt] (backtable) at ([yshift=-20.2mm]current page.north) {
-    \begin{tcolorbox}[
-      enhanced,
-      colback=white,
-      colframe=nusnavy!35!slate200,
-      boxrule=0.45pt,
-      arc=1.0mm,
-      left=0mm, right=0mm, top=0mm, bottom=0.2mm,
-      clip upper
-    ]
-      \fontsize{5.65}{7.05}\selectfont
-      \renewcommand{\arraystretch}{1.62}
-      \setlength{\tabcolsep}{3.5pt}
-      \begin{tabularx}{\linewidth}{@{} >{\columncolor{warmgray}}p{14.5mm} >{\raggedright\arraybackslash}X @{}}
-        \textbf{\texttt{\textcolor{slate700}{09:00-09:30}}} &
-        \textbf{Registration \& Morning Refreshments} \textcolor{slate500}{(Attendee check-in, badge pickup \& networking)} \\
-        \hline
+  % Clean Minimalist 2-Column Schedule Table
+  \node[anchor=north, text width=87mm, inner sep=0pt] at ([yshift=-24.5mm]current page.north) {
+    \fontsize{6.3}{7.8}\selectfont
+    \renewcommand{\arraystretch}{1.68}
+    \setlength{\tabcolsep}{3pt}
+    \arrayrulecolor{slate200}
+    \begin{tabularx}{\linewidth}{@{} p{16.5mm} >{\raggedright\arraybackslash}X @{}}
+      \textbf{\texttt{\textcolor{slate600}{09:00-09:30}}} &
+      \textbf{\textcolor{slate900}{Registration \& Morning Refreshments}} \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{goldaccent}{09:30-09:40}}} &
-        \textbf{\textcolor{nusnavy}{Opening Ceremony \& Welcome Addresses:}} 1) Prof Susanna Leong $\cdot$ 2) Chang An Rep $\cdot$ 3) George Loh \\
-        \hline
+      \textbf{\texttt{\textcolor{nusorange}{09:30-09:40}}} &
+      \textbf{\textcolor{nusnavy}{Opening Ceremony}} \textcolor{slate600}{(Prof. Susanna Leong, Chang An Rep, George Loh)} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{nusblue}{09:40-10:10}}} &
-        \textbf{Morning Presentation 1:} \textbf{\textcolor{nusnavy}{Dr. Li Wenbo}} --- \textbf{座舱智能体情感交互与测试评价} \hfill \onsitemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{09:40-10:10}}} &
+      \textbf{\textcolor{slate900}{Dr. Li Wenbo}} --- 座舱智能体情感交互与测试评价 \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{nusblue}{10:10-10:40}}} &
-        \textbf{Morning Presentation 2:} \textbf{\textcolor{nusnavy}{Prof. Ong Soh Khim}} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} \hfill \onlinemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{10:10-10:40}}} &
+      \textbf{\textcolor{slate900}{Prof. Ong Soh Khim}} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{slate700}{10:40-11:00}}} &
-        \textbf{Tea Break} \textcolor{slate500}{(Symposium group photography \& academic networking)} \\
-        \hline
+      \textbf{\texttt{\textcolor{slate600}{10:40-11:00}}} &
+      \textbf{\textcolor{slate600}{Tea Break \& Group Photo}} \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{nusblue}{11:00-11:30}}} &
-        \textbf{Morning Presentation 3:} \textbf{\textcolor{nusnavy}{Dr. Yajing Yang}} --- \textit{Data Analysis with LLM} \hfill \onsitemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{11:00-11:30}}} &
+      \textbf{\textcolor{slate900}{Dr. Yajing Yang}} --- \textit{Data Analysis with LLM} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{nusblue}{11:30-12:00}}} &
-        \textbf{Morning Presentation 4:} \textbf{\textcolor{nusnavy}{Dr. Shaoyang Peng}} --- \textit{LLM Unlearning} \hfill \onlinemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{11:30-12:00}}} &
+      \textbf{\textcolor{slate900}{Dr. Shaoyang Peng}} --- \textit{LLM Unlearning} \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{emerald}{12:00-13:00}}} &
-        \textbf{Networking Lunch} \textcolor{slate500}{(Collaborative lunch \& informal discussion)} \\
-        \hline
+      \textbf{\texttt{\textcolor{slate600}{12:00-13:00}}} &
+      \textbf{\textcolor{slate600}{Networking Lunch}} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{nusblue}{13:00-13:30}}} &
-        \textbf{Afternoon Presentation 1:} \textbf{\textcolor{nusnavy}{Prof Shen Lei}} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} \hfill \onsitemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{13:00-13:30}}} &
+      \textbf{\textcolor{slate900}{Prof. Shen Lei}} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{nusblue}{13:30-14:00}}} &
-        \textbf{Afternoon Presentation 2:} \textbf{\textcolor{nusnavy}{Prof. Pang Yan}} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} \hfill \onlinemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{13:30-14:00}}} &
+      \textbf{\textcolor{slate900}{Prof. Pang Yan}} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{nusblue}{14:00-14:30}}} &
-        \textbf{Afternoon Presentation 3:} \textbf{\textcolor{nusnavy}{Dr. 王通越}} --- \textbf{面向汽车驾乘人员健康管理的人工智能伦理治理} \hfill \onsitemini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{14:00-14:30}}} &
+      \textbf{\textcolor{slate900}{Dr. 王通越}} --- 面向汽车驾乘人员健康管理的人工智能伦理治理 \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{slate700}{14:30-14:50}}} &
-        \textbf{Tea Break} \textcolor{slate500}{(Afternoon refreshments \& poster viewing)} \\
-        \hline
+      \textbf{\texttt{\textcolor{slate600}{14:30-14:50}}} &
+      \textbf{\textcolor{slate600}{Afternoon Tea Break}} \\
+      \hline
 
-        \textbf{\texttt{\textcolor{indigo}{14:50-15:30}}} &
-        \textbf{\textcolor{indigo}{Panel Discussion:}} \textit{``Future Trajectories of Large Models in Embodied \& Connected Vehicles''} \hfill \hybridmini \\
-        \hline
+      \textbf{\texttt{\textcolor{nusnavy}{14:50-15:30}}} &
+      \textbf{\textcolor{nusnavy}{Panel Discussion}} --- \textit{Future Trajectories of Large Models in Embodied \& Connected Vehicles} \\
+      \hline
 
-        \rowcolor{rowalt}
-        \textbf{\texttt{\textcolor{goldaccent}{15:30-16:00}}} &
-        \textbf{\textcolor{nusnavy}{Closing Remarks}} \textcolor{slate500}{(Symposium wrap-up by the Chairs)} \\
-      \end{tabularx}
-    \end{tcolorbox}
+      \textbf{\texttt{\textcolor{nusorange}{15:30-16:00}}} &
+      \textbf{\textcolor{slate900}{Closing Remarks}} \\
+    \end{tabularx}
   };
 
-  % Bottom Secretariat & Venue Footer on Back Side
-  \node[anchor=south, text width=89mm, inner sep=0pt] at ([yshift=6.8mm]current page.south) {
-    \begin{tcolorbox}[
-      enhanced,
-      colback=warmgray,
-      colframe=slate200,
-      borderline north={1.2pt}{0pt}{nusnavy},
-      boxrule=0.4pt,
-      arc=0.9mm,
-      left=2.2mm, right=2.2mm, top=1.2mm, bottom=1.2mm
-    ]
-      \centering
-      \fontsize{5.05}{6.25}\selectfont\color{slate700}
-      \textbf{\textcolor{nusnavy}{Venue:}} Bldg 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area (两江新区互联网产业园二期4号楼)\\[0.3mm]
-      \textbf{\textcolor{nusnavy}{Major Correspondence:}} \textbf{Dr. Xi AI (艾惜, Barid)} $\cdot$ Assistant Director $\;\vert\;$ \texttt{\textcolor{nusblue}{xi.ai@nusricq.cn}}
-    \end{tcolorbox}
+  % Simple Bottom Venue Line
+  \fill[nusnavy] (current page.south west) rectangle ([yshift=8.5mm]current page.south east);
+  \node[anchor=center, text width=92mm, align=center] at ([yshift=4.25mm]current page.south) {
+    {\fontsize{5.6}{6.8}\selectfont\color{white}\textbf{Venue: Bldg 4, Internet Industrial Park Phase 2, Chongqing $\;\cdot\;$ NUSRI-CQ}}
   };
 \end{tikzpicture}
 
