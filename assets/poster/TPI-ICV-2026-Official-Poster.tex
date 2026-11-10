@@ -4,311 +4,424 @@
 \usepackage{xeCJK}
 \usepackage{amsmath,amssymb}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric, positioning, calc, shadows, backgrounds}
+\usetikzlibrary{shapes.geometric, positioning, calc, backgrounds}
 \usepackage[most]{tcolorbox}
 \usepackage{qrcode}
 \usepackage{array}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{colortbl}
 \usepackage{xcolor}
 \usepackage{hyperref}
 
 \hypersetup{
   colorlinks=true,
   urlcolor=nusblue,
-  pdftitle={TPI-ICV 2026 Official Symposium Poster},
+  pdftitle={TPI-ICV 2026 Official Symposium Poster (Print Edition)},
   pdfauthor={NUSRI-CQ & Chongqing Key Laboratory for ICV}
 }
 
-% Fonts
-\setmainfont{DejaVu Sans}
-\setsansfont{DejaVu Sans}
-\setmonofont{DejaVu Sans Mono}
-\setCJKmainfont[AutoFakeBold=2.2]{Droid Sans Fallback}
-\setCJKsansfont[AutoFakeBold=2.2]{Droid Sans Fallback}
+% ==================== PRINT-GRADE TYPOGRAPHY ====================
+\setmainfont{Lato}[
+  Path = /usr/share/fonts/truetype/lato/,
+  Extension = .ttf,
+  UprightFont = Lato-Regular,
+  BoldFont = Lato-Bold,
+  ItalicFont = Lato-Italic,
+  BoldItalicFont = Lato-BoldItalic
+]
+\setsansfont{Lato}[
+  Path = /usr/share/fonts/truetype/lato/,
+  Extension = .ttf,
+  UprightFont = Lato-Regular,
+  BoldFont = Lato-Bold,
+  ItalicFont = Lato-Italic,
+  BoldItalicFont = Lato-BoldItalic
+]
+\newfontfamily\displayserif{LinLibertine}[
+  Path = /usr/share/fonts/opentype/linux-libertine/,
+  Extension = .otf,
+  UprightFont = *_R,
+  BoldFont = *_RB,
+  ItalicFont = *_RI,
+  BoldItalicFont = *_RBI
+]
+\setmonofont{DejaVu Sans Mono}[Scale=0.88]
 
-% Color Palette (NUS Blue, NUS Orange, Academic Gold & Slate)
-\definecolor{nusnavy}{HTML}{002248}
+% True OpenType CJK Fonts (Fandol with native Bold & Kai Italic)
+\setCJKmainfont[
+  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
+  Extension = .otf,
+  UprightFont = FandolHei-Regular,
+  BoldFont = FandolHei-Bold,
+  ItalicFont = FandolKai-Regular
+]{FandolHei}
+\setCJKsansfont[
+  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
+  Extension = .otf,
+  UprightFont = FandolHei-Regular,
+  BoldFont = FandolHei-Bold,
+  ItalicFont = FandolKai-Regular
+]{FandolHei}
+\newCJKfontfamily\cjkserif[
+  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
+  Extension = .otf,
+  UprightFont = FandolSong-Regular,
+  BoldFont = FandolSong-Bold
+]{FandolSong}
+
+% ==================== EDITORIAL PRINT COLOR PALETTE ====================
+\definecolor{nusnavy}{HTML}{0A1E3C}
 \definecolor{nusblue}{HTML}{003D7C}
-\definecolor{nuslight}{HTML}{F0F6FF}
-\definecolor{nusorange}{HTML}{EF7C00}
-\definecolor{goldlight}{HTML}{FFFBEB}
-\definecolor{goldborder}{HTML}{F59E0B}
-\definecolor{emerald}{HTML}{047857}
-\definecolor{emeraldlight}{HTML}{ECFDF5}
-\definecolor{indigo}{HTML}{3730A3}
-\definecolor{indigolight}{HTML}{EEF2FF}
+\definecolor{goldaccent}{HTML}{B45309}
+\definecolor{goldrule}{HTML}{D97706}
+\definecolor{goldtint}{HTML}{FFFBEB}
+\definecolor{emerald}{HTML}{065F46}
+\definecolor{emeraldtint}{HTML}{ECFDF5}
+\definecolor{indigo}{HTML}{312E81}
 \definecolor{slate900}{HTML}{0F172A}
 \definecolor{slate700}{HTML}{334155}
+\definecolor{slate600}{HTML}{475569}
 \definecolor{slate500}{HTML}{64748B}
-\definecolor{slate200}{HTML}{E2E8F0}
-\definecolor{slate50}{HTML}{F8FAFC}
+\definecolor{slate200}{HTML}{CBD5E1}
+\definecolor{slate100}{HTML}{F1F5F9}
+\definecolor{warmgray}{HTML}{F8FAFC}
+\definecolor{rowalt}{HTML}{F8FAFC}
 
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
+
+% Compact Print Badge Macros
+\newcommand{\onsitebadge}{%
+  \tcbox[enhanced, on line, boxsep=0pt, left=1.4mm, right=1.4mm, top=0.45mm, bottom=0.45mm, colback=emeraldtint, colframe=emerald!50!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{emerald}{ON-SITE}}}%
+}
+\newcommand{\onlinebadge}{%
+  \tcbox[enhanced, on line, boxsep=0pt, left=1.55mm, right=1.55mm, top=0.45mm, bottom=0.45mm, colback=slate100, colframe=nusblue!45!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{nusblue}{ONLINE}}}%
+}
+\newcommand{\hybridbadge}{%
+  \tcbox[enhanced, on line, boxsep=0pt, left=1.5mm, right=1.5mm, top=0.45mm, bottom=0.45mm, colback=goldtint, colframe=goldrule!55!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{goldaccent}{HYBRID}}}%
+}
+
+% Section Header Macro
+\newcommand{\sectionheader}[3]{%
+  \begin{tikzpicture}
+    \fill[nusnavy] (0, 0) rectangle (0.14cm, 0.32cm);
+    \fill[goldrule] (0.18cm, 0) rectangle (0.24cm, 0.32cm);
+    \node[anchor=west, inner sep=0pt] at (0.35cm, 0.16cm) {\fontsize{7.6}{9.0}\selectfont\color{nusnavy}\textbf{#1 $\;\cdot\;$ #2}};
+    \draw[nusnavy!22!slate200, line width=0.5pt] (#3, 0.16cm) -- (18.5cm, 0.16cm);
+  \end{tikzpicture}%
+}
 
 \newsavebox{\qrbox}
 
 \begin{document}
 \savebox{\qrbox}{\qrcode[height=1.85cm]{https://tpi-icv.github.io/homepage/\#registration}}
 \begin{tikzpicture}[remember picture, overlay]
-  % Full Page Background
-  \fill[slate50] (current page.north west) rectangle (current page.south east);
 
-  % ==================== 1. TOP HEADER BANNER ====================
-  \fill[nusnavy] (current page.north west) rectangle ([yshift=-6.05cm]current page.north east);
-  % Subtle decorative right glow in header
-  \fill[nusblue, opacity=0.55] ([xshift=-7.5cm, yshift=-6.05cm]current page.north east) -- (current page.north east) -- ([xshift=-2.5cm]current page.north east) -- cycle;
-  % Gold Accent Bar at bottom of header
-  \fill[nusorange] ([yshift=-6.05cm]current page.north west) rectangle ([yshift=-6.18cm]current page.north east);
+  % ==================== 0. PURE PAPER BACKGROUND & DOUBLE ACADEMIC FRAME ====================
+  \fill[white] (current page.north west) rectangle (current page.south east);
 
-  % Header Content Node
-  \node[anchor=north west, text width=19.4cm, align=left] at ([xshift=0.8cm, yshift=-0.35cm]current page.north west) {
-    % Top Pill Badge
-    \begin{tcolorbox}[
-      enhanced,
-      colback=nusblue!85!black,
-      colframe=nusorange!90!white,
-      boxrule=0.6pt,
-      arc=2.5mm,
-      left=2.5mm, right=2.5mm, top=0.65mm, bottom=0.65mm,
-      hbox
-    ]
-      \fontsize{6.7}{8}\selectfont\color{white}\textbf{\texttt{TPI-ICV 2026}} \textcolor{nusorange}{\textbf{$\bullet$}} \textbf{JOINT ACADEMIC MILESTONE SYMPOSIUM \& POSTER EXHIBITION $\cdot$ 联合学术研讨会暨成果海报展}
-    \end{tcolorbox}
-    \vspace{0.9mm}
+  % Outer Fine Navy Frame (7mm printer-safe margin)
+  \draw[nusnavy, line width=1.1pt]
+    ([xshift=0.70cm, yshift=-0.70cm]current page.north west)
+    rectangle
+    ([xshift=-0.70cm, yshift=0.70cm]current page.south east);
 
-    % English Headline
-    {\fontsize{13.0}{15.3}\selectfont\color{white}\textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction}}\\[1.0mm]
-    % Chinese Headline
-    {\fontsize{10.3}{12.4}\selectfont\color{nusorange!30!white}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展}}\\[1.4mm]
+  % Inner Burnished Gold Hairline Frame
+  \draw[goldrule!85!white, line width=0.4pt]
+    ([xshift=0.84cm, yshift=-0.84cm]current page.north west)
+    rectangle
+    ([xshift=-0.84cm, yshift=0.84cm]current page.south east);
 
-    % Co-Hosts Strip
-    {\fontsize{6.75}{8.4}\selectfont\color{white!92!slate200}
-      \textbf{\textcolor{nusorange}{Co-Hosts / 联合主办:}}
-      \textbf{National University of Singapore (Chongqing) Research Institute (NUSRI-CQ / 重庆新国大研究院)} $\cdot$
-      \textbf{Chongqing Key Laboratory of Trusted Perception \& Interaction Technology for ICV (智能网联汽车可信感知交互技术重庆市重点实验室)} $\cdot$
+  % Top Institutional Crown Bar inside Frame
+  \fill[nusnavy]
+    ([xshift=0.84cm, yshift=-0.84cm]current page.north west)
+    rectangle
+    ([xshift=-0.84cm, yshift=-1.00cm]current page.north east);
+  \fill[goldrule]
+    ([xshift=0.84cm, yshift=-1.00cm]current page.north west)
+    rectangle
+    ([xshift=-0.84cm, yshift=-1.06cm]current page.north east);
+
+  % ==================== 1. EDITORIAL MASTHEAD & SYMPOSIUM HEADER ====================
+  \node[anchor=north, text width=18.5cm, inner sep=0pt, align=center] (headerblock) at ([yshift=-1.24cm]current page.north) {
+    % Symposium Kicker
+    {\fontsize{6.6}{8.0}\selectfont\color{goldaccent}\textbf{TPI-ICV 2026 $\;\cdot\;$ JOINT ACADEMIC MILESTONE SYMPOSIUM \& POSTER EXHIBITION $\;\cdot\;$ 联合学术研讨会暨成果海报展}}\\[1.3mm]
+
+    % Main English Title in Editorial Serif
+    {\displayserif\fontsize{14.0}{16.4}\selectfont\color{nusnavy}\textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}}\\[1.2mm]
+
+    % Main Chinese Title in True Songti Bold
+    {\cjkserif\fontsize{10.6}{12.6}\selectfont\color{nusblue}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会暨成果海报展}}\\[1.4mm]
+
+    % Ornamental Gold & Navy Divider
+    \begin{tikzpicture}
+      \draw[slate200, line width=0.4pt] (-8.8cm, 0) -- (8.8cm, 0);
+      \draw[goldrule, line width=1.0pt] (-2.6cm, 0) -- (2.6cm, 0);
+      \fill[nusnavy] (0, 0) circle (1.3pt);
+    \end{tikzpicture}\\[1.0mm]
+
+    % Co-Hosts Line (Centered with clean linebreaks)
+    {\fontsize{6.55}{8.4}\selectfont\color{slate700}
+      \textbf{\textcolor{nusnavy}{CO-HOSTS / 联合主办:}} \;
+      \textbf{National University of Singapore (Chongqing) Research Institute (NUSRI-CQ / 重庆新国大研究院)}\\
+      \textbf{Chongqing Key Laboratory of Trusted Perception \& Interaction Technology for ICV (智能网联汽车可信感知交互技术重庆市重点实验室)}\\
       \textbf{Changan Automobile Forward-looking Technology Research Institute (长安汽车前瞻技术研究院)}
-    }\\[1.3mm]
+    }\\[1.5mm]
 
-    % Date & Venue Highlight Box inside Header
+    % Date, Mode & Venue Ribbon (2 Crisp Single-Line Rows)
     \begin{tcolorbox}[
       enhanced,
-      colback=white!10!nusnavy,
-      colframe=white!28!nusblue,
-      boxrule=0.5pt,
-      arc=1.5mm,
-      left=2.4mm, right=2.4mm, top=0.95mm, bottom=0.95mm
+      colback=warmgray,
+      colframe=slate200,
+      borderline west={2.2pt}{0pt}{nusnavy},
+      borderline east={2.2pt}{0pt}{goldrule},
+      boxrule=0.45pt,
+      arc=1.0mm,
+      left=2.6mm, right=2.6mm, top=1.15mm, bottom=1.15mm
     ]
-      \fontsize{6.95}{8.7}\selectfont\color{white}
-      \textbf{\textcolor{nusorange}{DATE \& TIME / 会议时间:}} \textbf{12 November 2026 (09:00 - 16:00 UTC+8 / 2026年11月12日)} \quad $\vert$ \quad
-      \textbf{\textcolor{nusorange}{MODE / 参会形式:}} \textbf{In-Person \& Online Hybrid (线下+线上)}\\[0.35mm]
-      \textbf{\textcolor{nusorange}{VENUE / 举办地点:}} \textbf{Building 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area, Chongqing, China (中国重庆两江新区互联网产业园二期4号楼 $\cdot$ NUSRI-CQ)}
+      \fontsize{6.45}{8.1}\selectfont\color{slate900}\raggedright
+      \textbf{\textcolor{nusnavy}{DATE / 时间:}} \textbf{12 Nov 2026} \textcolor{slate600}{(09:00--16:00 UTC+8 / 2026年11月12日)} \hfill
+      \textbf{\textcolor{nusnavy}{MODE / 形式:}} \textbf{In-Person \& Online (线下+线上)} \hfill
+      \textbf{\textcolor{goldaccent}{FEE / 费用:}} \textbf{Complimentary (免注册费)}\\[0.55mm]
+      \textcolor{slate200}{\rule{\textwidth}{0.3pt}}\\[0.55mm]
+      \textbf{\textcolor{nusnavy}{VENUE / 地点:}} \textbf{Building 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area, Chongqing, China} \; \textcolor{slate600}{\textbf{(重庆两江新区互联网产业园二期4号楼 $\cdot$ 重庆新国大研究院 NUSRI-CQ)}}
     \end{tcolorbox}
   };
 
-  % ==================== 2. INVITED SPEAKERS SECTION (FULL WIDTH) ====================
-  \node[anchor=north west, text width=19.4cm] (speakersnode) at ([xshift=0.8cm, yshift=-6.42cm]current page.north west) {
-    \begin{tcolorbox}[
+  % ==================== 2. CORE RESEARCH THRUSTS (4-COLUMN EDITORIAL STRIP) ====================
+  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of headerblock] (thrustsblock) {
+    \sectionheader{CORE RESEARCH THRUSTS \& THEMATIC TRACKS}{四大核心研究方向与专题}{9.3cm}\\[0.85mm]
+    \begin{tcbitemize}[
+      raster columns=4,
+      raster column skip=2.2mm,
+      raster equal height=rows,
       enhanced,
       colback=white,
-      colframe=nusblue!30!slate200,
-      boxrule=0.7pt,
-      arc=2mm,
-      left=2.5mm, right=2.5mm, top=1.7mm, bottom=1.5mm,
-      title={\fontsize{8.0}{9.8}\selectfont\textbf{INVITED SPEAKERS \& FRONTIER TALKS $\cdot$ 特邀学术与产业报告嘉宾 (4 Thematic Tracks $\cdot$ 7 Invited Talks)}},
-      colbacktitle=nusblue,
-      coltitle=white,
-      toptitle=1.1mm, bottomtitle=1.1mm, lefttitle=2.5mm
+      colframe=slate200,
+      boxrule=0.45pt,
+      arc=1.0mm,
+      left=1.9mm, right=1.9mm, top=1.25mm, bottom=1.25mm
     ]
-      \begin{tcbitemize}[
-        raster columns=2,
-        raster column skip=2.8mm,
-        raster row skip=1.8mm,
-        raster equal height=rows,
-        enhanced,
-        boxrule=0.55pt,
-        arc=1.5mm,
-        left=2.2mm, right=2.2mm, top=1.15mm, bottom=1.15mm
-      ]
-        % Track 1
-        \tcbitem[colback=nuslight, colframe=nusblue!35!white]
-          {\fontsize{7.2}{8.8}\selectfont\color{nusblue}\textbf{TRACK 1 $\cdot$ Foundation AI \& LLMs (基础大模型与前沿AI)}}\\[0.9mm]
-          {\fontsize{6.8}{8.3}\selectfont\color{slate900}\raggedright
-            \textbf{1. Dr. Yajing Yang} \hfill \texttt{\textcolor{nusblue}{[NUS]}}\\
-            \textcolor{slate700}{\textit{Data Analysis with LLM}}\\[1.0mm]
-            \textbf{2. Dr. Pengyang Shao} \hfill \texttt{\textcolor{nusblue}{[Huawei @ SG]}}\\
-            \textcolor{slate700}{\textit{LLM Unlearning}}
-          }
+      \tcbitem[borderline north={1.6pt}{0pt}{nusblue}]
+        {\fontsize{6.3}{7.6}\selectfont\color{nusblue}\textbf{THRUST 1 $\cdot$ Foundation AI \& LLMs}}\\[0.3mm]
+        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{大模型与基础AI前沿}}\\[0.6mm]
+        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Edge Model Compression, Multimodal VLMs, Agentic Reasoning, LLM Unlearning \& In-Cabin Copilots.}
 
-        % Track 2
-        \tcbitem[colback=emeraldlight, colframe=emerald!35!white]
-          {\fontsize{7.2}{8.8}\selectfont\color{emerald}\textbf{TRACK 2 $\cdot$ AI Safety \& Trusted AI (人工智能可信与安全)}}\\[0.85mm]
-          {\fontsize{6.75}{8.2}\selectfont\color{slate900}\raggedright
-            \textbf{1. Prof. Pang Yan (庞严)} \hfill \texttt{\textcolor{emerald}{[NUS]}}\\
-            \textcolor{slate700}{\textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles (迈向可信智能体AI：隐私、安全与可靠性)}}\\[0.75mm]
-            \textbf{2. Prof. Li Wenbo} \hfill \texttt{\textcolor{emerald}{[Chongqing Univ.]}}\\
-            \textcolor{slate700}{\textit{Affective Interaction and Testing \& Evaluation of Cockpit Intelligent Agents (座舱智能体情感交互与测试评价)}}
-          }
+      \tcbitem[borderline north={1.6pt}{0pt}{emerald}]
+        {\fontsize{6.3}{7.6}\selectfont\color{emerald}\textbf{THRUST 2 $\cdot$ Trusted AI \& Safety}}\\[0.3mm]
+        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{可信AI与安全治理}}\\[0.6mm]
+        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Mechanistic Interpretability, Privacy, Affective Cockpit Evaluation \& Automotive AI Ethics Governance.}
 
-        % Track 3
-        \tcbitem[colback=indigolight, colframe=indigo!35!white]
-          {\fontsize{7.2}{8.8}\selectfont\color{indigo}\textbf{TRACK 3 $\cdot$ Smart Driving \& EVs (智能驾驶与电动化)}}\\[0.85mm]
-          {\fontsize{6.75}{8.2}\selectfont\color{slate900}\raggedright
-            \textbf{1. Prof. Ong Soh Khim} \hfill \texttt{\textcolor{indigo}{[NUS]}}\\
-            \textcolor{slate700}{\textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving}}\\[0.75mm]
-            \textbf{2. Prof. Shen Lei} \hfill \texttt{\textcolor{indigo}{[NUS]}}\\
-            \textcolor{slate700}{\textit{Intelligent Battery Management Systems for Electric Vehicles}}
-          }
+      \tcbitem[borderline north={1.6pt}{0pt}{indigo}]
+        {\fontsize{6.3}{7.6}\selectfont\color{indigo}\textbf{THRUST 3 $\cdot$ Spatial Interaction}}\\[0.3mm]
+        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{空间计算与自然感知交互}}\\[0.6mm]
+        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright 3D Gaussian Splatting, Gaze \& Eye-Roll Detection, Gesture Tracking \& Haptic Feedback.}
 
-        % Track 4
-        \tcbitem[colback=goldlight, colframe=goldborder!55!white]
-          {\fontsize{7.2}{8.8}\selectfont\color{nusorange!85!black}\textbf{TRACK 4 $\cdot$ Changan Leadership (长安汽车领航报告)}}\\[0.85mm]
-          {\fontsize{6.75}{8.2}\selectfont\color{slate900}\raggedright
-            \textbf{1. Dr. Tongyue Wang (王通越)} \hfill \texttt{\textcolor{nusorange!85!black}{[Changan Auto]}}\\
-            \textcolor{slate700}{\textit{AI Ethics Governance for Automotive Occupant Health Management (面向汽车驾乘人员健康管理的人工智能伦理治理)}}\\[0.75mm]
-            \textcolor{nusblue}{\textbf{Call for Posters \& Demos:}} \textcolor{slate700}{A0 Portrait PDF (841$\times$1189 mm), 1-Page Abstract \& Live Demos ($\rightarrow$ \texttt{xi.ai@nusricq.cn})}
-          }
-      \end{tcbitemize}
-    \end{tcolorbox}
+      \tcbitem[borderline north={1.6pt}{0pt}{goldrule}]
+        {\fontsize{6.3}{7.6}\selectfont\color{goldaccent}\textbf{THRUST 4 $\cdot$ Smart Driving \& EVs}}\\[0.3mm]
+        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{鲁棒智驾与智能电池管理}}\\[0.6mm]
+        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Multi-Sensor Degeneracy Fusion, Corner-Case Evaluation \& Intelligent EV Battery Management (BMS).}
+    \end{tcbitemize}
   };
 
-  % ==================== 3A. MIDDLE LEFT: 1-DAY PROGRAM SCHEDULE ====================
-  \node[anchor=north west, text width=9.95cm] at ([xshift=0.8cm, yshift=-13.55cm]current page.north west) {
+  % ==================== 3. FULL-WIDTH PROGRAM SCHEDULE (14 ITEMS) ====================
+  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of thrustsblock] (scheduleblock) {
+    \sectionheader{PROGRAM SCHEDULE \& INVITED TALKS}{一日会议详细议程与特邀报告 (12 Nov 2026)}{11.2cm}\\[0.85mm]
     \begin{tcolorbox}[
       enhanced,
       colback=white,
-      colframe=nusblue!30!slate200,
-      colupper=slate900,
-      boxrule=0.7pt,
-      arc=2mm,
-      left=2.2mm, right=2.2mm, top=1.8mm, bottom=1.8mm,
-      height=11.65cm,
-      valign=top,
-      title={\fontsize{7.7}{9.4}\selectfont\textbf{PROGRAM SCHEDULE $\cdot$ 一日会议详细议程 (12 Nov 2026)}},
-      colbacktitle=nusnavy,
-      coltitle=white,
-      toptitle=1.1mm, bottomtitle=1.1mm, lefttitle=2.2mm
+      colframe=nusnavy!35!slate200,
+      boxrule=0.55pt,
+      arc=1.2mm,
+      left=0mm, right=0mm, top=0mm, bottom=0.3mm,
+      clip upper
     ]
-      \fontsize{6.0}{7.2}\selectfont
-      \renewcommand{\arraystretch}{1.20}
-      \begin{tabularx}{\textwidth}[t]{@{}p{1.68cm}>{\raggedright\arraybackslash}X@{}}
-        \textbf{\texttt{\textcolor{slate700}{09:00-09:30}}} & \textbf{Registration \& Morning Refreshments} \textcolor{slate500}{(Attendee check-in, badge pickup \& networking)} \\
+      \fontsize{6.55}{8.15}\selectfont
+      \renewcommand{\arraystretch}{1.44}
+      \setlength{\tabcolsep}{5.5pt}
+      \begin{tabularx}{\textwidth}{@{} >{\columncolor{warmgray}}p{1.90cm} p{3.55cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{1.55cm} @{}}
+        \rowcolor{nusnavy}
+        \textbf{\textcolor{white}{\texttt{TIME (UTC+8)}}} &
+        \textbf{\textcolor{white}{SESSION / EVENT}} &
+        \textbf{\textcolor{white}{SPEAKER \& PRESENTATION TOPIC / 报告嘉宾与题目}} &
+        \textbf{\textcolor{white}{MODE}} \\
+
+        \textbf{\texttt{\textcolor{slate700}{09:00-09:30}}} &
+        \textbf{\textcolor{slate700}{Registration \& Refreshments}} &
+        \textcolor{slate600}{Attendee check-in, badge pickup, and morning networking (会议签到、胸牌领取与早间茶叙)} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusorange!90!black}{09:30-09:40}}} & \textbf{\textcolor{nusnavy}{Opening Ceremony \& Welcome Addresses:}} \textcolor{slate700}{1) Prof Susanna Leong $\cdot$ 2) Chang An Rep $\cdot$ 3) George Loh} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{goldaccent}{09:30-09:40}}} &
+        \textbf{\textcolor{nusnavy}{Opening Ceremony}} &
+        \textbf{\textcolor{nusnavy}{Welcome Addresses:}} \textbf{1) Prof. Susanna Leong} $\;\cdot\;$ \textbf{2) Chang An Rep} $\;\cdot\;$ \textbf{3) George Loh} &
+        \hybridbadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{09:40-10:10}}} & \textbf{Morning Presentation 1:} \textbf{\textcolor{nusnavy}{Dr. Li Wenbo}} --- \textit{座舱智能体情感交互与测试评价} \hfill \texttt{\textcolor{emerald}{[on-site]}} \\
+
+        \textbf{\texttt{\textcolor{nusblue}{09:40-10:10}}} &
+        \textbf{\textcolor{nusblue}{Morning Presentation 1}} &
+        \textbf{\textcolor{nusnavy}{Dr. Li Wenbo}} \textcolor{slate500}{(Chongqing Univ.)} --- \textbf{座舱智能体情感交互与测试评价} \textcolor{slate600}{\textit{(Affective Interaction and Testing \& Evaluation of Cockpit Intelligent Agents)}} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{10:10-10:40}}} & \textbf{Morning Presentation 2:} \textbf{\textcolor{nusnavy}{Prof. Ong Soh Khim}} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} \hfill \texttt{\textcolor{nusblue}{[online]}} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{nusblue}{10:10-10:40}}} &
+        \textbf{\textcolor{nusblue}{Morning Presentation 2}} &
+        \textbf{\textcolor{nusnavy}{Prof. Ong Soh Khim}} \textcolor{slate500}{(NUS)} --- \textit{Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving} &
+        \onlinebadge \\
         \hline
-        \textbf{\texttt{\textcolor{slate700}{10:40-11:00}}} & \textbf{Tea Break} \textcolor{slate500}{(Symposium group photography and academic networking)} \\
+
+        \textbf{\texttt{\textcolor{slate700}{10:40-11:00}}} &
+        \textbf{\textcolor{slate700}{Morning Tea Break}} &
+        \textcolor{slate600}{Symposium group photography and academic networking (全体与会嘉宾合影与学术茶歇)} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{11:00-11:30}}} & \textbf{Morning Presentation 3:} \textbf{\textcolor{nusnavy}{Dr. Yajing Yang}} --- \textit{Data Analysis with LLM} \hfill \texttt{\textcolor{emerald}{[on-site]}} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{nusblue}{11:00-11:30}}} &
+        \textbf{\textcolor{nusblue}{Morning Presentation 3}} &
+        \textbf{\textcolor{nusnavy}{Dr. Yajing Yang}} \textcolor{slate500}{(NUS)} --- \textit{Data Analysis with LLM} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{11:30-12:00}}} & \textbf{Morning Presentation 4:} \textbf{\textcolor{nusnavy}{Dr. Shaoyang Peng}} --- \textit{LLM Unlearning} \hfill \texttt{\textcolor{nusblue}{[online]}} \\
+
+        \textbf{\texttt{\textcolor{nusblue}{11:30-12:00}}} &
+        \textbf{\textcolor{nusblue}{Morning Presentation 4}} &
+        \textbf{\textcolor{nusnavy}{Dr. Shaoyang Peng}} \textcolor{slate500}{(Huawei @ SG)} --- \textit{LLM Unlearning} &
+        \onlinebadge \\
         \hline
-        \textbf{\texttt{\textcolor{emerald}{12:00-13:00}}} & \textbf{Networking Lunch} \textcolor{slate500}{(Collaborative lunch and informal discussion)} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{emerald}{12:00-13:00}}} &
+        \textbf{\textcolor{emerald}{Networking Lunch}} &
+        \textcolor{slate600}{Collaborative lunch and informal discussion (学术交流午餐与合作研讨)} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{13:00-13:30}}} & \textbf{Afternoon Presentation 1:} \textbf{\textcolor{nusnavy}{Prof Shen Lei}} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} \hfill \texttt{\textcolor{emerald}{[on-site]}} \\
+
+        \textbf{\texttt{\textcolor{nusblue}{13:00-13:30}}} &
+        \textbf{\textcolor{nusblue}{Afternoon Presentation 1}} &
+        \textbf{\textcolor{nusnavy}{Prof. Shen Lei}} \textcolor{slate500}{(NUS)} --- \textit{Intelligent Battery Management Systems for Electric Vehicles} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{13:30-14:00}}} & \textbf{Afternoon Presentation 2:} \textbf{\textcolor{nusnavy}{Prof. Pang Yan}} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} \hfill \texttt{\textcolor{nusblue}{[online]}} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{nusblue}{13:30-14:00}}} &
+        \textbf{\textcolor{nusblue}{Afternoon Presentation 2}} &
+        \textbf{\textcolor{nusnavy}{Prof. Pang Yan (庞严)}} \textcolor{slate500}{(NUS)} --- \textit{Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles} &
+        \onlinebadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusblue}{14:00-14:30}}} & \textbf{Afternoon Presentation 3:} \textbf{\textcolor{nusnavy}{Dr. 王通越}} --- \textit{面向汽车驾乘人员健康管理的人工智能伦理治理} \hfill \texttt{\textcolor{emerald}{[on-site]}} \\
+
+        \textbf{\texttt{\textcolor{nusblue}{14:00-14:30}}} &
+        \textbf{\textcolor{nusblue}{Afternoon Presentation 3}} &
+        \textbf{\textcolor{nusnavy}{Dr. 王通越 (Tongyue Wang)}} \textcolor{slate500}{(Changan Auto)} --- \textbf{面向汽车驾乘人员健康管理的人工智能伦理治理} \textcolor{slate600}{\textit{(AI Ethics Governance for Automotive Occupant Health Management)}} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{slate700}{14:30-14:50}}} & \textbf{Tea Break} \textcolor{slate500}{(Afternoon refreshments and networking)} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{slate700}{14:30-14:50}}} &
+        \textbf{\textcolor{slate700}{Afternoon Tea Break}} &
+        \textcolor{slate600}{Afternoon refreshments, poster viewing, and networking (下午茶歇与海报展交流)} &
+        \onsitebadge \\
         \hline
-        \textbf{\texttt{\textcolor{indigo}{14:50-15:30}}} & \textbf{\textcolor{indigo}{Panel Discussion:}} \textit{``Future Trajectories of Large Models in Embodied \& Connected Vehicles''} --- \textbf{Prof. Shen Lei, Dr. 王通越, Dr. Ai Xi} \\
+
+        \textbf{\texttt{\textcolor{indigo}{14:50-15:30}}} &
+        \textbf{\textcolor{indigo}{Panel Discussion}} &
+        \textbf{\textcolor{indigo}{Topic:}} \textit{``Future Trajectories of Large Models in Embodied \& Connected Vehicles''} --- \textbf{\textcolor{nusnavy}{Prof. Shen Lei, Dr. 王通越, Dr. Ai Xi}} &
+        \hybridbadge \\
         \hline
-        \textbf{\texttt{\textcolor{nusorange!90!black}{15:30-16:00}}} & \textbf{\textcolor{nusnavy}{Closing Remarks}} \textcolor{slate500}{(Symposium wrap-up by the Chairs)} \\
+
+        \rowcolor{rowalt}
+        \textbf{\texttt{\textcolor{goldaccent}{15:30-16:00}}} &
+        \textbf{\textcolor{nusnavy}{Closing Remarks}} &
+        \textcolor{slate600}{Symposium wrap-up and closing synthesis by the Chairs (大会主席闭幕总结致辞)} &
+        \hybridbadge \\
       \end{tabularx}
     \end{tcolorbox}
   };
 
-  % ==================== 3B. MIDDLE RIGHT TOP: 4 CORE THRUSTS ====================
-  \node[anchor=north east, text width=9.15cm] at ([xshift=-0.8cm, yshift=-13.55cm]current page.north east) {
-    \begin{tcolorbox}[
+  % ==================== 4. COMMITTEES (LEFT) & CALL FOR POSTERS (RIGHT) ====================
+  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of scheduleblock] (committeesblock) {
+    \begin{tcbitemize}[
+      raster columns=20,
+      raster column skip=2.5mm,
+      raster equal height=rows,
       enhanced,
-      colback=white,
-      colframe=nusblue!30!slate200,
-      colupper=slate900,
-      boxrule=0.7pt,
-      arc=2mm,
-      left=2.2mm, right=2.2mm, top=1.5mm, bottom=1.5mm,
-      height=4.40cm,
-      valign=center,
-      title={\fontsize{7.6}{9.2}\selectfont\textbf{CORE RESEARCH THRUSTS $\cdot$ 四大核心研究方向}},
-      colbacktitle=nusblue,
-      coltitle=white,
-      toptitle=1.1mm, bottomtitle=1.1mm, lefttitle=2.2mm
+      boxrule=0.45pt,
+      arc=1.0mm,
+      left=2.5mm, right=2.5mm, top=1.6mm, bottom=1.6mm
     ]
-      \fontsize{6.45}{8.2}\selectfont\raggedright
-      \textbf{\textcolor{nusblue}{1. LLMs \& Foundation AI (大模型与基础AI前沿):}} Edge Model Compression, Multimodal VLMs, Agentic Reasoning \& In-Cabin Copilots.\\[1.2mm]
-      \textbf{\textcolor{emerald}{2. Trusted AI \& Safety (可信AI与机理可解释性):}} Mechanistic Interpretability, Adversarial Robustness, LLM Unlearning \& Privacy.\\[1.2mm]
-      \textbf{\textcolor{indigo}{3. Spatial Computing \& Interaction (空间计算与自然交互):}} 3D Gaussian Splatting, Gaze/Gesture Tracking \& Haptic Feedback.\\[1.2mm]
-      \textbf{\textcolor{nusorange!85!black}{4. Autonomous Driving \& Battery (鲁棒智驾与储能电池):}} Multi-Sensor Degeneracy Fusion, Corner-Case Eval \& Intelligent EV BMS.
-    \end{tcolorbox}
+      \tcbitem[raster multicolumn=13, colback=white, colframe=slate200, borderline north={1.8pt}{0pt}{nusnavy}]
+        {\fontsize{7.2}{8.6}\selectfont\color{nusnavy}\textbf{ORGANIZATION \& COMMITTEES $\;\cdot\;$ 组织与学术委员会}}\\[0.65mm]
+        \textcolor{slate200}{\rule{\textwidth}{0.35pt}}\\[0.75mm]
+        {\fontsize{6.05}{7.55}\selectfont\color{slate900}\raggedright
+          \textbf{\textcolor{nusblue}{$\blacksquare$ Steering \& Management Committee (管理委员会):}}
+          \textbf{Co-Chairs:} Prof. Jibin LUO (罗继斌, NUS) $\cdot$ Zhangsong ZHAN (詹樟松, Changan) $\;\vert\;$
+          \textbf{Vice Chairs:} Prof. Jiagong WANG (王家功, NUSRI-CQ) $\cdot$ Huili YU (禹慧丽, Changan) $\;\vert\;$
+          \textbf{Members:} Prof. Jinbin WANG (王锦彬, NUS) $\cdot$ Jun LI (李俊, Changan)\\[0.75mm]
+
+          \textbf{\textcolor{emerald}{$\blacksquare$ Academic Advisory Committee (学术委员会):}}
+          \textbf{Chair:} Prof. Yong-Wei ZHANG (张永伟, IHPC A*STAR, Singapore) $\;\vert\;$
+          \textbf{Vice Chair:} Huili YU (禹慧丽, Changan) $\;\vert\;$
+          \textbf{Members:} Prof. Shuanggen JIN (金双根) $\cdot$ Prof. Dangxiao WANG (王党校, Beihang) $\cdot$ Prof. Bo AN (安波, NTU) $\cdot$ Prof. Bingsheng HE (何丙胜, NUS) $\cdot$ Prof. Qing SHI (石青, BIT) $\cdot$ Xing CHEN (陈星, Changan)\\[0.75mm]
+
+          \textbf{\textcolor{indigo}{$\blacksquare$ Executive Leadership \& Secretariat (执行领导层与秘书处):}}
+          \textbf{Lab Director:} Prof. Jiagong WANG (王家功) $\;\vert\;$
+          \textbf{Associate Directors:} Prof. Kaidi YANG (杨凯棣) $\cdot$ Prof. Yan PANG (庞严) $\;\vert\;$
+          \textbf{Assistant Director \& Major Correspondence (主要联络人):} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}}
+        }
+
+      \tcbitem[raster multicolumn=7, colback=warmgray, colframe=slate200, borderline north={1.8pt}{0pt}{goldrule}]
+        {\fontsize{7.2}{8.6}\selectfont\color{goldaccent}\textbf{CALL FOR POSTERS \& DEMOS $\;\cdot\;$ 成果征集}}\\[0.65mm]
+        \textcolor{slate200}{\rule{\textwidth}{0.35pt}}\\[0.75mm]
+        {\fontsize{6.05}{7.55}\selectfont\color{slate900}\raggedright
+          Researchers, PIs, postdocs, and students from NUS, NUSRI-CQ, Changan Auto, and partner universities are invited to submit:\\[0.65mm]
+          $\bullet$ \textbf{Research Posters:} A0 Portrait PDF ($841\times 1189\text{ mm}$), bilingual or English; printed \& mounted by the Secretariat.\\[0.55mm]
+          $\bullet$ \textbf{Extended Abstracts:} 1-page summary of recent work in Foundation AI, LLMs, or Trusted ICV.\\[0.55mm]
+          $\bullet$ \textbf{Interactive Demos:} Live software, hardware-in-the-loop, or cockpit agent demonstrations.
+        }
+    \end{tcbitemize}
   };
 
-  % ==================== 3C. MIDDLE RIGHT BOTTOM: GOVERNANCE COMMITTEES ====================
-  \node[anchor=north east, text width=9.15cm] at ([xshift=-0.8cm, yshift=-18.20cm]current page.north east) {
+  % ==================== 5. PRINT-ELEGANT FOOTER & QR REGISTRATION PORTAL ====================
+  \node[anchor=south, text width=18.5cm, inner sep=0pt] at ([yshift=1.08cm]current page.south) {
     \begin{tcolorbox}[
       enhanced,
-      colback=white,
-      colframe=nusblue!30!slate200,
-      colupper=slate900,
-      boxrule=0.7pt,
-      arc=2mm,
-      left=2.2mm, right=2.2mm, top=1.5mm, bottom=1.5mm,
-      height=7.00cm,
-      valign=center,
-      title={\fontsize{7.6}{9.2}\selectfont\textbf{ORGANIZATION \& COMMITTEES $\cdot$ 组织与学术委员会}},
-      colbacktitle=emerald!90!black,
-      coltitle=white,
-      toptitle=1.1mm, bottomtitle=1.1mm, lefttitle=2.2mm
+      colback=warmgray,
+      colframe=nusnavy,
+      boxrule=0.75pt,
+      borderline={0.35pt}{0.55mm}{goldrule},
+      arc=1.2mm,
+      left=2.8mm, right=2.8mm, top=1.4mm, bottom=1.4mm
     ]
-      \fontsize{6.4}{8.1}\selectfont\raggedright
-      \textbf{\textcolor{nusblue}{$\blacksquare$ Steering \& Management Committee (管理委员会)}}\\
-      $\bullet$ \textbf{Co-Chairs:} Prof. Jibin LUO (罗继斌, NUS) $\cdot$ Zhangsong ZHAN (詹樟松, Changan)\\
-      $\bullet$ \textbf{Vice Chairs:} Prof. Jiagong WANG (王家功, NUSRI-CQ) $\cdot$ Huili YU (禹慧丽, Changan)\\
-      $\bullet$ \textbf{Members:} Prof. Jinbin WANG (王锦彬, NUS) $\cdot$ Jun LI (李俊, Changan)\\[1.1mm]
-      \textbf{\textcolor{emerald}{$\blacksquare$ Academic Advisory Committee (学术委员会)}}\\
-      $\bullet$ \textbf{Chair:} Prof. Yong-Wei ZHANG (张永伟, IHPC A*STAR, Singapore)\\
-      $\bullet$ \textbf{Vice Chair:} Huili YU (禹慧丽, Changan Automobile)\\
-      $\bullet$ \textbf{Members:} Prof. Shuanggen JIN (金双根) $\cdot$ Prof. Dangxiao WANG (王党校, Beihang) $\cdot$ Prof. Bo AN (安波, NTU) $\cdot$ Prof. Bingsheng HE (何丙胜, NUS) $\cdot$ Prof. Qing SHI (石青, BIT) $\cdot$ Xing CHEN (陈星, Changan)\\[1.1mm]
-      \textbf{\textcolor{indigo}{$\blacksquare$ Executive Leadership \& Secretariat (执行领导层与秘书处)}}\\
-      $\bullet$ \textbf{Lab Director:} Prof. Jiagong WANG (王家功)\\
-      $\bullet$ \textbf{Associate Directors:} Prof. Kaidi YANG (杨凯棣) $\cdot$ Prof. Yan PANG (庞严)\\
-      $\bullet$ \textbf{Assistant Directors:} Ms. Xiaohong LIU (刘小红) $\cdot$ \textbf{Dr. Xi AI (艾惜,Barid)} \textit{(Major Correspondence / 大会主要联络人)}
-    \end{tcolorbox}
-  };
-
-  % ==================== 4. BOTTOM REGISTRATION & QR CODE BANNER ====================
-  \node[anchor=south west, text width=19.4cm] at ([xshift=0.8cm, yshift=0.40cm]current page.south west) {
-    \begin{tcolorbox}[
-      enhanced,
-      colback=nusnavy,
-      colframe=nusorange,
-      boxrule=0.9pt,
-      arc=2mm,
-      left=3.0mm, right=3.0mm, top=1.5mm, bottom=1.5mm
-    ]
-      \begin{minipage}[c]{0.81\textwidth}
-        {\fontsize{8.2}{10.0}\selectfont\color{nusorange}\textbf{PARTICIPANT REGISTRATION \& SUBMISSION PORTAL $\cdot$ 参会报名注册与海报/Demo提交}}\\[0.85mm]
-        {\fontsize{6.65}{8.35}\selectfont\color{white}\raggedright
-          $\bullet$ \textbf{Complimentary Registration (免注册费):} Open to invited speakers, committee members, NUS/NUSRI-CQ researchers, and Changan Automobile participants (In-Person in Chongqing \& Online Remote Link).\\[0.45mm]
-          $\bullet$ \textbf{Major Correspondence \& Submissions (主要联络人与成果提交):} \textbf{Dr. Xi AI (艾惜,Barid)} $\cdot$ Assistant Director\\
-          \phantom{$\bullet$} \textbf{TO:} \texttt{\textcolor{nusorange!40!white}{xi.ai@nusricq.cn}} \quad \textbf{CC:} \texttt{\textcolor{nusorange!40!white}{barid.x.ai@gmail.com}} \quad $\vert$ \quad \textbf{Portal:} \texttt{\textcolor{nusorange!40!white}{https://tpi-icv.github.io/homepage/}}
+      \begin{minipage}[c]{0.79\textwidth}
+        {\fontsize{7.6}{9.2}\selectfont\color{nusnavy}\textbf{PARTICIPANT REGISTRATION \& CORRESPONDENCE $\;\cdot\;$ 参会报名注册与秘书处联络}}\\[0.75mm]
+        {\fontsize{6.25}{7.85}\selectfont\color{slate700}\raggedright
+          $\bullet$ \textbf{\textcolor{slate900}{Complimentary Registration (免收注册费):}} Open to invited speakers, committee members, NUS/NUSRI-CQ researchers, Changan Automobile engineers, and invited academic guests (In-Person in Chongqing \& Online Remote Link).\\[0.45mm]
+          $\bullet$ \textbf{\textcolor{slate900}{Major Correspondence (大会主要联络人):}} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}} $\cdot$ Assistant Director, Executive Leadership \& Secretariat\\[0.40mm]
+          \phantom{$\bullet$} \textbf{\textcolor{nusnavy}{Email TO:}} \texttt{\textcolor{nusblue}{xi.ai@nusricq.cn}} \quad
+          \textbf{\textcolor{nusnavy}{CC:}} \texttt{\textcolor{nusblue}{barid.x.ai@gmail.com}} \quad $\vert$ \quad
+          \textbf{\textcolor{nusnavy}{Official Website:}} \texttt{\textcolor{nusblue}{https://tpi-icv.github.io/homepage/}}
         }
       \end{minipage}\hfill
-      \begin{minipage}[c]{0.165\textwidth}
+      \begin{minipage}[c]{0.185\textwidth}
         \centering
-        \begin{tcolorbox}[enhanced, colback=white, colframe=white, boxrule=0pt, arc=1mm, left=1.0mm, right=1.0mm, top=1.0mm, bottom=0.6mm, width=2.35cm]
+        \begin{tcolorbox}[
+          enhanced,
+          colback=white,
+          colframe=slate200,
+          boxrule=0.45pt,
+          arc=1.0mm,
+          left=1.0mm, right=1.0mm, top=0.9mm, bottom=0.6mm,
+          width=2.30cm
+        ]
           \centering
-          \usebox{\qrbox}\\[0.45mm]
-          {\fontsize{5.0}{5.8}\selectfont\color{nusnavy}\textbf{SCAN TO REGISTER}\\[-0.2mm]\textbf{扫码在线报名注册}}
+          \usebox{\qrbox}\\[0.4mm]
+          {\fontsize{4.9}{5.7}\selectfont\color{nusnavy}\textbf{SCAN TO REGISTER}\\[-0.1mm]\textbf{扫码在线报名注册}}
         \end{tcolorbox}
       \end{minipage}
     \end{tcolorbox}
   };
+
 \end{tikzpicture}
 \end{document}
