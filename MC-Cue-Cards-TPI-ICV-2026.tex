@@ -1,0 +1,454 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper, left=12.5mm, right=12.5mm, top=16mm, bottom=13.5mm, headheight=13pt, headsep=4mm, footskip=7mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{array}
+\usepackage{tabularx}
+
+% Fonts verified on system
+\setmainfont{Lato}[
+  Path = /usr/share/fonts/truetype/lato/,
+  Extension = .ttf,
+  UprightFont = Lato-Regular,
+  BoldFont = Lato-Bold,
+  ItalicFont = Lato-Italic,
+  BoldItalicFont = Lato-BoldItalic
+]
+\setsansfont{Lato}[
+  Path = /usr/share/fonts/truetype/lato/,
+  Extension = .ttf,
+  UprightFont = Lato-Regular,
+  BoldFont = Lato-Bold,
+  ItalicFont = Lato-Italic,
+  BoldItalicFont = Lato-BoldItalic
+]
+\setCJKmainfont[
+  Path = /usr/share/texlive/texmf-dist/fonts/opentype/public/fandol/,
+  Extension = .otf,
+  UprightFont = FandolHei-Regular,
+  BoldFont = FandolHei-Bold,
+  AutoFakeSlant = 0.15
+]{FandolHei}
+\setmonofont{DejaVu Sans Mono}[Scale=0.86]
+
+% Stage High-Contrast Color Palette
+\definecolor{nusnavy}{HTML}{002B5C}
+\definecolor{nusorange}{HTML}{D96B00}
+\definecolor{orangebg}{HTML}{FFF7ED}
+\definecolor{navybg}{HTML}{EEF4FF}
+\definecolor{greenbg}{HTML}{ECFDF5}
+\definecolor{greendark}{HTML}{065F46}
+\definecolor{amberbg}{HTML}{FFFBEB}
+\definecolor{amberborder}{HTML}{C26A00}
+\definecolor{slate900}{HTML}{0F172A}
+\definecolor{slate700}{HTML}{334155}
+\definecolor{slate500}{HTML}{64748B}
+\definecolor{slate200}{HTML}{E2E8F0}
+\definecolor{slate100}{HTML}{F8FAFC}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\linespread{1.0}
+
+% Running Header & Footer for Loose-Leaf Stage Safety
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.75pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{nusnavy}\leaders\hrule height \headrulewidth\hfill}}
+\lhead{\fontsize{9.2}{11}\selectfont\color{nusnavy}\textbf{TPI-ICV 2026 · 全程主持控场手卡 (MC Stage Cue Cards)} \textcolor{slate500}{\;|\; 12 Nov 2026 · NUSRI-CQ}}
+\rhead{\fontsize{10}{12}\selectfont\color{nusorange}\textbf{CARD \thepage\ / \pageref{LastPage}}}
+\lfoot{\fontsize{8.5}{10}\selectfont\color{slate500}Host \& Moderator: \textbf{Dr. Xi AI (艾惜 / Barid)} · 重点实验室主任助理 \;|\; 内部主持手卡 · 请勿外传}
+\rfoot{\fontsize{9.5}{11}\selectfont\color{nusnavy}\textbf{P.\,\thepage\ / \pageref{LastPage}}}
+
+% Reusable Stage Components (Explicit compact skips so 1 Card == 1 Page)
+\tcbset{
+  before skip=2.1mm,
+  after skip=2.1mm
+}
+
+\newcommand{\cardbanner}[3]{%
+  \begin{tcolorbox}[
+    enhanced, colback=nusnavy, colframe=nusnavy, arc=1.8mm,
+    boxrule=0pt, left=3.8mm, right=3.8mm, top=2.1mm, bottom=2.2mm,
+    before skip=0pt, after skip=2.4mm,
+    borderline south={1.1mm}{0mm}{nusorange}
+  ]
+    \begin{tabularx}{\linewidth}{@{}X r@{}}
+      {\fontsize{13.2}{16}\selectfont\color{white}\textbf{#1}} &
+      {\fontsize{11.2}{14}\selectfont\color{orangebg}\textbf{#2}}
+    \end{tabularx}
+    \vspace{0.6mm}
+    {\fontsize{9.3}{11.8}\selectfont\color{slate200}#3}
+  \end{tcolorbox}
+}
+
+\newcommand{\cue}[1]{%
+  {\fontsize{9.6}{12.5}\selectfont\textcolor{nusorange}{\textbf{【控场提示：#1】}}}%
+}
+
+\newcommand{\blankline}[1]{%
+  \underline{\hspace{#1}}%
+}
+
+\newtcolorbox{scriptbox}[1]{
+  enhanced,
+  colback=white,
+  colframe=nusnavy!78,
+  colbacktitle=navybg,
+  coltitle=nusnavy,
+  fonttitle=\fontsize{10.6}{13}\selectfont\bfseries,
+  title={#1},
+  arc=1.4mm,
+  boxrule=0.75pt,
+  left=3.4mm, right=3.4mm, top=2mm, bottom=2mm,
+  toptitle=1.3mm, bottomtitle=1.3mm
+}
+
+\newtcolorbox{qabox}[1]{
+  enhanced,
+  colback=amberbg,
+  colframe=amberborder,
+  colbacktitle=amberborder,
+  coltitle=white,
+  fonttitle=\fontsize{10}{12.2}\selectfont\bfseries,
+  title={#1},
+  arc=1.4mm,
+  boxrule=0.7pt,
+  left=3.2mm, right=3.2mm, top=1.7mm, bottom=1.7mm,
+  toptitle=1.15mm, bottomtitle=1.15mm,
+  before skip=1.2mm, after skip=2.2mm
+}
+
+\newtcolorbox{transbox}[1]{
+  enhanced,
+  colback=greenbg,
+  colframe=greendark!82,
+  colbacktitle=greendark,
+  coltitle=white,
+  fonttitle=\fontsize{10.3}{12.6}\selectfont\bfseries,
+  title={#1},
+  arc=1.4mm,
+  boxrule=0.75pt,
+  left=3.4mm, right=3.4mm, top=1.8mm, bottom=1.8mm,
+  toptitle=1.25mm, bottomtitle=1.25mm
+}
+
+\begin{document}
+\color{slate900}
+
+% ======================================================================
+% CARD 1: PRE-SHOW CHECKLIST + 09:25 WARM-UP + 09:30 OPENING WELCOME
+% ======================================================================
+\cardbanner{手卡 1 · 会前核对清单 \& 大会开幕词}{09:00 – 09:32}{Pre-Show Fill-in Checklist $\rightarrow$ 09:25 暖场静音播报 $\rightarrow$ 09:30 大会正式开幕定调}
+
+\begin{tcolorbox}[
+  enhanced, colback=orangebg, colframe=nusorange, arc=1.4mm, boxrule=0.8pt,
+  left=3.4mm, right=3.4mm, top=1.9mm, bottom=1.9mm,
+  title={\fontsize{10.5}{12.8}\selectfont\bfseries 09:20 前与会务组手写核对 5 项关键信息 (Pre-Show Write-In)},
+  colbacktitle=nusorange, coltitle=white, toptitle=1.3mm, bottomtitle=1.3mm
+]
+\fontsize{10.6}{15.8}\selectfont
+\textbf{1. 长安汽车致辞领导 (09:35)：} \blankline{76mm}\par
+{\fontsize{9.4}{13.4}\selectfont\color{slate700}快捷勾选：$\square$ \textbf{詹樟松 先生} (重庆长安汽车股份有限公司总裁助理、前瞻技术研究院总经理) \; $\square$ \textbf{禹慧丽 女士} (副总经理) \; $\square$ \textbf{李俊 先生} (副总经理)}\par
+\vspace{0.8mm}
+\textbf{2. 新国大领导接入方式：}
+Prof. Susanna Leong：$\square$ \textbf{线上 Online} \; $\square$ 现场 \quad|\quad
+Mr. George Loh：$\square$ \textbf{线上 Online} \; $\square$ 现场\par
+\vspace{0.8mm}
+\textbf{3. 全体合影地点 (10:40)：} \blankline{48mm} \quad
+\textbf{4. 午餐地点 (12:00)：} \blankline{46mm}\par
+\vspace{0.8mm}
+\textbf{5. 闭幕致辞安排 (15:30)：} $\square$ \textbf{版本A：王家功院长 (Prof. Jiagong WANG)} \quad $\square$ \textbf{版本B：主持人直接总结} \quad 其他：\blankline{24mm}
+\end{tcolorbox}
+
+\begin{transbox}{09:25 – 09:28 \;|\; 会前 3 分钟暖场与静音提醒 (Warm-Up Announcement)}
+\fontsize{11.5}{16.8}\selectfont
+\textbf{[中文]} 尊敬的各位领导、各位专家学者、线上及线下的同仁们，大家早上好！本次研讨会将于 \textbf{3分钟后（9点30分）} 正式开始。请现场各位嘉宾尽快入座，并将手机调至静音或振动状态；线上参会的嘉宾请保持麦克风静音。非常感谢大家的配合！\par
+\vspace{1mm}
+\textbf{[EN]} Good morning, distinguished guests, speakers, and colleagues joining us in Chongqing and online. Our symposium will officially begin in \textbf{three minutes at 9:30 AM}. Kindly take your seats and switch your mobile devices to silent mode. Online participants, please keep your microphones muted. Thank you!
+\end{transbox}
+
+\begin{scriptbox}{09:30 – 09:32 \;|\; 宣布大会开幕 \& 联合主办方介绍 (Official Opening)}
+\fontsize{11.8}{17.4}\selectfont
+\cue{面带微笑、语速稳健；先英文照顾新国大校领导与海外学者，再中文庄重定调}\par
+\vspace{0.8mm}
+\textbf{[EN 先行迎宾]} Distinguished leaders, esteemed professors, colleagues from \textbf{Changan Automobile, Chongqing University, 6ESTATES, NUS, and NUSRI-CQ} — good morning, and welcome to \textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction (TPI-ICV 2026)}!\par
+I am \textbf{Xi AI (Barid)}, Assistant Director of the Chongqing Key Laboratory, and it is my great privilege to serve as your host today.\par
+\vspace{1.4mm}
+\textbf{[ZH 庄重开幕]} 尊敬的各位领导、各位特邀专家、各位老师与同仁们：大家上午好！\par
+非常荣幸与大家相聚在重庆两江新区与云端会场，共同迎来了 \textbf{“2026年大模型与智能网联汽车可信感知交互联合学术研讨会”}。我是重点实验室主任助理 \textbf{艾惜 (Barid)}，很荣幸担任今天大会的主持人。\par
+本次研讨会由 \textbf{重庆新国大研究院 (NUSRI-CQ)}、\textbf{智能网联汽车可信感知交互技术重庆市重点实验室} 与 \textbf{重庆长安汽车股份有限公司} 联合主办。今天全天我们将围绕基础大模型、可信安全治理、空间感知交互以及智能驾驶与智能电池管理四大前沿方向，展开 \textbf{7 场深度特邀报告} 与 \textbf{1 场圆桌高峰对话}。
+\end{scriptbox}
+
+\newpage
+
+% ======================================================================
+% CARD 2: OPENING VIP SPEECHES (09:32 - 09:40) + FORMAT BRIEFING
+% ======================================================================
+\cardbanner{手卡 2 · 开幕式三位领导致辞 \& 议程规则}{09:32 – 09:41}{Prof. Susanna Leong $\rightarrow$ 长安汽车领导致辞 $\rightarrow$ Mr. George Loh $\rightarrow$ 20+10 控时说明}
+
+\begin{scriptbox}{09:32 – 09:35 \;|\; 开幕致辞一：Prof. Susanna Leong (Vice Provost, NUS)}
+\fontsize{11.6}{16.8}\selectfont
+\textbf{[引介]} To kick off our symposium, it is our great honor to invite \textbf{Professor Susanna Leong}, Vice Provost of the National University of Singapore, to deliver the opening welcome address.\par
+下面，首先让我们以热烈的掌声，诚挚邀请新加坡国立大学副教务长 \textbf{Prof. Susanna Leong} 为大会作开幕致辞！\par
+\cue{若线上} \textit{Prof. Leong is joining us live from Singapore — Prof. Leong, the virtual floor is yours!} \;|\; \cue{若现场} \textit{Please welcome Prof. Susanna Leong!}\par
+\vspace{1mm}
+\textbf{[致谢]} Thank you very much, \textbf{Prof. Leong}, for your inspiring words and steadfast support for our joint research initiatives between Singapore and Chongqing. 非常感谢 Prof. Susanna Leong 热情洋溢的致辞与期许！
+\end{scriptbox}
+
+\begin{scriptbox}{09:35 – 09:38 \;|\; 开幕致辞二：重庆长安汽车股份有限公司领导致辞 (Chang An Rep)}
+\fontsize{11.6}{16.8}\selectfont
+\textbf{[引介]} 作为智能网联新能源汽车领域的领军企业，\textbf{重庆长安汽车股份有限公司}与新国大及重庆研究院携手共建市级重点实验室，为前沿算法与整车工程场景搭建了宝贵的产学研桥梁。\par
+接下来，让我们以热烈的掌声，有请重庆长安汽车股份有限公司领导致辞代表 —— \textbf{【手写核对：\blankline{64mm}】} 为大会致辞！\par
+Next, let us warmly welcome \textbf{【Mr./Ms. \blankline{38mm}】} representing \textbf{Chongqing Changan Automobile Co., Ltd.} to deliver a welcome address. 掌声有请！\par
+\vspace{1mm}
+\textbf{[致谢]} 非常感谢 \textbf{【\blankline{18mm}总】} 的精彩致辞！从产业一线视野为我们指明了大模型与可信感知交互在未来量产整车中的关键落地方向。Thank you very much for sharing Changan Automobile's strategic industry vision!
+\end{scriptbox}
+
+\begin{scriptbox}{09:38 – 09:40 \;|\; 开幕致辞三：Mr. George Loh (Associate Vice President, NUS)}
+\fontsize{11.6}{16.8}\selectfont
+\textbf{[引介]} Next, we are privileged to invite \textbf{Mr. George Loh}, Associate Vice President of the National University of Singapore, to share his welcome remarks.\par
+下面，让我们掌声欢迎新加坡国立大学协理副校长 \textbf{Mr. George Loh} 为本次联合学术研讨会致辞！\par
+\cue{若线上} \textit{Mr. Loh, please go ahead — over to you!} \;|\; \cue{若现场} \textit{Please join me in welcoming Mr. George Loh!}\par
+\vspace{1mm}
+\textbf{[致谢]} Thank you very much, \textbf{George}, for your warm encouragement and continuous guidance in building the NUSRI-CQ innovation ecosystem! 再次掌声感谢三位领导的精彩致辞！
+\end{scriptbox}
+
+\begin{transbox}{09:40 \;|\; 进入学术报告环节：播报 “20 + 10” 深度互动规则 (30 sec)}
+\fontsize{11.2}{16}\selectfont
+各位专家、同仁，现在正式进入特邀学术报告环节。特别说明：今天每场报告共 \textbf{30分钟}，采用 \textbf{“20分钟主题讲演 + 10分钟深度互动讨论”} 模式，鼓励现场与线上的老师、工程师和同学们踊跃交流！\par
+Each invited talk is \textbf{30 minutes} — \textbf{20 minutes of presentation followed by a 10-minute deep-dive Q\&A}. \cue{18m 示意剩2分钟 $\cdot$ 20m 开启提问 $\cdot$ 29m 最后一个问题}
+\end{transbox}
+
+\newpage
+
+% ======================================================================
+% CARD 3: MORNING BLOCK 1 (TALK 1 + TALK 2 + 10:40 PHOTO & TEA BREAK)
+% ======================================================================
+\cardbanner{手卡 3 · 上午上半场报告 (Talk 1 \& Talk 2) + 合影茶歇}{09:40 – 11:00}{09:40 Dr. Li Wenbo (线下) $\rightarrow$ 10:10 Prof. Ong Soh Khim (线上) $\rightarrow$ 10:40 合影与茶歇}
+
+\begin{scriptbox}{09:40 – 10:10 \;|\; 报告 1 [线下 On-site]：Dr. Li Wenbo (重庆大学) · 20m + 10m}
+\fontsize{11.1}{15.8}\selectfont
+\textbf{[引介]} 首先开启今天首场特邀报告的是来自 \textbf{重庆大学 (Chongqing University)} 的 \textbf{Dr. Li Wenbo}。随着大模型进入智能座舱，座舱正从被动指令执行器演变为具备共情能力的主动智能体；如何科学设计情感交互并构建可量化的测试评价体系，是学界与车企共同关注的核心难题。\par
+Our first speaker is \textbf{Dr. Li Wenbo} from \textbf{Chongqing University}, speaking on \textit{``Affective Interaction and Testing \& Evaluation of Cockpit Intelligent Agents''}（《座舱智能体情感交互与测试评价》）. 掌声有请 \textbf{Dr. Li Wenbo}！\par
+\textbf{[20m 转提问]} 非常感谢 Dr. Li Wenbo 的精彩报告！现在进入 \textbf{10分钟互动讨论}，现场和线上的老师、长安同仁请举手提问！
+\end{scriptbox}
+\begin{qabox}{主持人专属深度提问备选 · Talk 1 (Dr. Li Wenbo)}
+\fontsize{10.2}{14.4}\selectfont
+\textbf{Q1 [主观共情转客观车规指标]：}“李博士，情感交互具有很强的个体主观差异。在构建行业级或车规级座舱智能体测试标准时，如何把用户主观的「共情舒适度」转化为可复现、可闭环回归测试的客观量化指标？”\par
+\textbf{Q2 [高认知负荷下的安全边界]：}“在复杂城市拥堵或人机共驾接管等高认知负荷场景下，主动情感关怀有时反而可能分散注意力。您认为座舱情感交互在什么时刻应「主动介入」，什么时刻必须「克制静默」？”
+\end{qabox}
+
+\begin{scriptbox}{10:10 – 10:40 \;|\; 报告 2 [线上 Online]：Prof. Ong Soh Khim (NUS) · 20m + 10m}
+\fontsize{11.1}{15.8}\selectfont
+\textbf{[引介]} Moving to our second morning keynote, we are honored to connect online with \textbf{Professor Ong Soh Khim} from the \textbf{National University of Singapore (NUS)}, an internationally renowned scholar in human-computer interaction, AR, and intelligent manufacturing. Today she presents \textit{``Gaze and Eye-Roll Detection with Potential Application for Autonomous Driving''}.\par
+第二场我们连线新加坡国立大学知名学者 \textbf{Prof. Ong Soh Khim}，分享面向自动驾驶的注视与眼球转动检测研究。\par
+\textit{Prof. Ong, we see and hear you clearly — 20 minutes for presentation and 10 minutes for Q\&A. Over to you!}
+\end{scriptbox}
+\begin{qabox}{MC Pocket Guiding Questions · Talk 2 (Prof. Ong Soh Khim · English)}
+\fontsize{10.1}{14.2}\selectfont
+\textbf{Q1 [Cabin Lighting \& Glasses Robustness]:} \textit{``In real-world driving, drivers often wear glasses or sunglasses and face rapid lighting shifts at tunnel entrances. How resilient is fine-grained eye-roll and gaze detection under these unconstrained cabin conditions, and which sensor modalities help most?''}\par
+\textbf{Q2 [L3 Take-Over Cognitive Readiness]:} \textit{``In Level-3 conditional automation, assessing driver readiness before a Take-Over Request (TOR) is critical. Beyond gaze direction, can subtle ocular cues like eye-rolls or gaze dispersion reveal frustration, fatigue, or cognitive disengagement?''}
+\end{qabox}
+
+\begin{transbox}{10:40 – 11:00 \;|\; 全体嘉宾合影 \& 晨间茶歇播报 (Group Photo \& Tea Break)}
+\fontsize{10.6}{14.8}\selectfont
+感谢 Prof. Ong！接下来 \textbf{10:40–11:00} 是 \textbf{全体参会嘉宾合影与晨间茶歇}。请现场各位领导、报告嘉宾与老师同学先移步至 \textbf{【\blankline{42mm}】} 拍摄大会合影（线上嘉宾欢迎开摄像头同框）！随后请享用茶歇并参观成果海报，我们 \textbf{11:00 准时} 回到报告厅！\par
+\textit{May I invite all on-site guests to gather at \textbf{[Location]} first for our group photo, followed by tea break. We resume at \textbf{11:00 AM sharp}!}
+\end{transbox}
+
+\newpage
+
+% ======================================================================
+% CARD 4: MORNING BLOCK 2 (TALK 3 + TALK 4 + 12:00 NETWORKING LUNCH)
+% ======================================================================
+\cardbanner{手卡 4 · 上午下半场报告 (Talk 3 \& Talk 4) + 午餐转场}{11:00 – 13:00}{11:00 Dr. Yajing Yang (线下) $\rightarrow$ 11:30 Dr. Shaoyang Peng (线上) $\rightarrow$ 12:00 交流午餐}
+
+\begin{scriptbox}{11:00 – 11:30 \;|\; 报告 3 [线下 On-site]：Dr. Yajing Yang (NUS) · 20m + 10m}
+\fontsize{11.1}{15.8}\selectfont
+\cue{10:59 提醒落座} 欢迎回到会场！Welcome back! 上午下半场我们聚焦大语言模型的数据智能分析与机器遗忘安全。\par
+下面有请上午第三位嘉宾——来自 \textbf{新加坡国立大学 (NUS)}、亲临重庆现场的 \textbf{Dr. Yajing Yang}，报告题目是 \textit{``Data Analysis with LLM''}（基于大语言模型的数据分析）。海量研发与多源时序数据的智能洞察是大模型赋能科研与工业的核心抓手。\par
+Please join me in welcoming \textbf{Dr. Yajing Yang} from \textbf{NUS} to the podium! 掌声有请！
+\end{scriptbox}
+\begin{qabox}{主持人专属深度提问备选 · Talk 3 (Dr. Yajing Yang · 中英双备)}
+\fontsize{10}{14.1}\selectfont
+\textbf{Q1 [零容忍数值幻觉与代码生成边界]：}“在车载工程等高精度场景容不得数值幻觉。相比让LLM直接输出结论，通过 Agent 自动编写执行代码/SQL 范式在复杂统计推理中的可靠性边界在哪里？” \\
+\textit{EN: ``Where numerical precision is non-negotiable, how do we eliminate numerical hallucinations, and where do code-generating data agents still struggle most?''}\par
+\textbf{Q2 [私有敏感数据本地中小模型部署]：}“车企大量敏感研发数据不能上公有云。本地私有化部署中小参数（7B–32B）开源模型做数据分析，与顶尖云端大模型相比核心差距在哪？如何弥补？” \\
+\textit{EN: ``When sensitive R\&D telemetry cannot leave private servers, how close can local open-weight models get to frontier cloud LLMs for data analysis?''}
+\end{qabox}
+
+\begin{scriptbox}{11:30 – 12:00 \;|\; 报告 4 [线上 Online]：Dr. Shaoyang Peng (6ESTATES@SG) · 20m + 10m}
+\fontsize{11.1}{15.8}\selectfont
+\textbf{[引介]} 上午压轴的第四场报告聚焦大模型数据隐私合规与安全治理前沿——\textbf{机器遗忘（LLM Unlearning）}。我们很高兴在线连线新加坡人工智能领军企业 \textbf{6ESTATES@SG} 的 \textbf{Dr. Shaoyang Peng}！\par
+Our fourth speaker joining online from Singapore is \textbf{Dr. Shaoyang Peng} from \textbf{6ESTATES@SG}, presenting \textit{``LLM Unlearning''} — critical for privacy protection, copyright compliance, and trustworthy AI.\par
+Dr. Peng / 彭博士您好！画面声音很清晰，接下来 30 分钟（20m 讲演 + 10m 提问）交给您！
+\end{scriptbox}
+\begin{qabox}{主持人专属深度提问备选 · Talk 4 (Dr. Shaoyang Peng · 中英双备)}
+\fontsize{10}{14.1}\selectfont
+\textbf{Q1 [「真遗忘」验证 vs 表层压制]：}“很多遗忘算法只是在输出层「压制」生成，遭遇越狱或微调攻击又会恢复记忆。产业界如何严格审计验证敏感知识是真的从内部表征中被彻底擦除了？” \\
+\textit{EN: ``Many unlearning methods suppress outputs superficially rather than erasing internal representations. How can we rigorously certify that sensitive data is truly forgotten?''}\par
+\textbf{Q2 [智能汽车持续遗忘与能力保持]：}“若车主注销账号要求依法遗忘个人习惯与轨迹数据，面对高频、持续的局部遗忘请求，如何避免对模型通用推理能力造成灾难性退化？” \\
+\textit{EN: ``In connected vehicles handling sequential `right-to-be-forgotten' requests, how do we prevent catastrophic degradation of core reasoning utility?''}
+\end{qabox}
+
+\begin{transbox}{12:00 – 13:00 \;|\; 学术交流午餐转场播报 (Networking Lunch · 60 min)}
+\fontsize{10.6}{14.8}\selectfont
+感谢彭博士！接下来 \textbf{12:00–13:00} 是 \textbf{学术交流午餐}，请现场嘉宾凭胸牌移步至 \textbf{【\blankline{42mm}】} 用餐交流。下午 \textbf{13:00 整} 准时开启 \textbf{Prof. Shen Lei、Prof. Pang Yan、王通越博士} 的三场重磅报告及圆桌对话！\\
+\textit{Lunch is served at \textbf{[Location]}. Our afternoon session resumes promptly at \textbf{1:00 PM (UTC+8)}. Enjoy your lunch!}
+\end{transbox}
+
+\newpage
+
+% ======================================================================
+% CARD 5: AFTERNOON BLOCK 1 (TALK 5: SHEN LEI + TALK 6: PANG YAN)
+% ======================================================================
+\cardbanner{手卡 5 · 下午特邀报告上半场 (Talk 5 \& Talk 6)}{13:00 – 14:00}{13:00 Prof. Shen Lei (NUS · 线下) $\rightarrow$ 13:30 Prof. Pang Yan (NUS · 线上)}
+
+\begin{transbox}{13:00 \;|\; 下午场开场唤醒 (Afternoon Wake-Up · 30 sec)}
+\fontsize{11}{15.6}\selectfont
+尊敬的各位专家学者、线上线下的同仁们，大家下午好！Good afternoon, everyone, and welcome back to \textbf{TPI-ICV 2026}! 下午我们将带来三场极具交叉深度与产业价值的报告，涵盖\textbf{智能电池管理、可信智能体AI安全、以及驾乘健康AI伦理治理}，依然采用 \textbf{20分钟报告 + 10分钟深度提问}。
+\end{transbox}
+
+\begin{scriptbox}{13:00 – 13:30 \;|\; 报告 5 [线下 On-site]：Prof. Shen Lei (NUS) · 20m + 10m}
+\fontsize{11.2}{16}\selectfont
+\textbf{[引介]} 下午第一场报告，我们非常荣幸邀请到亲临重庆会场的 \textbf{新加坡国立大学 (NUS)} 知名学者 \textbf{Prof. Shen Lei}！电动化是智能网联汽车的物理能量底座，将人工智能与物理电化学机理深度融合，打造高安全、全天候的智能电池管理系统（Intelligent BMS），正成为新能源汽车皇冠上的明珠。\par
+Let us warmly welcome \textbf{Professor Shen Lei} from the \textbf{National University of Singapore} for our first afternoon keynote on \textit{``Intelligent Battery Management Systems for Electric Vehicles''}. 掌声有请 \textbf{Prof. Shen}！\par
+\textbf{[致谢预告]} 非常感谢 Prof. Shen Lei！一会儿 \textbf{14:50 圆桌对话} 我们还将邀请沈教授再次登台深度碰撞！
+\end{scriptbox}
+\begin{qabox}{主持人专属深度提问备选 · Talk 5 (Prof. Shen Lei · 中英双备)}
+\fontsize{10.1}{14.3}\selectfont
+\textbf{Q1 [物理电化学机理 × 基础模型融合]：}“在重庆夏季极高温或冬季极寒等极端工况、以及不同电芯化学体系切换时，纯数据驱动模型易出现分布外泛化失效。您认为物理电化学先验（Physics-informed AI）与时序基础模型该如何耦合，以兼顾精度与安全边界？” \\
+\textit{EN: ``Under extreme temperatures or new battery chemistries, how should physics-informed priors combine with foundation/time-series models to ensure safety-critical BMS reliability?''}\par
+\textbf{Q2 [车端嵌入式BMS与云端数字孪生协同]：}“整车本地 BMS 控制器嵌入式算力受限且要求毫秒级实时响应。未来智能 BMS 中，哪些算法应留在车端实时闭环，哪些适合放在云端电池数字孪生大模型中协同演进？” \\
+\textit{EN: ``Given tight onboard MCU compute/latency limits, what is the optimal division of labor between vehicle-edge estimation and cloud battery digital twins?''}
+\end{qabox}
+
+\begin{scriptbox}{13:30 – 14:00 \;|\; 报告 6 [线上 Online]：Prof. Pang Yan 庞严教授 (NUS / 实验室副主任)}
+\fontsize{11.2}{16}\selectfont
+\textbf{[引介]} 第二场报告，我们很高兴在线连线 \textbf{新加坡国立大学 (NUS)} 副教授、同时也是我们 \textbf{重庆市重点实验室副主任 (Associate Director)} —— \textbf{Prof. Pang Yan (庞严教授)}！当大模型从被动对话迈向自主规划与调用车控工具的 \textbf{Agentic AI（智能体AI）}，隐私、安全与可靠性就成为决定其能否上车的生命线。\par
+We are delighted to welcome \textbf{Professor Pang Yan} from \textbf{NUS}, Associate Director of our Key Laboratory, presenting \textit{``Towards Trustworthy Agentic AI: Privacy, Safety, and Reliability in Intelligent Vehicles''}. 庞教授您好，时间交给您！Over to you!
+\end{scriptbox}
+\begin{qabox}{主持人专属深度提问备选 · Talk 6 (Prof. Pang Yan · 中英双备)}
+\fontsize{10.1}{14.3}\selectfont
+\textbf{Q1 [多步工具调用级联误差与确定性安全护栏]：}“车载 Agentic AI 会自主多步规划并调用车内外 API。面对潜在的多模态提示词注入或多步累积误差，如何在执行物理车控动作前建立「可证明安全」的硬护栏？” \\
+\textit{EN: ``As vehicular Agentic AI plans multi-step actions and invokes control APIs, how do we build deterministic safety guardrails against compounding errors or multimodal prompt injections?''}\par
+\textbf{Q2 [长期个性化记忆与端云隐私兼顾]：}“车载智能体越懂用户，越依赖长期偏好与座舱多模态数据记忆。在端云协同架构下，您最看好哪种技术路线实现「既高度个性化、又严格保护隐私」？” \\
+\textit{EN: ``In edge-cloud vehicle architectures, what paradigm is most promising for enabling long-term personalized agent memory with strong privacy guarantees?''}
+\end{qabox}
+
+\newpage
+
+% ======================================================================
+% CARD 6: AFTERNOON BLOCK 2 (TALK 7: DR. WANG TONGYUE + 14:30 TEA BREAK)
+% ======================================================================
+\cardbanner{手卡 6 · 下午报告 7 (王通越博士) + 下午茶歇与圆桌换场}{14:00 – 14:50}{14:00 Dr. 王通越 (重庆长安汽车股份有限公司 · 线下) $\rightarrow$ 14:30 茶歇 \& 舞台布场}
+
+\begin{scriptbox}{14:00 – 14:30 \;|\; 报告 7 [线下 On-site]：Dr. 王通越 (重庆长安汽车股份有限公司) · 20m + 10m}
+\fontsize{11.8}{17.4}\selectfont
+\textbf{[引介]} 下午第三场特邀报告，让我们聚焦智能网联汽车极富人文温度、同时又极具治理挑战的前沿议题——\textbf{汽车驾乘人员健康管理与人工智能伦理治理}。\par
+我们非常荣幸邀请到来自联合主办方 \textbf{重庆长安汽车股份有限公司} 的 \textbf{王通越博士 (Dr. Tongyue Wang)} 莅临现场分享！\par
+Our third afternoon keynote speaker is \textbf{Dr. Tongyue Wang (王通越博士)} from \textbf{Chongqing Changan Automobile Co., Ltd.}, speaking on \textit{``AI Ethics Governance for Automotive Occupant Health Management''}（《面向汽车驾乘人员健康管理的人工智能伦理治理》）。下面让我们以热烈的掌声有请 \textbf{王通越博士}！\par
+\vspace{1.2mm}
+\textbf{[20m 转提问]} 非常感谢王通越博士从产业工程与伦理治理双重视角带来的深刻分享！现在开启 \textbf{10分钟深度交流环节}，请现场与线上的老师同仁举手提问！\par
+\vspace{1mm}
+\textbf{[结束致谢]} 再次掌声感谢 \textbf{王通越博士}！王博士稍后在 \textbf{14:50} 也将留在台上参加我们的圆桌高峰对话，我们先把热烈的掌声送给王博士！
+\end{scriptbox}
+
+\begin{qabox}{主持人专属深度提问备选 · Talk 7 (Dr. 王通越 · 中文深度探讨)}
+\fontsize{11.2}{16.6}\selectfont
+\textbf{引导问题 1 [无感健康监测与「多乘员知情同意」的工程落地]：}\par
+“王博士，请教一个量产设计中非常现实的难题：座舱非接触式健康传感器（如视觉摄像头、毫米波生理雷达）往往是无感持续工作的，而且车内除了车主本人，经常还有家人、朋友或商务临时乘客。在产品交互设计上，如何优雅地解决\textbf{「多乘员动态知情同意」}与\textbf{「最小必要数据采集」}之间的平衡？”\par
+\vspace{1.8mm}
+\textbf{引导问题 2 [突发健康风险预警与主动安全接管的责任边界]：}\par
+“第二个问题关乎伦理与法规边界：当车载AI检测到驾驶员出现突发心率异常或重度疲劳征兆时，系统给出\textbf{「健康关怀提醒」}与触发\textbf{「主动安全接管 / 自动靠边停车」}之间，在伦理准则和法律责任上该如何划定清晰边界，既能在关键时刻守护生命，又不越界承担医疗诊断风险？”
+\end{qabox}
+
+\begin{transbox}{14:30 – 14:50 \;|\; 下午茶歇 \& 圆桌论坛舞台布置提示 (Afternoon Tea Break · 20 min)}
+\fontsize{11.4}{16.6}\selectfont
+\textbf{[中文播报]} 各位老师、各位同仁，至此今天全天 \textbf{7场特邀主题报告} 已经全部精彩呈现！接下来 \textbf{14:30 至 14:50} 是 \textbf{20分钟下午茶歇与海报交流时间}。请大家移步茶歇区稍事休息；工作人员也将借此时间在台上布置圆桌座椅与手持麦。\textbf{14点50分（2点50分）} 我们将准时开启今天压轴的 \textbf{圆桌高峰对话}，探讨“大模型在具身智能与智能网联整车领域的未来演进趋势”！\par
+\vspace{1mm}
+\textbf{[EN]} We will now take a \textbf{20-minute Afternoon Tea Break (14:30–14:50)} while setting the stage for our \textbf{Panel Discussion}. Please enjoy the refreshments and posters, and see you back at \textbf{2:50 PM sharp}!\par
+\vspace{1mm}
+\cue{茶歇期间动作：1) 确认台上3把座椅顺序（左一：Barid；居中：Prof. Shen Lei；右侧：Dr. 王通越）与3支手持麦试音；2) 与两位嘉宾花1分钟快速对齐两轮讨论方向。}
+\end{transbox}
+
+\newpage
+
+% ======================================================================
+% CARD 7: PANEL DISCUSSION STAGE HANDHELD CARD (14:50 - 15:30, 40 MIN)
+% ======================================================================
+\cardbanner{手卡 7 · 圆桌高峰对话控场手持卡 (Panel Discussion)}{14:50 – 15:30 (40m)}{议题：大模型在具身智能与智能网联整车领域的未来演进趋势 \;|\; Barid $\times$ Prof. Shen Lei $\times$ Dr. 王通越}
+
+\begin{scriptbox}{1. 破题开场 \& 三人阵容引介 (14:50 – 14:54 · 4 min)}
+\fontsize{10.8}{15.4}\selectfont
+欢迎回到会场！Welcome back to our \textbf{Panel Discussion}! 把今天7场报告串联起来看，能清晰看到一个历史性拐点：\textbf{智能网联汽车正从「软件定义汽车（SDV）」加速演进为物理世界最具代表性的「轮上具身智能体（Embodied Intelligent Vehicle）」}。\par
+接下来40分钟围绕\textbf{“大模型在具身智能与智能网联整车领域的未来演进趋势”}，非常荣幸与两位嘉宾同台碰撞：\textbf{Prof. Shen Lei}（新加坡国立大学，深耕物理机理与智能电池电控底座）、\textbf{王通越博士}（重庆长安汽车股份有限公司，聚焦整车量产应用与AI伦理安全治理），以及我本人 \textbf{艾惜 (Barid)}（从重点实验室多模态可信感知与端云协同视角共同参与讨论）。掌声欢迎两位嘉宾！
+\end{scriptbox}
+
+\begin{qabox}{2. 第一轮交锋：范式重构 —— 数字大模型遇上物理整车 (14:54 – 15:06 · 12 min)}
+\fontsize{10.5}{14.9}\selectfont
+\textbf{$\blacktriangleright$ 问 Prof. Shen Lei (约4m)：}“过去两年大模型在数字世界突飞猛进，但进入\textbf{具身物理整车}——无论是能量管理、底盘控制还是环境交互，物理定律容不下「概率幻觉」，且大模型本身也是耗电大户。从 AI for Science 与智能电池视角看，\textbf{「数字智能」与「物理硬件/能量底座」最大的鸿沟是什么？未来3年最值得突破的结合点在哪？}”\par
+\vspace{0.8mm}
+\textbf{$\blacktriangleright$ 问 Dr. 王通越 (约4m)：}“主机厂一线现在都在讲端到端VLA与座舱具身管家。站在长安产业落地视角，剥开概念泡沫，\textbf{未来2–3年真正能让普通车主愿意买单、高频使用的大模型核心场景是什么？工程化上车最让您头疼的「卡脖子」环节又是什么？}”\par
+\vspace{0.8mm}
+\textbf{$\blacktriangleright$ Barid 补充小结 (2m)：}“从重点实验室视角补充一点：具身整车最大特征是\textbf{「感知的不确定性」（雨雾眩光传感器退化、乘员微表情微妙）与「决策的高风险性」并存}。未来绝不是把云端千亿聊天模型硬塞进车机，而是构建\textbf{具备物理因果理解、传感器退化自适应、端云非对称协同}的垂域具身基座。”
+\end{qabox}
+
+\begin{qabox}{3. 第二轮交锋：「不可能三角」与产学研铁三角破局 (15:06 – 15:18 · 12 min)}
+\fontsize{10.5}{14.9}\selectfont
+\textbf{$\blacktriangleright$ 问 Dr. 王通越 (约4m)：}“面对车载大模型\textbf{「自主智能、车规实时功耗成本、零容忍安全伦理」的不可能三角}：当车内Agent拥有长期记忆并介入健康与驾驶辅助，车企与高校实验室该如何联手，把\textbf{「安全护栏」与「伦理治理」从后期合规审查变成前置的技术竞争力}？”\par
+\vspace{0.8mm}
+\textbf{$\blacktriangleright$ 问 Prof. Shen Lei (约4m)：}“新国大具备国际原创算法视野，重庆拥有完备整车产业链与8D复杂立体山地交通场景。像我们 \textbf{NUSRI-CQ、重点实验室与长安汽车} 这样的跨国「高校+研究院+龙头车企」铁三角，\textbf{怎样避免「高校发完论文就结束、企业只看短期交付」的脱节，真正跑出引领行业的原创成果？}”
+\end{qabox}
+
+\begin{transbox}{4. 观众开放麦 (15:18 – 15:27 · 9 min) \;\&\; 5. 2030 闪电预言收尾 (15:27 – 15:30 · 3 min)}
+\fontsize{10.4}{14.7}\selectfont
+\textbf{[开放提问 9m]} 把宝贵时间交给台下与线上的PI教授、长安专家和博士后/研究生同学们！\textit{Let's open the floor to our audience in Chongqing and online!}\\
+\textbf{[10秒防冷场破冰题]} \textit{“替在场年轻博士后和研究生请教两位：面对大模型极速迭代，智能汽车与AI方向的青年学者最该重点锤炼哪一项不可替代的核心能力？”}\par
+\vspace{0.8mm}
+\textbf{[15:27 闪电收尾 · 面向2030三句话预言]} 请每位嘉宾用不超过三句话预言：\textbf{2030年的智能网联汽车最本质的变化是什么？}（顺序：\textbf{王通越博士 $\rightarrow$ Prof. Shen Lei $\rightarrow$ Barid 收尾}）\\
+\textbf{[Barid 收尾金句]} “到2030年，汽车将不再只是从A点到B点的交通机器，而会成为\textbf{第一个真正走进千家万户、可信赖、懂分寸、知冷暖的具身智能伙伴}！再次掌声感谢 \textbf{Prof. Shen Lei} 与 \textbf{王通越博士}！”
+\end{transbox}
+
+\newpage
+
+% ======================================================================
+% CARD 8: CLOSING CEREMONY DUAL-VERSION PODIUM CARD (15:30 - 16:00)
+% ======================================================================
+\cardbanner{手卡 8 · 大会闭幕总结致辞与圆满礼成 (双版本备选)}{15:30 – 16:00}{根据会前核对勾选：优先使用【版本 A：引介王家功院长致辞】；若委托主持则读【版本 B】}
+
+\begin{scriptbox}{【版本 A · 默认推荐】引介王家功院长（或现场领衔主席）作闭幕致辞 + 宣布闭幕}
+\fontsize{11.4}{16.4}\selectfont
+\textbf{[引介闭幕致辞]} 各位领导、各位专家学者、线上及线下的同仁们：经过一天充实而高密度的思想激荡，我们的议程即将进入尾声。下面，让我们以最热烈的掌声，有请 \textbf{重庆新国大研究院院长、智能网联汽车可信感知交互技术重庆市重点实验室主任 —— 王家功教授 (Prof. Jiagong WANG)} \cue{或手写替换：\blankline{30mm}} 为本次联合学术研讨会作闭幕总结致辞！\par
+Ladies and gentlemen, to conclude today's symposium, please join me in welcoming \textbf{Professor Jiagong WANG}, Director of NUS (Chongqing) Research Institute and Director of our Chongqing Key Laboratory, to deliver the \textbf{Closing Remarks}! 掌声有请！\par
+\vspace{1.2mm}
+\cue{院领导致辞完毕后，主持人走回讲台宣布圆满闭幕}\par
+\textbf{[最终谢幕词]} 非常感谢 \textbf{王院长} 高瞻远瞩的总结与勉励！Thank you very much, Prof. Wang!\par
+在此，请允许我再次代表大会组委会与重点实验室秘书处，衷心感谢今天带来精彩分享的 \textbf{7位海内外特邀报告嘉宾}，感谢致辞的新国大与长安汽车各位领导，感谢线上线下全程投入的各位委员会专家、实验室PI、长安研发同仁以及全体会务组工作人员的辛勤付出！\par
+我宣布：\textbf{“2026年大模型与智能网联汽车可信感知交互联合学术研讨会 (TPI-ICV 2026)” 圆满闭幕！}\par
+Thank you all once again for joining \textbf{TPI-ICV 2026} in Chongqing and online. Wishing everyone safe travels and fruitful collaborations ahead — \textbf{the symposium is now officially adjourned!} 祝各位返程顺利、身体健康，我们下次再会！
+\end{scriptbox}
+
+\begin{tcolorbox}[
+  enhanced, colback=slate100, colframe=slate700, arc=1.4mm, boxrule=0.8pt,
+  left=3.4mm, right=3.4mm, top=1.9mm, bottom=1.9mm,
+  title={\fontsize{10.6}{13}\selectfont\bfseries 【版本 B · 现场备选】若院领导委托主持人直接代表组委会作闭幕总结},
+  colbacktitle=slate700, coltitle=white, toptitle=1.25mm, bottomtitle=1.25mm
+]
+\fontsize{10.8}{15.4}\selectfont
+尊敬的各位领导、各位专家学者、线上及线下的同仁们：从清晨 9:30 的开幕致辞，到涵盖基础大模型、机器遗忘、座舱情感与视线感知、智能电池管理及汽车AI伦理治理的 \textbf{7 场特邀报告}，再到具身智能整车 \textbf{圆桌高峰对话}，我们共同度过了极具学术密度与产业启发的一天。回顾全天交流，有\textbf{三点共识}尤为令人振奋：\par
+\textbf{1.「向深处去」：}大模型上车正从表层对话走向底层物理电化学机理融合、因果可解释与边缘高效推理；\par
+\textbf{2.「向可信去」：}无论是 Agentic AI 硬护栏、机器遗忘、量化情感测评还是健康伦理治理，“可信、安全、合规”已成为智能网联汽车不可动摇的生命线；\par
+\textbf{3.「向融合去」：}依托 \textbf{重庆新国大研究院 (NUSRI-CQ)}、\textbf{重庆市重点实验室} 与 \textbf{重庆长安汽车股份有限公司} 的紧密携手，新加坡国际前沿原创研究正与重庆鲜活的整车产业场景深度咬合。\par
+谨代表大会组委会与重点实验室秘书处，衷心感谢各位致辞领导、7位特邀报告专家、全体PI与长安研发同仁及会务团队！\par
+Ladies and gentlemen, colleagues joining us online and in Chongqing — thank you for making \textbf{TPI-ICV 2026} an inspiring milestone. I now declare \textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction} successfully concluded! 祝各位返程平安，期待联合攻关结出更多硕果！大会圆满结束！
+\end{tcolorbox}
+
+\end{document}
