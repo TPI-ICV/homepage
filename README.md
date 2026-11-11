@@ -6,7 +6,7 @@
 Co-hosted by:
 - **National University of Singapore (Chongqing) Research Institute (NUSRI-CQ / 重庆新国大研究院)**
 - **Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles (智能网联汽车可信感知交互技术重庆市重点实验室)**
-- Strategic collaboration with **Changan Automobile Forward-looking Technology Research Institute (长安汽车前瞻技术研究院)**
+- Strategic collaboration with **Chongqing Changan Automobile Co., Ltd. (重庆长安汽车股份有限公司)**
 
 ---
 

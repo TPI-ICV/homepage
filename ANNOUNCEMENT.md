@@ -13,7 +13,7 @@ We are delighted to share the **Final Announcement and Program Schedule** for **
 The symposium is jointly hosted by:
 - **National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)**
 - **Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles**
-- **Changan Automobile Forward-looking Technology Research Institute**
+- **Chongqing Changan Automobile Co., Ltd.**
 
 ### ■ Key Event & Logistics Information
 - **Date & Time:** Thursday, 12 November 2026 · 09:00 – 16:00 (UTC+8 / SGT)
@@ -54,7 +54,7 @@ Warm regards,
 **Organizing Committee & Secretariat of TPI-ICV 2026**  
 National University of Singapore (Chongqing) Research Institute (NUSRI-CQ)  
 Chongqing Key Laboratory of Trusted Perception and Interaction Technology for Intelligent and Connected Vehicles  
-Changan Automobile Forward-looking Technology Research Institute  
+Chongqing Changan Automobile Co., Ltd.  
 
 ---
 
@@ -64,9 +64,9 @@ Changan Automobile Forward-looking Technology Research Institute
 
 尊敬的各位特邀报告嘉宾、委员会专家、课题组同仁及参会代表：
 
-由 **重庆新国大研究院 (NUSRI-CQ)**、**智能网联汽车可信感知交互技术重庆市重点实验室** 与 **长安汽车前瞻技术研究院** 联合主办的 **“2026年大模型与智能网联汽车可信感知交互联合学术研讨会” (The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction, TPI-ICV 2026)** 将于 **2026年11月12日（星期四）09:00 – 16:00** 隆重举行。
+由 **重庆新国大研究院 (NUSRI-CQ)**、**智能网联汽车可信感知交互技术重庆市重点实验室** 与 **重庆长安汽车股份有限公司** 联合主办的 **“2026年大模型与智能网联汽车可信感知交互联合学术研讨会” (The 2026 Joint Symposium on Foundation AI, Large Language Models, and Trusted Vehicular Interaction, TPI-ICV 2026)** 将于 **2026年11月12日（星期四）09:00 – 16:00** 隆重举行。
 
-本次研讨会汇聚来自新加坡国立大学 (NUS)、重庆新国大研究院、重庆大学、6ESTATES@SG 及长安汽车前瞻技术研究院的知名学者与产业技术专家，围绕基础大模型与前沿AI、人工智能可信与伦理安全、空间计算与座舱自然交互、智能驾驶与电动汽车智能电池管理等方向展开深入交流。现将会议最终议程及参会指南通知如下：
+本次研讨会汇聚来自新加坡国立大学 (NUS)、重庆新国大研究院、重庆大学、6ESTATES@SG 及重庆长安汽车股份有限公司的知名学者与产业技术专家，围绕基础大模型与前沿AI、人工智能可信与伦理安全、空间计算与座舱自然交互、智能驾驶与电动汽车智能电池管理等方向展开深入交流。现将会议最终议程及参会指南通知如下：
 
 ### 一、 会议时间、地点与参会指引
 - **会议时间：** 2026年11月12日（星期四）09:00 – 16:00（北京时间 UTC+8）
@@ -106,7 +106,7 @@ Changan Automobile Forward-looking Technology Research Institute
 **2026年大模型与智能网联汽车可信感知交互联合学术研讨会组委会**  
 重庆新国大研究院 (NUSRI-CQ)  
 智能网联汽车可信感知交互技术重庆市重点实验室  
-长安汽车前瞻技术研究院  
+重庆长安汽车股份有限公司  
 
 ---
 
