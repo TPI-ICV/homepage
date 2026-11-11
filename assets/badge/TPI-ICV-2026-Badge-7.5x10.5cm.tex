@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage[paperwidth=105mm, paperheight=148mm, margin=0pt]{geometry}
+\usepackage[paperwidth=75mm, paperheight=105mm, margin=0pt]{geometry}
 \usepackage{fontspec}
 \usepackage{xeCJK}
 \usepackage{tikz}
@@ -48,70 +48,70 @@
 \begin{document}
 
 % ======================================================================
-% PAGE 1: FRONT SIDE (SIMPLE STANDARD ACADEMIC BADGE)
+% PAGE 1: FRONT SIDE (7.5 x 10.5 cm STANDARD ACADEMIC BADGE)
 % ======================================================================
 \begin{tikzpicture}[remember picture, overlay]
   % Pure White Background
   \fill[white] (current page.north west) rectangle (current page.south east);
 
   % Top Navy Header Band
-  \fill[nusnavy] (current page.north west) rectangle ([yshift=-36mm]current page.north east);
-  \fill[nusorange] ([yshift=-36mm]current page.north west) rectangle ([yshift=-37.5mm]current page.north east);
+  \fill[nusnavy] (current page.north west) rectangle ([yshift=-26.0mm]current page.north east);
+  \fill[nusorange] ([yshift=-26.0mm]current page.north west) rectangle ([yshift=-27.1mm]current page.north east);
 
   % Event Title in Header
-  \node[anchor=center, text width=90mm, align=center] at ([yshift=-19.5mm]current page.north) {
-    {\fontsize{7.5}{9.0}\selectfont\color{nusorange}\textbf{TPI-ICV 2026}}\\[1.8mm]
-    {\fontsize{9.2}{11.4}\selectfont\color{white}\textbf{The 2026 Joint Symposium on\\Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}}\\[1.6mm]
-    {\fontsize{7.4}{9.2}\selectfont\color{white!90!slate200}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会}}
+  \node[anchor=center, text width=66mm, align=center] at ([yshift=-13.2mm]current page.north) {
+    {\fontsize{5.6}{6.8}\selectfont\color{nusorange}\textbf{TPI-ICV 2026}\par}\vspace{1.0mm}
+    {\fontsize{6.65}{8.1}\selectfont\color{white}\textbf{The 2026 Joint Symposium on\\Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}\par}\vspace{1.2mm}
+    {\fontsize{5.25}{6.5}\selectfont\color{white!90!slate200}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会}\par}
   };
 
   % Center Open Area for Attendee Name & Affiliation (Clean & Uncluttered)
-  \node[anchor=center, text width=86mm, align=center] at ([yshift=-3mm]current page.center) {
-    {\fontsize{18}{22}\selectfont\color{slate900}\textbf{\strut}}\\[3mm]
-    {\fontsize{11}{14}\selectfont\color{slate600}\strut}
+  \node[anchor=center, text width=62mm, align=center] at ([yshift=-2mm]current page.center) {
+    {\fontsize{13}{16}\selectfont\color{slate900}\textbf{\strut}\par}
   };
 
   % Co-Hosts & Date/Location above Bottom Bar
-  \node[anchor=south, text width=90mm, align=center] at ([yshift=21.5mm]current page.south) {
-    \textcolor{slate200}{\rule{78mm}{0.4pt}}\\[2.2mm]
-    {\fontsize{6.5}{8.2}\selectfont\color{slate600}
-      \textbf{NUSRI-CQ (重庆新国大研究院)} $\;\cdot\;$ \textbf{Chongqing Key Lab for ICV} $\;\cdot\;$ \textbf{Changan Auto}\\[0.8mm]
-      \textbf{\textcolor{slate900}{12 November 2026 $\;\cdot\;$ Chongqing, China}}
+  \node[anchor=south, text width=66mm, align=center] at ([yshift=14.8mm]current page.south) {
+    \textcolor{slate200}{\rule{56mm}{0.35pt}}\\[1.5mm]
+    {\fontsize{4.75}{6.0}\selectfont\color{slate600}
+      \textbf{NUSRI-CQ (重庆新国大研究院)}\\
+      \textbf{Chongqing Key Lab for ICV $\;\cdot\;$ Changan Auto}\\[0.7mm]
+      \textbf{\textcolor{slate900}{12 November 2026 $\;\cdot\;$ Chongqing, China}}\par
     }
   };
 
   % Bottom Role Bar
-  \fill[nusnavy] (current page.south west) rectangle ([yshift=16.5mm]current page.south east);
-  \node[anchor=center, text width=90mm, align=center] at ([yshift=8.25mm]current page.south) {
-    {\fontsize{11.5}{13.5}\selectfont\color{white}\textbf{PARTICIPANT $\;\cdot\;$ 参会代表}}
+  \fill[nusnavy] (current page.south west) rectangle ([yshift=11.8mm]current page.south east);
+  \node[anchor=center, text width=66mm, align=center] at ([yshift=5.9mm]current page.south) {
+    {\fontsize{8.4}{10.0}\selectfont\color{white}\textbf{PARTICIPANT $\;\cdot\;$ 参会代表}\par}
   };
 \end{tikzpicture}
 
 \newpage
 
 % ======================================================================
-% PAGE 2: BACK SIDE (CLEAN BILINGUAL AGENDA)
+% PAGE 2: BACK SIDE (7.5 x 10.5 cm CLEAN BILINGUAL AGENDA)
 % ======================================================================
 \begin{tikzpicture}[remember picture, overlay]
   % Pure White Background
   \fill[white] (current page.north west) rectangle (current page.south east);
 
   % Simple Top Header Band
-  \fill[nusnavy] (current page.north west) rectangle ([yshift=-16.5mm]current page.north east);
-  \fill[nusorange] ([yshift=-16.5mm]current page.north west) rectangle ([yshift=-17.7mm]current page.north east);
+  \fill[nusnavy] (current page.north west) rectangle ([yshift=-11.8mm]current page.north east);
+  \fill[nusorange] ([yshift=-11.8mm]current page.north west) rectangle ([yshift=-12.6mm]current page.north east);
 
-  \node[anchor=center, text width=90mm, align=center] at ([yshift=-8.8mm]current page.north) {
-    {\fontsize{9.0}{11.0}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议议程}}\\[0.5mm]
-    {\fontsize{6.2}{7.6}\selectfont\color{white!85!slate200}\textbf{12 November 2026 $\;\cdot\;$ 09:00 -- 16:00}}
+  \node[anchor=center, text width=66mm, align=center] at ([yshift=-6.0mm]current page.north) {
+    {\fontsize{6.5}{7.8}\selectfont\color{white}\textbf{PROGRAM SCHEDULE $\;\cdot\;$ 会议议程}\par}\vspace{0.5mm}
+    {\fontsize{4.6}{5.6}\selectfont\color{white!85!slate200}\textbf{12 November 2026 $\;\cdot\;$ 09:00 -- 16:00}\par}
   };
 
   % Clean Minimalist 2-Column Bilingual Schedule Table
-  \node[anchor=north, text width=88mm, inner sep=0pt] at ([yshift=-21.5mm]current page.north) {
-    \fontsize{5.9}{7.35}\selectfont
-    \renewcommand{\arraystretch}{1.58}
-    \setlength{\tabcolsep}{2.8pt}
+  \node[anchor=north, text width=66.4mm, inner sep=0pt] at ([yshift=-15.0mm]current page.north) {
+    \fontsize{4.35}{5.35}\selectfont
+    \renewcommand{\arraystretch}{1.54}
+    \setlength{\tabcolsep}{2.0pt}
     \arrayrulecolor{slate200}
-    \begin{tabularx}{\linewidth}{@{} p{15.5mm} >{\raggedright\arraybackslash}X @{}}
+    \begin{tabularx}{\linewidth}{@{} p{11.2mm} >{\raggedright\arraybackslash}X @{}}
       \textbf{\texttt{\textcolor{slate600}{09:00-09:30}}} &
       \textbf{\textcolor{slate900}{Registration \& Morning Refreshments}} \textcolor{slate600}{$\cdot$ 会议签到与早间茶叙} \\
       \hline
@@ -170,9 +170,10 @@
   };
 
   % Simple Bottom Venue Line
-  \fill[nusnavy] (current page.south west) rectangle ([yshift=11.0mm]current page.south east);
-  \node[anchor=center, text width=92mm, align=center] at ([yshift=5.5mm]current page.south) {
-    {\fontsize{5.4}{6.6}\selectfont\color{white}\textbf{Venue: Bldg 4, Internet Industrial Park Phase 2, Chongqing}\\[0.3mm]\textbf{中国重庆两江新区互联网产业园二期4号楼 $\;\cdot\;$ NUSRI-CQ}}
+  \fill[nusnavy] (current page.south west) rectangle ([yshift=8.2mm]current page.south east);
+  \node[anchor=center, text width=68mm, align=center] at ([yshift=4.1mm]current page.south) {
+    {\fontsize{4.15}{5.15}\selectfont\color{white}\textbf{Venue: Bldg 4, Internet Industrial Park Phase 2, Chongqing}\\
+    \textbf{中国重庆两江新区互联网产业园二期4号楼 $\;\cdot\;$ NUSRI-CQ}\par}
   };
 \end{tikzpicture}
 

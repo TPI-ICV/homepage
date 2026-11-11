@@ -39,7 +39,7 @@ const translations = {
     labelPI: "Lab PI Group / Changan Unit",
     labelTitle: "Working Title",
     labelType: "Presentation Format",
-    typePoster: "Poster Only (A0 Portrait PDF)",
+    typePoster: "Poster Only (48×68 cm Portrait PDF)",
     typeDemo: "Interactive Demo Only",
     typeBoth: "Both Poster and Interactive Demo",
     labelAbstract: "Structured Abstract / System Brief",
@@ -66,7 +66,7 @@ const translations = {
     labelPI: "所属实验室PI课题组 / 长安汽车部门",
     labelTitle: "汇报论文 / 成果题目",
     labelType: "展示形式",
-    typePoster: "仅海报展评 (A0标准竖版PDF)",
+    typePoster: "仅海报展评 (48×68 cm 竖版PDF)",
     typeDemo: "仅系统实物/交互Demo演示",
     typeBoth: "海报展评 + 实物交互Demo演示",
     labelAbstract: "结构化摘要 / 系统概述",
@@ -231,7 +231,7 @@ ${reqText}
 
 --- ATTACHMENTS NOTE ---
 Please find attached our:
-- Poster Draft (Single-page A0 Portrait PDF: 841 mm × 1189 mm)
+- Poster Draft (Single-page Portrait PDF: 48 × 68 cm / 480 mm × 680 mm)
 - 1-page Structured Summary Document
 
 Sincerely,

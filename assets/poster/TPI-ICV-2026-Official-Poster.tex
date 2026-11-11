@@ -1,5 +1,5 @@
 \documentclass[10pt]{article}
-\usepackage[a4paper, margin=0pt]{geometry}
+\usepackage[paperwidth=480mm, paperheight=680mm, margin=0pt]{geometry}
 \usepackage{fontspec}
 \usepackage{xeCJK}
 \usepackage{amsmath,amssymb}
@@ -17,7 +17,7 @@
 \hypersetup{
   colorlinks=true,
   urlcolor=nusblue,
-  pdftitle={TPI-ICV 2026 Official Symposium Poster (Print Edition)},
+  pdftitle={TPI-ICV 2026 Official Symposium Poster (48 x 68 cm Print Edition)},
   pdfauthor={NUSRI-CQ & Chongqing Key Laboratory for ICV}
 }
 
@@ -91,156 +91,158 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 
-% Compact Print Badge Macros
+% Compact Print Badge Macros (Scaled for 48 x 68 cm Canvas)
 \newcommand{\onsitebadge}{%
-  \tcbox[enhanced, on line, boxsep=0pt, left=1.4mm, right=1.4mm, top=0.45mm, bottom=0.45mm, colback=emeraldtint, colframe=emerald!50!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{emerald}{ON-SITE}}}%
+  \tcbox[enhanced, on line, boxsep=0pt, left=3.2mm, right=3.2mm, top=1.0mm, bottom=1.0mm, colback=emeraldtint, colframe=emerald!50!white, boxrule=0.8pt, arc=1.8mm]{\fontsize{12.6}{14.6}\selectfont\textbf{\textcolor{emerald}{ON-SITE}}}%
 }
 \newcommand{\onlinebadge}{%
-  \tcbox[enhanced, on line, boxsep=0pt, left=1.55mm, right=1.55mm, top=0.45mm, bottom=0.45mm, colback=slate100, colframe=nusblue!45!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{nusblue}{ONLINE}}}%
+  \tcbox[enhanced, on line, boxsep=0pt, left=3.5mm, right=3.5mm, top=1.0mm, bottom=1.0mm, colback=slate100, colframe=nusblue!45!white, boxrule=0.8pt, arc=1.8mm]{\fontsize{12.6}{14.6}\selectfont\textbf{\textcolor{nusblue}{ONLINE}}}%
 }
 \newcommand{\hybridbadge}{%
-  \tcbox[enhanced, on line, boxsep=0pt, left=1.5mm, right=1.5mm, top=0.45mm, bottom=0.45mm, colback=goldtint, colframe=goldrule!55!white, boxrule=0.35pt, arc=0.8mm]{\fontsize{5.5}{6.4}\selectfont\textbf{\textcolor{goldaccent}{HYBRID}}}%
+  \tcbox[enhanced, on line, boxsep=0pt, left=3.4mm, right=3.4mm, top=1.0mm, bottom=1.0mm, colback=goldtint, colframe=goldrule!55!white, boxrule=0.8pt, arc=1.8mm]{\fontsize{12.6}{14.6}\selectfont\textbf{\textcolor{goldaccent}{HYBRID}}}%
 }
 
-% Section Header Macro
+% Section Header Macro (42.30 cm Content Width)
 \newcommand{\sectionheader}[3]{%
   \begin{tikzpicture}
-    \fill[nusnavy] (0, 0) rectangle (0.14cm, 0.32cm);
-    \fill[goldrule] (0.18cm, 0) rectangle (0.24cm, 0.32cm);
-    \node[anchor=west, inner sep=0pt] at (0.35cm, 0.16cm) {\fontsize{7.6}{9.0}\selectfont\color{nusnavy}\textbf{#1 $\;\cdot\;$ #2}};
-    \draw[nusnavy!22!slate200, line width=0.5pt] (#3, 0.16cm) -- (18.5cm, 0.16cm);
+    \fill[nusnavy] (0, 0) rectangle (0.32cm, 0.73cm);
+    \fill[goldrule] (0.41cm, 0) rectangle (0.55cm, 0.73cm);
+    \node[anchor=west, inner sep=0pt] at (0.80cm, 0.365cm) {\fontsize{17.4}{20.6}\selectfont\color{nusnavy}\textbf{#1 $\;\cdot\;$ #2}};
+    \draw[nusnavy!22!slate200, line width=1.15pt] (#3, 0.365cm) -- (42.30cm, 0.365cm);
   \end{tikzpicture}%
 }
 
 \newsavebox{\qrbox}
 
 \begin{document}
-\savebox{\qrbox}{\qrcode[height=1.85cm]{https://tpi-icv.github.io/homepage/\#registration}}
+\savebox{\qrbox}{\qrcode[height=4.22cm]{https://tpi-icv.github.io/homepage/\#registration}}
 \begin{tikzpicture}[remember picture, overlay]
 
   % ==================== 0. PURE PAPER BACKGROUND & DOUBLE ACADEMIC FRAME ====================
   \fill[white] (current page.north west) rectangle (current page.south east);
 
-  % Outer Fine Navy Frame (7mm printer-safe margin)
-  \draw[nusnavy, line width=1.1pt]
-    ([xshift=0.70cm, yshift=-0.70cm]current page.north west)
+  % Outer Fine Navy Frame (16mm printer-safe margin on 48x68cm board)
+  \draw[nusnavy, line width=2.5pt]
+    ([xshift=1.60cm, yshift=-1.60cm]current page.north west)
     rectangle
-    ([xshift=-0.70cm, yshift=0.70cm]current page.south east);
+    ([xshift=-1.60cm, yshift=1.60cm]current page.south east);
 
   % Inner Burnished Gold Hairline Frame
-  \draw[goldrule!85!white, line width=0.4pt]
-    ([xshift=0.84cm, yshift=-0.84cm]current page.north west)
+  \draw[goldrule!85!white, line width=0.9pt]
+    ([xshift=1.92cm, yshift=-1.92cm]current page.north west)
     rectangle
-    ([xshift=-0.84cm, yshift=0.84cm]current page.south east);
+    ([xshift=-1.92cm, yshift=1.92cm]current page.south east);
 
   % Top Institutional Crown Bar inside Frame
   \fill[nusnavy]
-    ([xshift=0.84cm, yshift=-0.84cm]current page.north west)
+    ([xshift=1.92cm, yshift=-1.92cm]current page.north west)
     rectangle
-    ([xshift=-0.84cm, yshift=-1.00cm]current page.north east);
+    ([xshift=-1.92cm, yshift=-2.29cm]current page.north east);
   \fill[goldrule]
-    ([xshift=0.84cm, yshift=-1.00cm]current page.north west)
+    ([xshift=1.92cm, yshift=-2.29cm]current page.north west)
     rectangle
-    ([xshift=-0.84cm, yshift=-1.06cm]current page.north east);
+    ([xshift=-1.92cm, yshift=-2.43cm]current page.north east);
 
   % ==================== 1. EDITORIAL MASTHEAD & SYMPOSIUM HEADER ====================
-  \node[anchor=north, text width=18.5cm, inner sep=0pt, align=center] (headerblock) at ([yshift=-1.24cm]current page.north) {
+  \node[anchor=north, text width=42.30cm, inner sep=0pt, align=center] (headerblock) at ([yshift=-2.84cm]current page.north) {
     % Symposium Kicker
-    {\fontsize{6.6}{8.0}\selectfont\color{goldaccent}\textbf{TPI-ICV 2026 $\;\cdot\;$ JOINT ACADEMIC MILESTONE SYMPOSIUM $\;\cdot\;$ 联合学术研讨会}}\\[1.3mm]
+    {\fontsize{15.1}{18.3}\selectfont\color{goldaccent}\textbf{TPI-ICV 2026 $\;\cdot\;$ JOINT ACADEMIC MILESTONE SYMPOSIUM $\;\cdot\;$ 联合学术研讨会}\par}\vspace{2.8mm}
 
     % Main English Title in Editorial Serif
-    {\displayserif\fontsize{14.0}{16.4}\selectfont\color{nusnavy}\textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}}\\[1.2mm]
+    {\displayserif\fontsize{32.0}{37.5}\selectfont\color{nusnavy}\textbf{The 2026 Joint Symposium on Foundation AI, Large Language Models,\\and Trusted Vehicular Interaction}\par}\vspace{2.6mm}
 
     % Main Chinese Title in True Songti Bold
-    {\cjkserif\fontsize{10.6}{12.6}\selectfont\color{nusblue}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会}}\\[1.4mm]
+    {\cjkserif\fontsize{24.2}{28.8}\selectfont\color{nusblue}\textbf{2026年大模型与智能网联汽车可信感知交互联合学术研讨会}\par}\vspace{3.0mm}
 
     % Ornamental Gold & Navy Divider
     \begin{tikzpicture}
-      \draw[slate200, line width=0.4pt] (-8.8cm, 0) -- (8.8cm, 0);
-      \draw[goldrule, line width=1.0pt] (-2.6cm, 0) -- (2.6cm, 0);
-      \fill[nusnavy] (0, 0) circle (1.3pt);
-    \end{tikzpicture}\\[1.0mm]
+      \draw[slate200, line width=0.9pt] (-20.1cm, 0) -- (20.1cm, 0);
+      \draw[goldrule, line width=2.3pt] (-5.95cm, 0) -- (5.95cm, 0);
+      \fill[nusnavy] (0, 0) circle (3.0pt);
+    \end{tikzpicture}\\[2.2mm]
 
     % Co-Hosts Line (Centered with clean linebreaks)
-    {\fontsize{6.55}{8.4}\selectfont\color{slate700}
+    {\fontsize{15.0}{19.2}\selectfont\color{slate700}
       \textbf{\textcolor{nusnavy}{CO-HOSTS / 联合主办:}} \;
       \textbf{National University of Singapore (Chongqing) Research Institute (NUSRI-CQ / 重庆新国大研究院)}\\
       \textbf{Chongqing Key Laboratory of Trusted Perception \& Interaction Technology for ICV (智能网联汽车可信感知交互技术重庆市重点实验室)}\\
-      \textbf{Changan Automobile Forward-looking Technology Research Institute (长安汽车前瞻技术研究院)}
-    }\\[1.5mm]
+      \textbf{Changan Automobile Forward-looking Technology Research Institute (长安汽车前瞻技术研究院)}\par
+    }\vspace{3.2mm}
 
     % Date, Mode & Venue Ribbon (2 Crisp Single-Line Rows)
     \begin{tcolorbox}[
       enhanced,
       colback=warmgray,
       colframe=slate200,
-      borderline west={2.2pt}{0pt}{nusnavy},
-      borderline east={2.2pt}{0pt}{goldrule},
-      boxrule=0.45pt,
-      arc=1.0mm,
-      left=2.6mm, right=2.6mm, top=1.15mm, bottom=1.15mm
+      borderline west={5.0pt}{0pt}{nusnavy},
+      borderline east={5.0pt}{0pt}{goldrule},
+      boxrule=1.0pt,
+      arc=2.3mm,
+      left=6.0mm, right=6.0mm, top=2.6mm, bottom=2.6mm
     ]
-      \fontsize{6.45}{8.1}\selectfont\color{slate900}\raggedright
+      \fontsize{14.7}{18.5}\selectfont\color{slate900}\raggedright
       \textbf{\textcolor{nusnavy}{DATE / 时间:}} \textbf{12 Nov 2026} \textcolor{slate600}{(09:00--16:00 UTC+8 / 2026年11月12日)} \hfill
       \textbf{\textcolor{nusnavy}{MODE / 形式:}} \textbf{In-Person \& Online (线下+线上)} \hfill
-      \textbf{\textcolor{goldaccent}{FEE / 费用:}} \textbf{Complimentary (免注册费)}\\[0.55mm]
-      \textcolor{slate200}{\rule{\textwidth}{0.3pt}}\\[0.55mm]
-      \textbf{\textcolor{nusnavy}{VENUE / 地点:}} \textbf{Building 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area, Chongqing, China} \; \textcolor{slate600}{\textbf{(重庆两江新区互联网产业园二期4号楼 $\cdot$ 重庆新国大研究院 NUSRI-CQ)}}
+      \textbf{\textcolor{goldaccent}{FEE / 费用:}} \textbf{Complimentary (免注册费)}\\[1.25mm]
+      \textcolor{slate200}{\rule{\textwidth}{0.7pt}}\\[1.25mm]
+      \textbf{\textcolor{nusnavy}{VENUE / 地点:}} \textbf{Building 4, Internet Industrial Park Phase 2, Chongqing Liang Jiang New Area, Chongqing, China} \; \textcolor{slate600}{\textbf{(重庆两江新区互联网产业园二期4号楼 $\cdot$ 重庆新国大研究院 NUSRI-CQ)}}\par
     \end{tcolorbox}
   };
 
   % ==================== 2. CORE RESEARCH THRUSTS (4-COLUMN EDITORIAL STRIP) ====================
-  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of headerblock] (thrustsblock) {
-    \sectionheader{CORE RESEARCH THRUSTS \& THEMATIC TRACKS}{四大核心研究方向与专题}{9.3cm}\\[0.85mm]
+  \node[anchor=north, text width=42.30cm, inner sep=0pt, below=0.78cm of headerblock] (thrustsblock) {
+    \sectionheader{CORE RESEARCH THRUSTS \& THEMATIC TRACKS}{四大核心研究方向与专题}{21.3cm}\\[1.9mm]
     \begin{tcbitemize}[
       raster columns=4,
-      raster column skip=2.2mm,
+      raster column skip=5.0mm,
       raster equal height=rows,
       enhanced,
       colback=white,
       colframe=slate200,
-      boxrule=0.45pt,
-      arc=1.0mm,
-      left=1.9mm, right=1.9mm, top=1.25mm, bottom=1.25mm
+      boxrule=1.0pt,
+      arc=2.3mm,
+      left=4.3mm, right=4.3mm, top=2.85mm, bottom=2.85mm
     ]
-      \tcbitem[borderline north={1.6pt}{0pt}{nusblue}]
-        {\fontsize{6.3}{7.6}\selectfont\color{nusblue}\textbf{THRUST 1 $\cdot$ Foundation AI \& LLMs}}\\[0.3mm]
-        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{大模型与基础AI前沿}}\\[0.6mm]
-        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Edge Model Compression, Multimodal VLMs, Agentic Reasoning, LLM Unlearning \& In-Cabin Copilots.}
+      \tcbitem[borderline north={3.6pt}{0pt}{nusblue}]
+        {\fontsize{14.4}{17.4}\selectfont\color{nusblue}\textbf{THRUST 1 $\cdot$ Foundation AI \& LLMs}\par}\vspace{0.7mm}
+        {\fontsize{13.8}{16.7}\selectfont\color{nusnavy}\textbf{大模型与基础AI前沿}\par}\vspace{1.35mm}
+        {\fontsize{13.35}{16.3}\selectfont\color{slate600}\raggedright Edge Model Compression, Multimodal VLMs, Agentic Reasoning, LLM Unlearning \& In-Cabin Copilots.\par}
 
-      \tcbitem[borderline north={1.6pt}{0pt}{emerald}]
-        {\fontsize{6.3}{7.6}\selectfont\color{emerald}\textbf{THRUST 2 $\cdot$ Trusted AI \& Safety}}\\[0.3mm]
-        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{可信AI与安全治理}}\\[0.6mm]
-        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Mechanistic Interpretability, Privacy, Affective Cockpit Evaluation \& Automotive AI Ethics Governance.}
+      \tcbitem[borderline north={3.6pt}{0pt}{emerald}]
+        {\fontsize{14.4}{17.4}\selectfont\color{emerald}\textbf{THRUST 2 $\cdot$ Trusted AI \& Safety}\par}\vspace{0.7mm}
+        {\fontsize{13.8}{16.7}\selectfont\color{nusnavy}\textbf{可信AI与安全治理}\par}\vspace{1.35mm}
+        {\fontsize{13.35}{16.3}\selectfont\color{slate600}\raggedright Mechanistic Interpretability, Privacy, Affective Cockpit Evaluation \& Automotive AI Ethics Governance.\par}
 
-      \tcbitem[borderline north={1.6pt}{0pt}{indigo}]
-        {\fontsize{6.3}{7.6}\selectfont\color{indigo}\textbf{THRUST 3 $\cdot$ Spatial Interaction}}\\[0.3mm]
-        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{空间计算与自然感知交互}}\\[0.6mm]
-        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright 3D Gaussian Splatting, Gaze \& Eye-Roll Detection, Gesture Tracking \& Haptic Feedback.}
+      \tcbitem[borderline north={3.6pt}{0pt}{indigo}]
+        {\fontsize{14.4}{17.4}\selectfont\color{indigo}\textbf{THRUST 3 $\cdot$ Spatial Interaction}\par}\vspace{0.7mm}
+        {\fontsize{13.8}{16.7}\selectfont\color{nusnavy}\textbf{空间计算与自然感知交互}\par}\vspace{1.35mm}
+        {\fontsize{13.35}{16.3}\selectfont\color{slate600}\raggedright 3D Gaussian Splatting, Gaze \& Eye-Roll Detection, Gesture Tracking \& Haptic Feedback.\par}
 
-      \tcbitem[borderline north={1.6pt}{0pt}{goldrule}]
-        {\fontsize{6.3}{7.6}\selectfont\color{goldaccent}\textbf{THRUST 4 $\cdot$ Smart Driving \& EVs}}\\[0.3mm]
-        {\fontsize{6.05}{7.3}\selectfont\color{nusnavy}\textbf{鲁棒智驾与智能电池管理}}\\[0.6mm]
-        {\fontsize{5.85}{7.15}\selectfont\color{slate600}\raggedright Multi-Sensor Degeneracy Fusion, Corner-Case Evaluation \& Intelligent EV Battery Management (BMS).}
+      \tcbitem[borderline north={3.6pt}{0pt}{goldrule}]
+        {\fontsize{14.4}{17.4}\selectfont\color{goldaccent}\textbf{THRUST 4 $\cdot$ Smart Driving \& EVs}\par}\vspace{0.7mm}
+        {\fontsize{13.8}{16.7}\selectfont\color{nusnavy}\textbf{鲁棒智驾与智能电池管理}\par}\vspace{1.35mm}
+        {\fontsize{13.35}{16.3}\selectfont\color{slate600}\raggedright Multi-Sensor Degeneracy Fusion, Corner-Case Evaluation \& Intelligent EV Battery Management (BMS).\par}
     \end{tcbitemize}
   };
 
   % ==================== 3. FULL-WIDTH PROGRAM SCHEDULE (14 ITEMS) ====================
-  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of thrustsblock] (scheduleblock) {
-    \sectionheader{PROGRAM SCHEDULE \& INVITED TALKS}{一日会议详细议程与特邀报告 (12 Nov 2026)}{11.2cm}\\[0.85mm]
+  \node[anchor=north, text width=42.30cm, inner sep=0pt, below=0.78cm of thrustsblock] (scheduleblock) {
+    \sectionheader{PROGRAM SCHEDULE \& INVITED TALKS}{一日会议详细议程与特邀报告 (12 Nov 2026)}{25.6cm}\\[1.9mm]
     \begin{tcolorbox}[
       enhanced,
       colback=white,
       colframe=nusnavy!35!slate200,
-      boxrule=0.55pt,
-      arc=1.2mm,
-      left=0mm, right=0mm, top=0mm, bottom=0.3mm,
+      boxrule=1.25pt,
+      arc=2.7mm,
+      left=0mm, right=0mm, top=0mm, bottom=0.7mm,
       clip upper
     ]
-      \fontsize{6.55}{8.15}\selectfont
+      \fontsize{15.0}{18.6}\selectfont
       \renewcommand{\arraystretch}{1.44}
-      \setlength{\tabcolsep}{5.5pt}
-      \begin{tabularx}{\textwidth}{@{} >{\columncolor{warmgray}}p{1.90cm} p{3.55cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{1.55cm} @{}}
+      \setlength{\tabcolsep}{12.5pt}
+      \setlength{\arrayrulewidth}{0.8pt}
+      \arrayrulecolor{slate200}
+      \begin{tabularx}{\textwidth}{@{} >{\columncolor{warmgray}}p{4.35cm} p{8.10cm} >{\raggedright\arraybackslash}X >{\centering\arraybackslash}p{3.55cm} @{}}
         \rowcolor{nusnavy}
         \textbf{\textcolor{white}{\texttt{TIME (UTC+8)}}} &
         \textbf{\textcolor{white}{SESSION / EVENT}} &
@@ -341,67 +343,67 @@
   };
 
   % ==================== 4. COMMITTEES (LEFT) & CALL FOR POSTERS (RIGHT) ====================
-  \node[anchor=north, text width=18.5cm, inner sep=0pt, below=0.34cm of scheduleblock] (committeesblock) {
+  \node[anchor=north, text width=42.30cm, inner sep=0pt, below=0.78cm of scheduleblock] (committeesblock) {
     \begin{tcbitemize}[
       raster columns=20,
-      raster column skip=2.5mm,
+      raster column skip=5.7mm,
       raster equal height=rows,
       enhanced,
-      boxrule=0.45pt,
-      arc=1.0mm,
-      left=2.5mm, right=2.5mm, top=1.6mm, bottom=1.6mm
+      boxrule=1.0pt,
+      arc=2.3mm,
+      left=5.7mm, right=5.7mm, top=3.65mm, bottom=3.65mm
     ]
-      \tcbitem[raster multicolumn=13, colback=white, colframe=slate200, borderline north={1.8pt}{0pt}{nusnavy}]
-        {\fontsize{7.2}{8.6}\selectfont\color{nusnavy}\textbf{ORGANIZATION \& COMMITTEES $\;\cdot\;$ 组织与学术委员会}}\\[0.65mm]
-        \textcolor{slate200}{\rule{\textwidth}{0.35pt}}\\[0.75mm]
-        {\fontsize{6.05}{7.55}\selectfont\color{slate900}\raggedright
+      \tcbitem[raster multicolumn=13, colback=white, colframe=slate200, borderline north={4.1pt}{0pt}{nusnavy}]
+        {\fontsize{16.5}{19.7}\selectfont\color{nusnavy}\textbf{ORGANIZATION \& COMMITTEES $\;\cdot\;$ 组织与学术委员会}\par}\vspace{1.5mm}
+        \textcolor{slate200}{\rule{\textwidth}{0.8pt}}\\[1.7mm]
+        {\fontsize{13.8}{17.3}\selectfont\color{slate900}\raggedright
           \textbf{\textcolor{nusblue}{$\blacksquare$ Steering \& Management Committee (管理委员会):}}
           \textbf{Co-Chairs:} Prof. Jibin LUO (罗继斌, NUS) $\cdot$ Zhangsong ZHAN (詹樟松, Changan) $\;\vert\;$
           \textbf{Vice Chairs:} Prof. Jiagong WANG (王家功, NUSRI-CQ) $\cdot$ Huili YU (禹慧丽, Changan) $\;\vert\;$
-          \textbf{Members:} Prof. Jinbin WANG (王锦彬, NUS) $\cdot$ Jun LI (李俊, Changan)\\[0.75mm]
+          \textbf{Members:} Prof. Jinbin WANG (王锦彬, NUS) $\cdot$ Jun LI (李俊, Changan)\\[1.7mm]
 
           \textbf{\textcolor{emerald}{$\blacksquare$ Academic Advisory Committee (学术委员会):}}
           \textbf{Chair:} Prof. Yong-Wei ZHANG (张永伟, IHPC A*STAR, Singapore) $\;\vert\;$
           \textbf{Vice Chair:} Huili YU (禹慧丽, Changan) $\;\vert\;$
-          \textbf{Members:} Prof. Shuanggen JIN (金双根) $\cdot$ Prof. Dangxiao WANG (王党校, Beihang) $\cdot$ Prof. Bo AN (安波, NTU) $\cdot$ Prof. Bingsheng HE (何丙胜, NUS) $\cdot$ Prof. Qing SHI (石青, BIT) $\cdot$ Xing CHEN (陈星, Changan)\\[0.75mm]
+          \textbf{Members:} Prof. Shuanggen JIN (金双根) $\cdot$ Prof. Dangxiao WANG (王党校, Beihang) $\cdot$ Prof. Bo AN (安波, NTU) $\cdot$ Prof. Bingsheng HE (何丙胜, NUS) $\cdot$ Prof. Qing SHI (石青, BIT) $\cdot$ Xing CHEN (陈星, Changan)\\[1.7mm]
 
           \textbf{\textcolor{indigo}{$\blacksquare$ Executive Leadership \& Secretariat (执行领导层与秘书处):}}
           \textbf{Lab Director:} Prof. Jiagong WANG (王家功) $\;\vert\;$
           \textbf{Associate Directors:} Prof. Kaidi YANG (杨凯棣) $\cdot$ Prof. Yan PANG (庞严) $\;\vert\;$
-          \textbf{Assistant Director \& Major Correspondence (主要联络人):} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}}
+          \textbf{Assistant Director \& Major Correspondence (主要联络人):} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}}\par
         }
 
-      \tcbitem[raster multicolumn=7, colback=warmgray, colframe=slate200, borderline north={1.8pt}{0pt}{goldrule}]
-        {\fontsize{7.2}{8.6}\selectfont\color{goldaccent}\textbf{CALL FOR POSTERS \& DEMOS $\;\cdot\;$ 成果征集}}\\[0.65mm]
-        \textcolor{slate200}{\rule{\textwidth}{0.35pt}}\\[0.75mm]
-        {\fontsize{6.05}{7.55}\selectfont\color{slate900}\raggedright
-          Researchers, PIs, postdocs, and students from NUS, NUSRI-CQ, Changan Auto, and partner universities are invited to submit:\\[0.65mm]
-          $\bullet$ \textbf{Research Posters:} A0 Portrait PDF ($841\times 1189\text{ mm}$), bilingual or English; printed \& mounted by the Secretariat.\\[0.55mm]
-          $\bullet$ \textbf{Extended Abstracts:} 1-page summary of recent work in Foundation AI, LLMs, or Trusted ICV.\\[0.55mm]
-          $\bullet$ \textbf{Interactive Demos:} Live software, hardware-in-the-loop, or cockpit agent demonstrations.
+      \tcbitem[raster multicolumn=7, colback=warmgray, colframe=slate200, borderline north={4.1pt}{0pt}{goldrule}]
+        {\fontsize{16.5}{19.7}\selectfont\color{goldaccent}\textbf{CALL FOR POSTERS \& DEMOS $\;\cdot\;$ 成果征集}\par}\vspace{1.5mm}
+        \textcolor{slate200}{\rule{\textwidth}{0.8pt}}\\[1.7mm]
+        {\fontsize{13.8}{17.3}\selectfont\color{slate900}\raggedright
+          Researchers, PIs, postdocs, and students from NUS, NUSRI-CQ, Changan Auto, and partner universities are invited to submit:\\[1.5mm]
+          $\bullet$ \textbf{Research Posters:} Portrait PDF ($48\times 68\text{ cm}$), bilingual or English; printed \& mounted by the Secretariat.\\[1.25mm]
+          $\bullet$ \textbf{Extended Abstracts:} 1-page summary of recent work in Foundation AI, LLMs, or Trusted ICV.\\[1.25mm]
+          $\bullet$ \textbf{Interactive Demos:} Live software, hardware-in-the-loop, or cockpit agent demonstrations.\par
         }
     \end{tcbitemize}
   };
 
   % ==================== 5. PRINT-ELEGANT FOOTER & QR REGISTRATION PORTAL ====================
-  \node[anchor=south, text width=18.5cm, inner sep=0pt] at ([yshift=1.08cm]current page.south) {
+  \node[anchor=south, text width=42.30cm, inner sep=0pt] at ([yshift=2.47cm]current page.south) {
     \begin{tcolorbox}[
       enhanced,
       colback=warmgray,
       colframe=nusnavy,
-      boxrule=0.75pt,
-      borderline={0.35pt}{0.55mm}{goldrule},
-      arc=1.2mm,
-      left=2.8mm, right=2.8mm, top=1.4mm, bottom=1.4mm
+      boxrule=1.7pt,
+      borderline={0.8pt}{1.25mm}{goldrule},
+      arc=2.7mm,
+      left=6.4mm, right=6.4mm, top=3.2mm, bottom=3.2mm
     ]
       \begin{minipage}[c]{0.79\textwidth}
-        {\fontsize{7.6}{9.2}\selectfont\color{nusnavy}\textbf{PARTICIPANT REGISTRATION \& CORRESPONDENCE $\;\cdot\;$ 参会报名注册与秘书处联络}}\\[0.75mm]
-        {\fontsize{6.25}{7.85}\selectfont\color{slate700}\raggedright
-          $\bullet$ \textbf{\textcolor{slate900}{Complimentary Registration (免收注册费):}} Open to invited speakers, committee members, NUS/NUSRI-CQ researchers, Changan Automobile engineers, and invited academic guests (In-Person in Chongqing \& Online Remote Link).\\[0.45mm]
-          $\bullet$ \textbf{\textcolor{slate900}{Major Correspondence (大会主要联络人):}} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}} $\cdot$ Assistant Director, Executive Leadership \& Secretariat\\[0.40mm]
+        {\fontsize{17.4}{21.0}\selectfont\color{nusnavy}\textbf{PARTICIPANT REGISTRATION \& CORRESPONDENCE $\;\cdot\;$ 参会报名注册与秘书处联络}\par}\vspace{1.7mm}
+        {\fontsize{14.3}{18.0}\selectfont\color{slate700}\raggedright
+          $\bullet$ \textbf{\textcolor{slate900}{Complimentary Registration (免收注册费):}} Open to invited speakers, committee members, NUS/NUSRI-CQ researchers, Changan Automobile engineers, and invited academic guests (In-Person in Chongqing \& Online Remote Link).\\[1.0mm]
+          $\bullet$ \textbf{\textcolor{slate900}{Major Correspondence (大会主要联络人):}} \textbf{\textcolor{nusnavy}{Dr. Xi AI (艾惜, Barid)}} $\cdot$ Assistant Director, Executive Leadership \& Secretariat\\[0.9mm]
           \phantom{$\bullet$} \textbf{\textcolor{nusnavy}{Email TO:}} \texttt{\textcolor{nusblue}{xi.ai@nusricq.cn}} \quad
           \textbf{\textcolor{nusnavy}{CC:}} \texttt{\textcolor{nusblue}{barid.x.ai@gmail.com}} \quad $\vert$ \quad
-          \textbf{\textcolor{nusnavy}{Official Website:}} \texttt{\textcolor{nusblue}{https://tpi-icv.github.io/homepage/}}
+          \textbf{\textcolor{nusnavy}{Official Website:}} \texttt{\textcolor{nusblue}{https://tpi-icv.github.io/homepage/}}\par
         }
       \end{minipage}\hfill
       \begin{minipage}[c]{0.185\textwidth}
@@ -410,14 +412,14 @@
           enhanced,
           colback=white,
           colframe=slate200,
-          boxrule=0.45pt,
-          arc=1.0mm,
-          left=1.0mm, right=1.0mm, top=0.9mm, bottom=0.6mm,
-          width=2.30cm
+          boxrule=1.0pt,
+          arc=2.3mm,
+          left=2.3mm, right=2.3mm, top=2.1mm, bottom=1.4mm,
+          width=5.25cm
         ]
           \centering
-          \usebox{\qrbox}\\[0.4mm]
-          {\fontsize{4.9}{5.7}\selectfont\color{nusnavy}\textbf{SCAN TO REGISTER}\\[-0.1mm]\textbf{扫码在线报名注册}}
+          \usebox{\qrbox}\\[0.9mm]
+          {\fontsize{11.2}{13.0}\selectfont\color{nusnavy}\textbf{SCAN TO REGISTER}\\[-0.2mm]\textbf{扫码在线报名注册}\par}
         \end{tcolorbox}
       \end{minipage}
     \end{tcolorbox}
