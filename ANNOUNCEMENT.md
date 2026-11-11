@@ -22,7 +22,7 @@ The symposium is jointly hosted by:
 - **On-Site Check-In:** `09:00 – 09:30` at the Registration Desk (symposium badge pickup, morning refreshments, and networking; if driving onto campus, please share your vehicle license plate with the Secretariat in advance)
 - **Online Access:** `[Insert Zoom / Voov / Teams Link & Passcode, or: Sent directly to registered email addresses]`
 - **Official Website & Registration:** https://tpi-icv.github.io/homepage/
-- **Official Poster (`48 × 68 cm`):** https://tpi-icv.github.io/homepage/poster.html
+- **Official Poster (`60 × 80 cm`):** https://tpi-icv.github.io/homepage/poster.html
 
 ### ■ Final Program Schedule (12 November 2026 · UTC+8 / SGT)
 - **09:00 – 09:30** | **Registration & Morning Refreshments** *(Attendee check-in, badge pickup, and networking)*
@@ -43,7 +43,7 @@ The symposium is jointly hosted by:
 ### ■ Registration & Secretariat Contact
 If you have not yet registered, please submit your attendance details via https://tpi-icv.github.io/homepage/#registration so we can finalize badge preparation, lunch headcount (`12:00 – 13:00`), and online access credentials.
 
-For any logistics, poster (`48 × 68 cm` portrait), demo setup, or online connection inquiries, please contact the Symposium Secretariat:
+For any logistics, poster (`60 × 80 cm` portrait), demo setup, or online connection inquiries, please contact the Symposium Secretariat:
 - **Major Correspondence:** **Dr. Xi AI (艾惜, Barid)** · Assistant Director, Executive Leadership & Secretariat
 - **Email:** TO: `xi.ai@nusricq.cn` | CC: `barid.x.ai@gmail.com`
 
@@ -97,7 +97,7 @@ Chongqing Changan Automobile Co., Ltd.
 本次研讨会免收注册费（含线下参会胸牌、上下午茶歇及 `12:00 – 13:00` 交流午餐）。尚未完成登记的参会老师、同学及企业代表，请尽快通过官网完成报名以便统计用餐、入园车牌及发送线上会议接入信息：  
 👉 **在线报名入口：** https://tpi-icv.github.io/homepage/#registration
 
-如对会议日程、海报装裱（标准竖版尺寸 `48 × 68 cm`）/ Demo展示或交通会务有任何疑问，请联系大会秘书处：
+如对会议日程、海报装裱（标准竖版尺寸 `60 × 80 cm`）/ Demo展示或交通会务有任何疑问，请联系大会秘书处：
 - **大会主要联络人 (Major Correspondence)：** **Dr. Xi AI (艾惜, Barid)** · 重点实验室主任助理 (Assistant Director)
 - **联络邮箱：** 主送 `xi.ai@nusricq.cn` ｜ 抄送 `barid.x.ai@gmail.com`
 
